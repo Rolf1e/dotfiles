@@ -11,7 +11,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'eagletmt/neco-ghc'
 
-"Plug 'ycm-core/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe'
 "Plug 'ervandew/eclim'
 Plug 'morhetz/gruvbox'
 "Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
@@ -59,22 +59,22 @@ if has('gui_running')
 	set guifont=JetBrains Mono Regular Nerd Font Complete
 endif
 
-" YCM
-fun! GoYCM()
-	nnoremap <buffer> <silent> <leader>gd :YCMCompleter GoTo<CR>
-	nnoremap <buffer> <silent> <leader>gr :YCMCompleter GoToReferences<CR>
-	nnoremap <buffer> <silent> <F1>:resize 7 :YcmCompleter GetDoc<CR>
-endfun
-
-autocmd FileType java,rust,cpp,hpp,h,cxx,c,typescript :call GoYCM()
-
 let g:ycm_autoclose_preview_window_after_insertion = 0
 
-fun! Compile()
+"Compiler
+
+
+fun! Rust()
+	nnoremap <buffer> <silent> <F2> :Cargo run<CR><C-w><C-p>
+	nnoremap <buffer> <silent> <leader><F2> :let $RUST_BACKTRACE='1'<CR> :Cargo run<CR><C-w><C-p>
+endfun
+
+fun! Java()
 	nnoremap <buffer> <silent> <F2> :YcmDiags<CR><C-w><C-p>
 endfun
 
-autocmd FileType java,rust :call Compile()
+autocmd FileType java :call Java()
+autocmd FileType rust :call Rust()
 
 "Tagbar
 nmap <F4> :TagbarToggle<CR>
@@ -252,5 +252,4 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-
 
