@@ -11,7 +11,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'eagletmt/neco-ghc'
 
-Plug 'ycm-core/YouCompleteMe'
+"Plug 'ycm-core/YouCompleteMe'
 "Plug 'ervandew/eclim'
 Plug 'morhetz/gruvbox'
 "Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
@@ -21,8 +21,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
-
-"Plug 'lervag/vimtex'
+Plug 'lervag/vimtex'
+Plug 'terryma/vim-multiple-cursors'
 
 Plug 'kien/ctrlp.vim'
 
@@ -102,7 +102,12 @@ function! AutoHighlightToggle()
   endif
 endfunction
 
-"COC
+" ===== COC ===== 
+" Plugins:  
+" coc-marketplace
+" coc-rust-analyzer
+" coc-cord
+" coc-import-cost
 " TextEdit might fail if hidden is not set.
 set hidden
 
@@ -252,4 +257,3 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-
