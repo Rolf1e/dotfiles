@@ -1,54 +1,91 @@
+"transparent colorscheme
+let g:forest_night_transparent_background = 1
+
 ":help key-notation
 
-call plug#begin('~/AppData/Local/nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
-Plug 'scrooloose/nerdtree'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'scrooloose/nerdcommenter'
+"Completer
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+"Git
+Plug 'tpope/vim-fugitive'
+Plug 'rbong/vim-flog'
+Plug 'airblade/vim-gitgutter'
+
+"System
+Plug 'terryma/vim-multiple-cursors'
+Plug 'kien/ctrlp.vim'
+Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
 Plug 'ryanoasis/vim-devicons'
+Plug 'sheerun/vim-polyglot'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'mbbill/undotree'
 
+"TeX
+Plug 'lervag/vimtex'
+
+"Rust
+Plug 'rust-lang/rust.vim'
+
+"Haskell
 Plug 'neovimhaskell/haskell-vim'
 Plug 'eagletmt/neco-ghc'
 
-"Plug 'ycm-core/YouCompleteMe'
-"Plug 'ervandew/eclim'
+"colorscheme
+Plug 'flazz/vim-colorschemes'
 Plug 'morhetz/gruvbox'
-"Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'puremourning/vimspector'
-Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
-Plug 'lervag/vimtex'
-Plug 'terryma/vim-multiple-cursors'
-
-Plug 'kien/ctrlp.vim'
-
-Plug 'rust-lang/rust.vim'
-Plug 'majutsushi/tagbar'
+Plug 'sainnhe/forest-night'
+"Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
+"
+Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
+set clipboard+=unnamedplus
+
+"Open term in nvim
+nmap <leader>t <C-w>s<C-w><C-p>:resize 10<CR>:ter<CR>
+
+"undotree
+nnoremap <F5> :UndotreeToggle<cr>
+
+"NERDTree
+nnoremap <silent> <space>e :NERDTree<cr>
+
 " Haskell 
-syntax on
+"syntax on
 filetype plugin indent on
 let g:ycm_semantic_triggers = {'haskell' : ['.']}
 let g:haskellmode_completion_ghc = 0
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 let g:necoghc_enable_detailed_browse = 1
+let g:haskell_classic_highlighting = 1
+let g:haskell_indent_if = 3
+let g:haskell_indent_case = 2
+let g:haskell_indent_let = 4
+let g:haskell_indent_where = 6
+let g:haskell_indent_before_where = 2
+let g:haskell_indent_after_bare_where = 2
+let g:haskell_indent_do = 3
+let g:haskell_indent_in = 1
+let g:haskell_indent_guard = 2
+let g:haskell_indent_case_alternative = 1
+let g:cabal_indent_section = 2
 
-" GruvBox - Material
-colorscheme gruvbox
-set termguicolors
-set background=dark
 
-" nerdtree
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-let g:coc_disable_startup_warning = 1
-set encoding=UTF-8
 filetype plugin on
+"colorscheme 
+set termguicolors
+colorscheme forest-night
+set background=dark
+let g:airline_theme = 'forest_night'
+" nerdtree
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+set encoding=UTF-8
 " Show lines numbers
 set number
 set relativenumber
@@ -62,7 +99,6 @@ endif
 let g:ycm_autoclose_preview_window_after_insertion = 0
 
 "Compiler
-
 
 fun! Rust()
 	nnoremap <buffer> <silent> <F2> :Cargo run<CR><C-w><C-p>
@@ -103,6 +139,7 @@ function! AutoHighlightToggle()
 endfunction
 
 " ===== COC ===== 
+let g:coc_disable_startup_warning = 1
 " Plugins:  
 " coc-marketplace
 " coc-rust-analyzer
@@ -240,20 +277,3 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-" Mappings for CoCList
-" Show all diagnostics.
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions.
-nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
-" Show commands.
-nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document.
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols.
-nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list.
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
