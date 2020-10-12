@@ -44,7 +44,24 @@ Plug 'sainnhe/forest-night'
 Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
+" Strange remapping I know
+noremap l h
+noremap ; l
+noremap h ; 
+
 set clipboard+=unnamedplus
+" " Copy to clipboard
+vnoremap  <leader>y  "+y
+nnoremap  <leader>Y  "+yg_
+nnoremap  <leader>y  "+y
+nnoremap  <leader>yy  "+yy
+
+" " Paste from clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+
 
 "Open term in nvim
 nmap <leader>t <C-w>s<C-w><C-p>:resize 10<CR>:ter<CR>
@@ -52,6 +69,8 @@ nmap <leader>t <C-w>s<C-w><C-p>:resize 10<CR>:ter<CR>
 "undotree
 nnoremap <F5> :UndotreeToggle<cr>
 
+"CtrlP
+set wildignore+=*/target/*,*.so,*.jar,*/node_modules/*,*/dist/*,*/dll/*
 "NERDTree
 nnoremap <silent> <space>e :NERDTree<cr>
 
@@ -97,20 +116,6 @@ if has('gui_running')
 endif
 
 let g:ycm_autoclose_preview_window_after_insertion = 0
-
-"Compiler
-
-fun! Rust()
-	nnoremap <buffer> <silent> <F2> :Cargo run<CR><C-w><C-p>
-	nnoremap <buffer> <silent> <leader><F2> :let $RUST_BACKTRACE='1'<CR> :Cargo run<CR><C-w><C-p>
-endfun
-
-fun! Java()
-	nnoremap <buffer> <silent> <F2> :YcmDiags<CR><C-w><C-p>
-endfun
-
-autocmd FileType java :call Java()
-autocmd FileType rust :call Rust()
 
 "Tagbar
 nmap <F4> :TagbarToggle<CR>

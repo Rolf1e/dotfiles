@@ -112,12 +112,29 @@ if ! shopt -oq posix; then
   fi
 fi
 
+
+# To handle screen thing 
+# => /etc/systemd/logind.conf -> Lid commands
+
+
 git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
+#I3 connection nm-connection-editor
+#nm-applet
+
+# ==  Software ==
+
 #Firefox
 alias firefox="~/software/firefox/firefox &"
+
+# = game =
+
+#FTB
+alias ftb="/opt/FTBA/FTBApp &"
+
+# == DEV  == 
 
 #Git
 alias gs="git status"
@@ -129,10 +146,6 @@ alias gco="git checkout $1"
 
 alias ug="ungit &"
 
-#Java - Maven
-alias mci="mvn clean install"
-
-export MAVEN_HOME="~/software/apache-maven-3.6.3/bin"
 
 #Rust
 alias cr="cargo run"
@@ -146,10 +159,20 @@ export RUST="~/.cargo/bin"
 #Java
 alias jm="mvn clean install"
 export JAVA_HOME="~/software/jdk8u265-b01/bin"
+
+#Java - Maven
+alias mci="mvn clean install"
+export MAVEN_HOME="~/software/apache-maven-3.6.3/bin"
 #export JAVA_HOME="~/software/jdk-14"
 
 #Haskell
 export HASKELL_PATH="/opt/ghc/bin"
+
+#R
+alias rstudio="rstudio &"
+
+#TypeScript
+alias tsw="tsc -w"
 
 #mysql
 alias mysqlc="mysql $1 -u root -p"
@@ -162,7 +185,8 @@ alias postman="~/software/Postman/Postman &"
 
 #System
 #alias dev="cd ~/projects"
-alias dev="cd /media/rolfie/e724a4a5-d27a-476f-8dd5-b350aec9b4c1/projects"
+alias mdev="sudo ~/software/.sh/config-ssd.sh"
+alias dev="cd /media/rolfie/ssd2/projects/$1"
 alias :q="exit"
 alias c="clear"
 alias dwn="cd ~/Downloads"
@@ -170,8 +194,13 @@ alias doc="cd ~/Documents"
 alias tz="tar czvf $1.tar.gz $1"
 alias tx="tar xzvf $1"
 alias txc="tar xzvf $1 -C $2"
-alias cours="cd /media/rolfie/e724a4a5-d27a-476f-8dd5-b350aec9b4c1/cours"
+alias cours="cd /media/rolfie/ssd2/projects/cours"
+alias vlm="pavucontrol &"
+alias t3="tree -L 3"
+alias scn="bash ~/software/.sh/screenshot.sh $1"
+alias mscn="bash ~/software/.sh/mouse_screenshot.sh $1"
 
+export OWN_SOFTWARE="~/software/.sh:~/software/firefox/"
 #jetbrains 
 #intellij
 alias idea="~/software/idea-IU-202.6397.94/bin/idea.sh &"
@@ -182,7 +211,7 @@ alias datagrip="~/software/DataGrip-2020.2.2/bin/datagrip.sh &"
 #path
 export TEX_LIVE="/usr/local/texlive/2020/bin/x86_64-linux"
 
-export PATH=$PATH:"/home/rolfie/.local/bin":$TEX_LIVE:$RUST:$MAVEN_HOME:$HASKELL_PATH:$JAVA_HOME
+export PATH=$PATH:"/home/rolfie/.local/bin":$TEX_LIVE:$RUST:$MAVEN_HOME:$HASKELL_PATH:$JAVA_HOME:$OWN_SOFTWARE
 export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$(git_branch)\$ "
 
 #starship rust (always at end)
