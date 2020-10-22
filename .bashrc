@@ -139,10 +139,10 @@ alias ftb="/opt/FTBA/FTBApp &"
 #Git
 alias gs="git status"
 alias gd="git diff"
-alias ga="git add $1"
-alias gc="git commit -m $1"
+alias ga="git add"
+alias gc="git commit -m"
 alias gp="git push"
-alias gco="git checkout $1"
+alias gco="git checkout"
 
 alias ug="ungit &"
 
@@ -156,14 +156,10 @@ alias ctb="RUST_BACKTRACE=1 cargo test -- --nocapture"
 alias cf="cargo fmt"
 export RUST="~/.cargo/bin"
 
-#Java
-alias jm="mvn clean install"
-export JAVA_HOME="~/software/jdk8u265-b01/bin"
-
 #Java - Maven
-alias mci="mvn clean install"
+alias jm="mvn clean install"
+alias nmvn='function _() { mvn -B archetype:generate -DgroupId=com.rolfie.$1 -DartifactId=$1 -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4; }; _'
 export MAVEN_HOME="~/software/apache-maven-3.6.3/bin"
-#export JAVA_HOME="~/software/jdk-14"
 
 #Haskell
 export HASKELL_PATH="/opt/ghc/bin"
@@ -175,10 +171,10 @@ alias rstudio="rstudio &"
 alias tsw="tsc -w"
 
 #mysql
-alias mysqlc="mysql $1 -u root -p"
+alias mysqlc="mysql -u root -p"
 
 #psql
-alias pg="psql $1"
+alias pg="psql"
 
 #Postman 
 alias postman="~/software/Postman/Postman &"
@@ -186,19 +182,21 @@ alias postman="~/software/Postman/Postman &"
 #System
 #alias dev="cd ~/projects"
 alias mdev="sudo ~/software/.sh/config-ssd.sh"
-alias dev="cd /media/rolfie/ssd2/projects/$1"
+alias dev='function _(){ cd /media/rolfie/ssd2/projects/$1; }; _'
 alias :q="exit"
 alias c="clear"
 alias dwn="cd ~/Downloads"
 alias doc="cd ~/Documents"
-alias tz="tar czvf $1.tar.gz $1"
-alias tx="tar xzvf $1"
-alias txc="tar xzvf $1 -C $2"
+# TODO fix
+alias tz='function _(){ tar czvf $1.tar.gz $1; }; _'
+alias tx="tar xzvf"
+alias txc='function _(){ tar xzvf $1 -C $2; }; _'
 alias cours="cd /media/rolfie/ssd2/projects/cours"
 alias vlm="pavucontrol &"
 alias t3="tree -L 3"
-alias scn="bash ~/software/.sh/screenshot.sh $1"
-alias mscn="bash ~/software/.sh/mouse_screenshot.sh $1"
+alias tn='function _(){ tree -L $1; }; _'
+alias scn="bash ~/software/.sh/screenshot.sh"
+alias mscn="bash ~/software/.sh/mouse_screenshot.sh"
 alias grep="rg"
 
 export OWN_SOFTWARE="~/software/.sh:~/software/firefox/"
