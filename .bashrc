@@ -127,7 +127,7 @@ git_branch() {
 # ==  Software ==
 
 #Firefox
-alias firefox="~/software/firefox/firefox &"
+alias firefox="~/software/firefox/firefox -search $1 &"
 
 # = game =
 
@@ -199,6 +199,7 @@ alias vlm="pavucontrol &"
 alias t3="tree -L 3"
 alias scn="bash ~/software/.sh/screenshot.sh $1"
 alias mscn="bash ~/software/.sh/mouse_screenshot.sh $1"
+alias grep="rg"
 
 export OWN_SOFTWARE="~/software/.sh:~/software/firefox/"
 #jetbrains 

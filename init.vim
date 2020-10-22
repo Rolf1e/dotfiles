@@ -37,6 +37,8 @@ Plug 'sainnhe/forest-night'
 Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
+
+
 " === REMAPPING ===
 
 inoremap <C-c> <esc>
@@ -120,7 +122,6 @@ require'nvim_lsp'.jedi_language_server.setup({})
 require'nvim_lsp'.rust_analyzer.setup({on_attach=require'completion'.on_attach})
 require'nvim_lsp'.tsserver.setup({on_attach=require'completion'.on_attach})
 
-<<<<<<< HEAD
 vim.lsp.callbacks['textDocument/codeAction'] = require'lsputil.codeAction'.code_action_handler
 vim.lsp.callbacks['textDocument/references'] = require'lsputil.locations'.references_handler
 vim.lsp.callbacks['textDocument/definition'] = require'lsputil.locations'.definition_handler
@@ -138,6 +139,7 @@ EOF
 if has('gui_running')
 	set guifont=JetBrains Mono Regular Nerd Font Complete
 endif
+
 
 " Highlight all instances of word under cursor, when idle.
 " Useful when studying strange source code.
