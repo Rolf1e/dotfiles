@@ -158,11 +158,14 @@ export RUST="~/.cargo/bin"
 
 #Java - Maven
 alias jm="mvn clean install"
-alias nmvn='function _() { mvn -B archetype:generate -DgroupId=com.rolfie.$1 -DartifactId=$1 -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4; }; _'
+alias nmvn='function _(){ mvn -B archetype:generate -DgroupId=com.rolfie.$1 -DartifactId=$1 -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4; }; _'
+alias mvntest='function _(){ mvn -Dtest=$1 test; }; _'
 export MAVEN_HOME="~/software/apache-maven-3.6.3/bin"
 
 #Haskell
 export HASKELL_PATH="/opt/ghc/bin"
+export GHCUP="/home/rolfie/.ghcup/env"
+[ -f "/home/rolfie/.ghcup/env" ] && source "/home/rolfie/.ghcup/env" # ghcup-env
 
 #R
 alias rstudio="rstudio &"
@@ -180,26 +183,31 @@ alias pg="psql"
 alias postman="~/software/Postman/Postman &"
 
 #System
-#alias dev="cd ~/projects"
 alias mdev="sudo ~/software/.sh/config-ssd.sh"
 alias dev='function _(){ cd /media/rolfie/ssd2/projects/$1; }; _'
 alias :q="exit"
 alias c="clear"
 alias dwn="cd ~/Downloads"
 alias doc="cd ~/Documents"
-# TODO fix
 alias tz='function _(){ tar czvf $1.tar.gz $1; }; _'
 alias tx="tar xzvf"
 alias txc='function _(){ tar xzvf $1 -C $2; }; _'
-alias cours="cd /media/rolfie/ssd2/projects/cours"
+alias cours='function _(){ cd /media/rolfie/ssd2/projects/cours/$1; }; _'
 alias vlm="pavucontrol &"
 alias t3="tree -L 3"
+alias t2="tree -L 2"
+alias t1="tree -L 1"
 alias tn='function _(){ tree -L $1; }; _'
 alias scn="bash ~/software/.sh/screenshot.sh"
 alias mscn="bash ~/software/.sh/mouse_screenshot.sh"
 alias grep="rg"
+alias vi="nvim"
+alias vim="nvim"
+
+export TERMINAL="alacritty"
 
 export OWN_SOFTWARE="~/software/.sh:~/software/firefox/"
+
 #jetbrains 
 #intellij
 alias idea="~/software/idea-IU-202.6397.94/bin/idea.sh &"
@@ -210,8 +218,9 @@ alias datagrip="~/software/DataGrip-2020.2.2/bin/datagrip.sh &"
 #path
 export TEX_LIVE="/usr/local/texlive/2020/bin/x86_64-linux"
 
-export PATH=$PATH:"/home/rolfie/.local/bin":$TEX_LIVE:$RUST:$MAVEN_HOME:$HASKELL_PATH:$JAVA_HOME:$OWN_SOFTWARE
+export PATH=$PATH:"/home/rolfie/.local/bin":$TEX_LIVE:$RUST:$MAVEN_HOME:$HASKELL_PATH:$JAVA_HOME:$OWN_SOFTWARE:$GHCUP:$TERMINAL
 export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$(git_branch)\$ "
+
 
 #starship rust (always at end)
 eval "$(starship init bash)"

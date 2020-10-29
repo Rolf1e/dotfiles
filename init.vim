@@ -4,6 +4,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'RishabhRD/popfix'
 Plug 'RishabhRD/nvim-lsputils'
 Plug 'nvim-lua/completion-nvim'
+Plug 'mfussenegger/nvim-jdtls'
 
 "Git
 Plug 'tpope/vim-fugitive'
@@ -12,9 +13,6 @@ Plug 'airblade/vim-gitgutter'
 
 "System
 Plug 'terryma/vim-multiple-cursors'
-Plug 'scrooloose/syntastic'
-Plug 'ryanoasis/vim-devicons'
-Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
@@ -31,10 +29,11 @@ Plug 'rust-lang/rust.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
-Plug 'sainnhe/forest-night'
 
 "Fun
 Plug 'ThePrimeagen/vim-be-good'
+
+Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
 
 
@@ -43,6 +42,8 @@ call plug#end()
 
 inoremap <C-c> <esc>
 noremap <C-c> <esc>
+noremap <leader>5 :vertical resize +5<CR>
+noremap <leader>6 :vertical resize -5<CR>
 "Open term in nvim
 noremap <leader>t <C-w>s<C-w><C-p>:resize 10<CR>:ter<CR>
 
@@ -53,9 +54,11 @@ noremap h ;
 
 " FZF 
 noremap <C-p> :GFiles<CR>
+noremap <A-p> :Buffers<CR>
 noremap <leader>p :Files<CR>
 
 " LSP 
+nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
@@ -64,12 +67,20 @@ nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
 nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
 nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
-nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 imap <silent> <c-space> <Plug>(completion_trigger)
 nmap <tab> <Plug>(completion_smart_tab)
 nmap <s-tab> <Plug>(completion_smart_s_tab)
+
+" LSP - jdtls
+nnoremap <A-CR> <Cmd>lua require('jdtls').code_action()<CR>
+vnoremap <A-CR> <Esc><Cmd>lua require('jdtls').code_action(true)<CR>
+nnoremap <leader>r <Cmd>lua require('jdtls').code_action(false, 'refactor')<CR>
+nnoremap <A-o> <Cmd>lua require'jdtls'.organize_imports()<CR>
+nnoremap crv <Cmd>lua require('jdtls').extract_variable()<CR>
+vnoremap crv <Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>
+vnoremap crm <Esc><Cmd>lua require('jdtls').extract_method(true)<CR>
 
 " Undotree
 nnoremap <F5> :UndotreeToggle<cr>
@@ -84,15 +95,19 @@ nnoremap <silent> <space>e :NERDTree<cr>
 
 
 "colorscheme 
-let g:forest_night_transparent_background = 1
-let g:airline_theme = 'forest_night'
+if exists('+termguicolors')
+	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
 
+let g:airline_powerline_fonts = 1
 let g:ycm_autoclose_preview_window_after_insertion = 0
+let g:gruvbox_contrast_dark = 'hard'
 
 filetype plugin indent on
 filetype plugin on
 "colorscheme 
-colorscheme forest-night
+colorscheme gruvbox
 set termguicolors
 set background=dark
 set encoding=UTF-8
@@ -103,41 +118,52 @@ set relativenumber
 set formatoptions-=cro                  " Stop newline continution of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set showtabline=2                       " Always show tabs
-
+set tabstop=2                           " Insert 2 spaces for a tab
+set cmdheight=2
+set colorcolumn=80
+set shiftwidth=2                        " Change the number of space characters inserted for indentation
 " === LSP ===
 " Set completeopt to have a better completion experience
 set completeopt=menuone,noinsert,noselect
 " Avoid showing message extra message when using completion
 set shortmess+=c
 
-autocmd Filetype rust,python,typescript setlocal omnifunc=v:lua.vim.lsp.omnifunc
+autocmd Filetype rust,python,typescript,java setlocal omnifunc=v:lua.vim.lsp.omnifunc
 " Use completion-nvim in every buffer
 autocmd BufEnter * lua require'completion'.on_attach()
 
-lua <<EOF
-require'nvim_lsp'.rust_analyzer.setup({})
-require'nvim_lsp'.tsserver.setup({})
-require'nvim_lsp'.jedi_language_server.setup({})
+"require'nvim_lsp'.hls.setup{on_attach=require'completion'.on_attach}
+lua << EOF
 
-require'nvim_lsp'.rust_analyzer.setup({on_attach=require'completion'.on_attach})
-require'nvim_lsp'.tsserver.setup({on_attach=require'completion'.on_attach})
+local nvim_lsp = require'nvim_lsp'
+nvim_lsp.rust_analyzer.setup{on_attach=require'completion'.on_attach}
 
+nvim_lsp.tsserver.setup{on_attach=require'completion'.on_attach}
+
+nvim_lsp.jdtls.setup{
+		on_attach=require'completion'.on_attach,
+	 	init_options = {
+    	jvm_args = {"-javaagent:/home/rolfie/.m2/repository/org/projectlombok/lombok/1.18.10/lombok-1.18.10.jar"},
+  	},
+	}	
+
+vim.lsp.callbacks['textDocument/declaration'] = require'lsputil.locations'.declaration_handler
 vim.lsp.callbacks['textDocument/codeAction'] = require'lsputil.codeAction'.code_action_handler
 vim.lsp.callbacks['textDocument/references'] = require'lsputil.locations'.references_handler
 vim.lsp.callbacks['textDocument/definition'] = require'lsputil.locations'.definition_handler
-vim.lsp.callbacks['textDocument/declaration'] = require'lsputil.locations'.declaration_handler
 vim.lsp.callbacks['textDocument/typeDefinition'] = require'lsputil.locations'.typeDefinition_handler
 vim.lsp.callbacks['textDocument/implementation'] = require'lsputil.locations'.implementation_handler
 vim.lsp.callbacks['textDocument/documentSymbol'] = require'lsputil.symbols'.document_handler
 vim.lsp.callbacks['workspace/symbol'] = require'lsputil.symbols'.workspace_handler
 
-local loc = require'lsputil.locations'
-loc.key_maps['n']['gd'] = vim.lsp.buf.declaration()
 EOF
 
 
+
+
+
 if has('gui_running')
-	set guifont=JetBrains Mono Regular Nerd Font Complete
+	set guifont=Mono Regular Nerd Font Complete
 endif
 
 
@@ -154,7 +180,7 @@ function! AutoHighlightToggle()
     return 0
   else
     augroup auto_highlight
-      au!
+
       au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
     augroup end
     setl updatetime=500
