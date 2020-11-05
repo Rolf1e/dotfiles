@@ -121,22 +121,22 @@ git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-#I3 connection nm-connection-editor
+#i3 connection nm-connection-editor
 #nm-applet
 
 # ==  Software ==
 
-#Firefox
+#firefox
 alias firefox="~/software/firefox/firefox -search $1 &"
 
 # = game =
 
-#FTB
+#ftb
 alias ftb="/opt/FTBA/FTBApp &"
 
 # == DEV  == 
 
-#Git
+#git
 alias gs="git status"
 alias gd="git diff"
 alias ga="git add"
@@ -147,7 +147,7 @@ alias gco="git checkout"
 alias ug="ungit &"
 
 
-#Rust
+#rust
 alias cr="cargo run"
 alias cb="cargo build"
 alias cc="touch ./src/main.rs && cargo clippy"
@@ -156,21 +156,21 @@ alias ctb="RUST_BACKTRACE=1 cargo test -- --nocapture"
 alias cf="cargo fmt"
 export RUST="~/.cargo/bin"
 
-#Java - Maven
+#java - maven
 alias jm="mvn clean install"
 alias nmvn='function _(){ mvn -B archetype:generate -DgroupId=com.rolfie.$1 -DartifactId=$1 -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4; }; _'
 alias mvntest='function _(){ mvn -Dtest=$1 test; }; _'
 export MAVEN_HOME="~/software/apache-maven-3.6.3/bin"
 
-#Haskell
+#haskell
 export HASKELL_PATH="/opt/ghc/bin"
 export GHCUP="/home/rolfie/.ghcup/env"
 [ -f "/home/rolfie/.ghcup/env" ] && source "/home/rolfie/.ghcup/env" # ghcup-env
 
-#R
+#r
 alias rstudio="rstudio &"
 
-#TypeScript
+#typeScript
 alias tsw="tsc -w"
 
 #mysql
@@ -179,10 +179,10 @@ alias mysqlc="mysql -u root -p"
 #psql
 alias pg="psql"
 
-#Postman 
+#postman 
 alias postman="~/software/Postman/Postman &"
 
-#System
+#system
 alias mdev="sudo ~/software/.sh/config-ssd.sh"
 alias dev='function _(){ cd /media/rolfie/ssd2/projects/$1; }; _'
 alias :q="exit"
@@ -204,9 +204,33 @@ alias grep="rg"
 alias vi="nvim"
 alias vim="nvim"
 
+#tmux
+tmux_traffic() {
+	watson start traffic
+	tmux new-session -s traffic -c /media/rolfie/ssd2/projects/cours/traffic -n vim -d nvim
+
+	tmux new-window -t traffic: -n java -c '/media/rolfie/ssd2/projects/cours/traffic/src/main/java/com/rolfie/traffic'
+	tmux new-window -t traffic: -n jtest -c '/media/rolfie/ssd2/projects/cours/traffic/src/test/java/com/rolfie/traffic'
+	tmux new-window -t traffic: -n bash -c '/media/rolfie/ssd2/projects/cours/traffic'
+}
+
+tmux_optim() {
+	watson start optim-master
+	tmux new-session -s optim -c /media/rolfie/ssd2/projects/cours/optim-master -n vim -d nvim
+
+	tmux new-window -t optim: -n rust -c '/media/rolfie/ssd2/projects/cours/optim-master'
+}
+
+alias tconn='function _(){ tmux attach-session -t $1; }; _'
+alias tc='function _() { tmux_$1; tmux attach-session -t $1; }; _'
+
+
 export TERMINAL="alacritty"
 
 export OWN_SOFTWARE="~/software/.sh:~/software/firefox/"
+
+#minizinc
+alias mzide="~/software/MiniZincIDE-2.5.1-bundle-linux-x86_64/MiniZincIDE.sh &"
 
 #jetbrains 
 #intellij

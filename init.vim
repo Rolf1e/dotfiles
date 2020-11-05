@@ -15,6 +15,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'frazrepo/vim-rainbow'
 
 "Tree
 Plug 'scrooloose/nerdcommenter'
@@ -58,10 +59,9 @@ noremap <A-p> :Buffers<CR>
 noremap <leader>p :Files<CR>
 
 " LSP 
-nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> gd :lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> gD :lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
 nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
@@ -93,7 +93,6 @@ nnoremap <silent> <space>e :NERDTree<cr>
 
 
 
-
 "colorscheme 
 if exists('+termguicolors')
 	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -103,6 +102,7 @@ endif
 let g:airline_powerline_fonts = 1
 let g:ycm_autoclose_preview_window_after_insertion = 0
 let g:gruvbox_contrast_dark = 'hard'
+let g:rainbow_active = 1
 
 filetype plugin indent on
 filetype plugin on
@@ -120,7 +120,7 @@ set clipboard=unnamedplus               " Copy paste between vim and everything 
 set showtabline=2                       " Always show tabs
 set tabstop=2                           " Insert 2 spaces for a tab
 set cmdheight=2
-set colorcolumn=80
+set colorcolumn=100
 set shiftwidth=2                        " Change the number of space characters inserted for indentation
 " === LSP ===
 " Set completeopt to have a better completion experience
@@ -137,6 +137,8 @@ lua << EOF
 
 local nvim_lsp = require'nvim_lsp'
 nvim_lsp.rust_analyzer.setup{on_attach=require'completion'.on_attach}
+
+nvim_lsp.jedi_language_server.setup{on_attach=require'completion'.on_attach}
 
 nvim_lsp.tsserver.setup{on_attach=require'completion'.on_attach}
 
