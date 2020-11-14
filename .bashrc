@@ -203,6 +203,10 @@ alias mscn="bash ~/software/.sh/mouse_screenshot.sh"
 alias grep="rg"
 alias vi="nvim"
 alias vim="nvim"
+alias us="setxkbmap us"
+alias fr="setxkbmap fr"
+alias dotfiles="cd ~/Documents/dotfiles"
+
 
 #tmux
 tmux_traffic() {
@@ -214,11 +218,18 @@ tmux_traffic() {
 	tmux new-window -t traffic: -n bash -c '/media/rolfie/ssd2/projects/cours/traffic'
 }
 
+tmux_stratego() {
+	watson start stratego
+	tmux new-session -s stratego -c /media/rolfie/ssd2/projects/cours/stratego/game-engine -n vim -d nvim
+
+	tmux new-window -t stratego: -n ts -c '/media/rolfie/ssd2/projects/cours/stratego/game-engine'
+}
+
 tmux_optim() {
 	watson start optim-master
 	tmux new-session -s optim -c /media/rolfie/ssd2/projects/cours/optim-master -n vim -d nvim
 
-	tmux new-window -t optim: -n rust -c '/media/rolfie/ssd2/projects/cours/optim-master'
+	tmux new-window -t optim: -n ts -c '/media/rolfie/ssd2/projects/cours/optim-master'
 }
 
 alias tconn='function _(){ tmux attach-session -t $1; }; _'

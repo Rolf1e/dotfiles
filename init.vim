@@ -31,6 +31,8 @@ Plug 'flazz/vim-colorschemes'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 
+Plug 'szw/vim-maximizer'
+
 "Fun
 Plug 'ThePrimeagen/vim-be-good'
 
@@ -40,7 +42,9 @@ call plug#end()
 
 
 " === REMAPPING ===
-
+"
+" You can't stop me
+cmap w!! w !sudo tee %
 inoremap <C-c> <esc>
 noremap <C-c> <esc>
 noremap <leader>5 :vertical resize +5<CR>
@@ -52,6 +56,10 @@ noremap <leader>t <C-w>s<C-w><C-p>:resize 10<CR>:ter<CR>
 noremap l h
 noremap ; l
 noremap h ; 
+
+noremap <C-w>l <C-w>h
+noremap <C-w>; <C-w>l
+noremap <C-w>h <C-w>;
 
 " FZF 
 noremap <C-p> :GFiles<CR>
@@ -86,7 +94,7 @@ vnoremap crm <Esc><Cmd>lua require('jdtls').extract_method(true)<CR>
 nnoremap <F5> :UndotreeToggle<cr>
 
 " Highlight
-nnoremap <F3> :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
+nnoremap <F1> :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
 
 "NERDTree
 nnoremap <silent> <space>e :NERDTree<cr>
@@ -127,6 +135,7 @@ set shiftwidth=2                        " Change the number of space characters 
 set completeopt=menuone,noinsert,noselect
 " Avoid showing message extra message when using completion
 set shortmess+=c
+set noshowmode                          " We don't need to see things like -- INSERT -- anymore
 
 autocmd Filetype rust,python,typescript,java setlocal omnifunc=v:lua.vim.lsp.omnifunc
 " Use completion-nvim in every buffer
