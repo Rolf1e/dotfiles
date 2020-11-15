@@ -16,6 +16,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'frazrepo/vim-rainbow'
+Plug 'szw/vim-maximizer'
 
 "Tree
 Plug 'scrooloose/nerdcommenter'
@@ -27,16 +28,18 @@ Plug 'mbbill/undotree'
 Plug 'rust-lang/rust.vim'
 
 "colorscheme
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 Plug 'flazz/vim-colorschemes'
 Plug 'morhetz/gruvbox'
-Plug 'vim-airline/vim-airline'
-
-Plug 'szw/vim-maximizer'
+Plug 'sainnhe/gruvbox-material'
+Plug 'doums/darcula'
 
 "Fun
 Plug 'ThePrimeagen/vim-be-good'
 
-Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
 
 
@@ -107,15 +110,11 @@ if exists('+termguicolors')
 	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
-let g:airline_powerline_fonts = 1
-let g:ycm_autoclose_preview_window_after_insertion = 0
-let g:gruvbox_contrast_dark = 'hard'
-let g:rainbow_active = 1
 
 filetype plugin indent on
 filetype plugin on
 "colorscheme 
-colorscheme gruvbox
+colorscheme darcula
 set termguicolors
 set background=dark
 set encoding=UTF-8
@@ -137,6 +136,12 @@ set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 set noshowmode                          " We don't need to see things like -- INSERT -- anymore
 
+let g:airline_powerline_fonts = 1
+let g:airline_theme='wombat'
+let g:ycm_autoclose_preview_window_after_insertion = 0
+let g:gruvbox_contrast_dark = 'hard'
+let g:rainbow_active = 1
+
 autocmd Filetype rust,python,typescript,java setlocal omnifunc=v:lua.vim.lsp.omnifunc
 " Use completion-nvim in every buffer
 autocmd BufEnter * lua require'completion'.on_attach()
@@ -144,7 +149,7 @@ autocmd BufEnter * lua require'completion'.on_attach()
 "require'nvim_lsp'.hls.setup{on_attach=require'completion'.on_attach}
 lua << EOF
 
-local nvim_lsp = require'nvim_lsp'
+local nvim_lsp = require'lspconfig'
 nvim_lsp.rust_analyzer.setup{on_attach=require'completion'.on_attach}
 
 nvim_lsp.jedi_language_server.setup{on_attach=require'completion'.on_attach}
