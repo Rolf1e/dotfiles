@@ -67,8 +67,8 @@ noremap <C-w>h <C-w>;
 " FZF 
 noremap <C-p> :GFiles<CR>
 noremap <A-p> :Buffers<CR>
-noremap <leader>p :Files<CR>
-
+"noremap <leader>p :Files<CR>
+nnoremap <silent> <leader>p :All<CR>
 " LSP 
 nnoremap <silent> gd :lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
@@ -142,19 +142,28 @@ let g:ycm_autoclose_preview_window_after_insertion = 0
 let g:gruvbox_contrast_dark = 'hard'
 let g:rainbow_active = 1
 
-autocmd Filetype rust,python,typescript,java setlocal omnifunc=v:lua.vim.lsp.omnifunc
+
+"fzf
+command! -bang -nargs=*  All
+  \ call fzf#run(fzf#wrap({'source': 'rg --files --hidden --no-ignore-vcs --glob "!{node_modules/*,.git/*}"', 'down': '40%', 'options': '--expect=ctrl-t,ctrl-x,ctrl-v --multi --reverse' }))
+
+autocmd Filetype rust,python,typescript,java,haskell setlocal omnifunc=v:lua.vim.lsp.omnifunc
 " Use completion-nvim in every buffer
 autocmd BufEnter * lua require'completion'.on_attach()
 
-"require'nvim_lsp'.hls.setup{on_attach=require'completion'.on_attach}
 lua << EOF
 
 local nvim_lsp = require'lspconfig'
+
 nvim_lsp.rust_analyzer.setup{on_attach=require'completion'.on_attach}
 
 nvim_lsp.jedi_language_server.setup{on_attach=require'completion'.on_attach}
 
 nvim_lsp.tsserver.setup{on_attach=require'completion'.on_attach}
+
+nvim_lsp.hls.setup{on_attach=require'completion'.on_attach}
+
+nvim_lsp.bashls.setup{on_attach=require'completion'.on_attach}
 
 nvim_lsp.jdtls.setup{
 		on_attach=require'completion'.on_attach,

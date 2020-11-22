@@ -16,18 +16,27 @@ alias txc='function _(){ tar xzvf $1 -C $2; }; _'
 alias cours='function _(){ cd /media/rolfie/ssd2/projects/cours/$1; }; _'
 alias vlm="pavucontrol &"
 
-alias t3="tree -L 3"
-alias t2="tree -L 2"
-alias t1="tree -L 1"
-alias tn='function _(){ tree -L $1; }; _'
+tree_settings() {
+	tree -a -L $1 -I ".git|.github|.vscode|.idea|*node_modules|*dist|$2" --ignore-case
+}
+
+alias t3="tree_settings 3"
+alias t2="tree_settings 2"
+alias t1="tree_settings 1"
+alias tn='function _(){ tree_settings $1 $2; }; _'
 
 alias scn="bash ~/software/.sh/screenshot.sh"
 alias mscn="bash ~/software/.sh/mouse_screenshot.sh"
 
+#grep
 alias grep="rg"
+alias erg='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git,target}"'
 
 alias vi="nvim"
 alias vim="nvim"
+
+alias fzfi='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git,target}" | fzf'
+alias vifi='vim $(fzfi)'
 
 #keyboard
 alias us="setxkbmap us"
@@ -36,17 +45,6 @@ alias dotfiles="cd ~/Documents/dotfiles"
 
 alias bg='function _(){ feh --bg-scale $1; }; _'
 
-
-#tmux
-tmux_traffic() {
-	watson start traffic
-	tmux new-session -s traffic -c /media/rolfie/ssd2/projects/cours/traffic -n vim -d nvim
-
-	tmux new-window -t traffic: -n java -c '/media/rolfie/ssd2/projects/cours/traffic/src/main/java/com/rolfie/traffic'
-	tmux new-window -t traffic: -n jtest -c '/media/rolfie/ssd2/projects/cours/traffic/src/test/java/com/rolfie/traffic'
-	tmux new-window -t traffic: -n bash -c '/media/rolfie/ssd2/projects/cours/traffic'
-}
-
 tmux_stratego() {
 	watson start stratego
 	tmux new-session -s stratego -c /media/rolfie/ssd2/projects/cours/stratego/game-engine -n vim -d nvim
@@ -54,15 +52,55 @@ tmux_stratego() {
 	tmux new-window -t stratego: -n ts -c '/media/rolfie/ssd2/projects/cours/stratego/game-engine'
 }
 
-tmux_optim() {
-	watson start optim-master
-	tmux new-session -s optim -c /media/rolfie/ssd2/projects/cours/optim-master -n vim -d nvim
+#tmux
+tmux_load() {
+	case $1 in
+		"stratego") 
+			path='/media/rolfie/ssd2/projects/cours/stratego/game-engine'
+			watson_start stratego
 
-	tmux new-window -t optim: -n ts -c '/media/rolfie/ssd2/projects/cours/optim-master'
+			create_session stratego $path vim nvim
+			create_window stratego ts $path
+			;;
+		"stratego-rust")
+			;;
+		"optim")
+			path='/media/rolfie/ssd2/projects/cours/optim-master'
+			watson_start optim-master
+
+			create_session optim $path vim nvim
+			create_window optim ts $path
+			;;
+		*) 
+			echo "I need a correct session name, dumb ass !!"
+			;;
+	esac
+}
+
+watson_start() {
+	watson start $1
+}
+
+create_session() {
+	session=$1
+	working_directory=$2
+	window=$3
+	cmd=$4
+	tmux new-session -s $session -c $working_directory -n $window -d $cmd
+}
+
+# $1 link to session
+# $2 window name 
+# $3 working directory
+create_window() {
+	session=$1
+	window=$2
+	working_directory=$3
+	tmux new-window -t $session: -n $window -c $working_directory 
 }
 
 alias tconn='function _(){ tmux attach-session -t $1; }; _'
-alias tc='function _() { tmux_$1; tmux attach-session -t $1; }; _'
+alias tc='function _() { tmux_load $1; tmux attach-session -t $1; }; _'
 
 # == DEV  == 
 
