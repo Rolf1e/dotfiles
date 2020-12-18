@@ -1,3 +1,27 @@
+filetype on
+filetype indent on
+filetype plugin on
+set number
+set relativenumber
+set termguicolors
+set background=dark
+set encoding=UTF-8
+set formatoptions-=cro                  " Stop newline continution of comments
+set clipboard=unnamedplus               " Copy paste between vim and everything else
+set cmdheight=2
+set showtabline=2                       " Always show tabs
+set tabstop=2                           " Insert 2 spaces for a tab
+set shiftwidth=2                        " Change the number of space characters inserted for indentation
+set colorcolumn=100
+set expandtab
+set smartindent
+" === LSP ===
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+" Avoid showing message extra message when using completion
+set shortmess+=c
+set noshowmode                          " We don't need to see things like -- INSERT -- anymore
+
 call plug#begin('~/.config/nvim/plugged')
 "Completer
 Plug 'neovim/nvim-lspconfig'
@@ -24,7 +48,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mbbill/undotree'
 
-"Rust
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
+
 Plug 'rust-lang/rust.vim'
 
 "colorscheme
@@ -43,6 +69,8 @@ Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
 
+"colorscheme 
+colorscheme gruvbox-material
 
 " === REMAPPING ===
 "
@@ -110,32 +138,6 @@ if exists('+termguicolors')
 	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
-
-filetype plugin indent on
-filetype plugin on
-"colorscheme 
-colorscheme darcula
-set termguicolors
-set background=dark
-set encoding=UTF-8
-set number
-set smartindent
-set autoindent
-set relativenumber
-set formatoptions-=cro                  " Stop newline continution of comments
-set clipboard=unnamedplus               " Copy paste between vim and everything else
-set showtabline=2                       " Always show tabs
-set tabstop=2                           " Insert 2 spaces for a tab
-set cmdheight=2
-set colorcolumn=100
-set shiftwidth=2                        " Change the number of space characters inserted for indentation
-" === LSP ===
-" Set completeopt to have a better completion experience
-set completeopt=menuone,noinsert,noselect
-" Avoid showing message extra message when using completion
-set shortmess+=c
-set noshowmode                          " We don't need to see things like -- INSERT -- anymore
-
 let g:airline_powerline_fonts = 1
 let g:airline_theme='wombat'
 let g:ycm_autoclose_preview_window_after_insertion = 0
@@ -147,7 +149,7 @@ let g:rainbow_active = 1
 command! -bang -nargs=*  All
   \ call fzf#run(fzf#wrap({'source': 'rg --files --hidden --no-ignore-vcs --glob "!{node_modules/*,.git/*}"', 'down': '40%', 'options': '--expect=ctrl-t,ctrl-x,ctrl-v --multi --reverse' }))
 
-autocmd Filetype rust,python,typescript,java,haskell setlocal omnifunc=v:lua.vim.lsp.omnifunc
+autocmd Filetype cpp,rust,python,typescript,java,haskell setlocal omnifunc=v:lua.vim.lsp.omnifunc
 " Use completion-nvim in every buffer
 autocmd BufEnter * lua require'completion'.on_attach()
 
@@ -164,6 +166,7 @@ nvim_lsp.tsserver.setup{on_attach=require'completion'.on_attach}
 nvim_lsp.hls.setup{on_attach=require'completion'.on_attach}
 
 nvim_lsp.bashls.setup{on_attach=require'completion'.on_attach}
+
 
 nvim_lsp.jdtls.setup{
 		on_attach=require'completion'.on_attach,
@@ -183,7 +186,27 @@ vim.lsp.callbacks['workspace/symbol'] = require'lsputil.symbols'.workspace_handl
 
 EOF
 
-
+"tree sitter
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", 
+  highlight = {
+    enable = true,              
+  },
+  refactor = {
+    navigation = {
+      enable = true,
+      keymaps = {
+        goto_definition = "gnd",
+        list_definitions = "gnD",
+        list_definitions_toc = "gO",
+        goto_next_usage = "<a-*>",
+        goto_previous_usage = "<a-#>",
+      },
+    },
+  },
+}
+EOF
 
 
 

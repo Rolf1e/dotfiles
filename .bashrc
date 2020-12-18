@@ -119,6 +119,9 @@ fi
 #i3 connection nm-connection-editor
 #nm-applet
 
+#node
+#export NODE_PATH="~/node_modules"
+
 #rust
 export RUST="~/.cargo/bin"
 

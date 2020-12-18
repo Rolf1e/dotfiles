@@ -45,13 +45,6 @@ alias dotfiles="cd ~/Documents/dotfiles"
 
 alias bg='function _(){ feh --bg-scale $1; }; _'
 
-tmux_stratego() {
-	watson start stratego
-	tmux new-session -s stratego -c /media/rolfie/ssd2/projects/cours/stratego/game-engine -n vim -d nvim
-
-	tmux new-window -t stratego: -n ts -c '/media/rolfie/ssd2/projects/cours/stratego/game-engine'
-}
-
 #tmux
 tmux_load() {
 	case $1 in
@@ -71,6 +64,11 @@ tmux_load() {
 			create_session optim $path vim nvim
 			create_window optim ts $path
 			;;
+    "aoc")
+      path='/media/rolfie/ssd2/projects/aoc/'
+      create_session aoc $path vim nvim
+      create_window aoc term $path
+      ;;
 		*) 
 			echo "I need a correct session name, dumb ass !!"
 			;;
@@ -117,7 +115,7 @@ alias ug="ungit &"
 #rust
 alias cr="cargo run"
 alias cb="cargo build"
-alias cc="touch ./src/main.rs && cargo clippy"
+alias cc="cargo clippy"
 alias ct="cargo test"
 alias ctb="RUST_BACKTRACE=1 cargo test -- --nocapture"
 alias cf="cargo fmt"
@@ -162,3 +160,5 @@ alias firefox="~/software/firefox/firefox -search $1 &"
 #ftb
 alias ftb="/opt/FTBA/FTBApp &"
 
+#keyboard
+alias wally='~/software/wally &'
