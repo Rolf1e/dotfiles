@@ -50,6 +50,7 @@ Plug 'preservim/tagbar'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
+Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'p00f/nvim-ts-rainbow'
 
 Plug 'rust-lang/rust.vim'
@@ -140,14 +141,14 @@ let g:airline_theme='wombat'
 let g:ycm_autoclose_preview_window_after_insertion = 0
 let g:gruvbox_contrast_dark = 'hard'
 let g:rainbow_active = 1
-let g:rustfmt_autosave = 1
+"let g:rustfmt_autosave = 1
 
 
 "fzf
 command! -bang -nargs=*  All
       \ call fzf#run(fzf#wrap({'source': 'rg --files --hidden --no-ignore-vcs --glob "!{node_modules/*,.git/*,target/}"', 'down': '40%', 'options': '--expect=ctrl-t,ctrl-x,ctrl-v --multi --reverse' }))
 
-autocmd Filetype cpp,rust,python,typescript,java,haskell setlocal omnifunc=v:lua.vim.lsp.omnifunc
+autocmd Filetype cpp,rust,python,typescript,java,haskell,lua setlocal omnifunc=v:lua.vim.lsp.omnifunc
 " Use completion-nvim in every buffer
 autocmd BufEnter * lua require'completion'.on_attach()
 
