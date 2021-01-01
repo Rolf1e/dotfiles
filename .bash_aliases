@@ -114,6 +114,7 @@ alias ug="ungit &"
 
 #rust
 alias cr="cargo run"
+alias crb="RUST_BACKTRACE=1 cargo run"
 alias cb="cargo build"
 alias cc="cargo clippy"
 alias ct="cargo test"
@@ -126,12 +127,6 @@ alias mzide="~/software/MiniZincIDE-2.5.1-bundle-linux-x86_64/MiniZincIDE.sh &"
 #jetbrains 
 #intellij
 alias idea="~/software/idea-IU-202.6397.94/bin/idea.sh &"
-
-#datagrip
-alias datagrip="~/software/DataGrip-2020.2.2/bin/datagrip.sh &"
-
-#r
-alias rstudio="rstudio &"
 
 #typeScript
 alias tsw="tsc -w"
