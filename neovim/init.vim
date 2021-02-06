@@ -1,9 +1,9 @@
 filetype on
-filetype indent on
+filetype indent on 
 filetype plugin on
 
-set number
-set relativenumber
+set number 
+set relativenumber 
 set termguicolors
 set background=dark
 set encoding=UTF-8
@@ -18,48 +18,76 @@ set expandtab
 set smartindent
 " === LSP ===
 " Set completeopt to have a better completion experience
-set completeopt=menuone,noinsert,noselect " Avoid showing message extra message when using completion
+set completeopt=menu,menuone,noinsert,noselect " Avoid showing message extra message when using completion
 set shortmess+=c
 set noshowmode                          " We don't need to see things like -- INSERT -- anymore
 
+"treesitter
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+set fml=10
+set fdl=2
+
+"colorscheme 
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
+
+let g:airline_powerline_fonts = 1
+let g:airline_theme='wombat'
+let g:ycm_autoclose_preview_window_after_insertion = 0
+let g:gruvbox_contrast_dark = 'hard'
+let g:rainbow_active = 1
+let g:python_host_prog = "/usr/bin/python2"
+let g:python3_host_prog = "/usr/local/bin/python3.8"
+
+autocmd Filetype cpp,rust,python,typescript,java,haskell,lua setlocal omnifunc=v:lua.vim.lsp.omnifunc
+" Use completion-nvim in every buffer
+"autocmd BufEnter * lua require'completion'.on_attach()
+
 call plug#begin('~/.config/nvim/plugged')
-"Completer
+"Completer and formatter
 Plug 'neovim/nvim-lspconfig'
 Plug 'RishabhRD/popfix'
 Plug 'RishabhRD/nvim-lsputils'
-Plug 'nvim-lua/completion-nvim'
-Plug 'mfussenegger/nvim-jdtls'
+Plug 'hrsh7th/nvim-compe'
+Plug 'rust-lang/rust.vim'
+Plug 'rhysd/vim-clang-format'
+
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
+Plug 'nvim-treesitter/nvim-treesitter-refactor'
+Plug 'nvim-treesitter/completion-treesitter'
 
 "Git
 Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-flog'
 Plug 'airblade/vim-gitgutter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 "System
-Plug 'terryma/vim-multiple-cursors'
+Plug 'szw/vim-maximizer'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'szw/vim-maximizer'
 
 "Tree
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mbbill/undotree'
 Plug 'preservim/tagbar'
-
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/playground'
-Plug 'nvim-treesitter/nvim-treesitter-refactor'
-Plug 'p00f/nvim-ts-rainbow'
-
-Plug 'rust-lang/rust.vim'
 
 "colorscheme
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
 Plug 'sainnhe/gruvbox-material'
+Plug 'morhetz/gruvbox'
 
 "Fun
 Plug 'ThePrimeagen/vim-be-good'
@@ -89,34 +117,16 @@ noremap <C-w>l <C-w>h
 noremap <C-w>; <C-w>l
 noremap <C-w>h <C-w>;
 
-" FZF 
-noremap <C-p> :GFiles<CR>
-noremap <A-p> :Buffers<CR>
-nnoremap <silent> <leader>p :All<CR>
-
 " LSP 
-nnoremap <silent> gd :lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> gD :lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
-nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
-nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 imap <silent> <c-space> <Plug>(completion_trigger)
 nmap <tab> <Plug>(completion_smart_tab)
 nmap <s-tab> <Plug>(completion_smart_s_tab)
 
-" LSP - jdtls
-nnoremap <A-CR> <Cmd>lua require('jdtls').code_action()<CR>
-vnoremap <A-CR> <Esc><Cmd>lua require('jdtls').code_action(true)<CR>
-nnoremap <leader>r <Cmd>lua require('jdtls').code_action(false, 'refactor')<CR>
-nnoremap <A-o> <Cmd>lua require'jdtls'.organize_imports()<CR>
-nnoremap crv <Cmd>lua require('jdtls').extract_variable()<CR>
-vnoremap crv <Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>
-vnoremap crm <Esc><Cmd>lua require('jdtls').extract_method(true)<CR>
+inoremap <silent><expr> <C-Space> compe#complete()
+inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+inoremap <silent><expr> <C-e>     compe#close('<C-e>')
 
 " Undotree
 nnoremap <F5> :UndotreeToggle<cr>
@@ -130,35 +140,54 @@ nnoremap <F1> :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
 "NERDTree
 nnoremap <silent> <space>e :NERDTree<cr>
 
-"colorscheme 
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-endif
+"telescope vim
+nnoremap <C-p> <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <A-p> <cmd>Telescope buffers show_all_buffers=true<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-let g:airline_powerline_fonts = 1
-let g:airline_theme='wombat'
-let g:ycm_autoclose_preview_window_after_insertion = 0
-let g:gruvbox_contrast_dark = 'hard'
-let g:rainbow_active = 1
-"let g:rustfmt_autosave = 1
-
-
-"fzf
-command! -bang -nargs=*  All
-      \ call fzf#run(fzf#wrap({'source': 'rg --files --hidden --no-ignore-vcs --glob "!{node_modules/*,.git/*,target/}"', 'down': '40%', 'options': '--expect=ctrl-t,ctrl-x,ctrl-v --multi --reverse' }))
-
-autocmd Filetype cpp,rust,python,typescript,java,haskell,lua setlocal omnifunc=v:lua.vim.lsp.omnifunc
-" Use completion-nvim in every buffer
-autocmd BufEnter * lua require'completion'.on_attach()
+command! -complete=file -nargs=* DebugC lua require "my_debug".start_c_debugger({<f-args>}, "gdb")
+command! -complete=file -nargs=* DebugRust lua require "my_debug".start_c_debugger({<f-args>}, "gdb", "rust-gdb")
 
 "lsp
 lua package.loaded["my_lsp_config"] = nil
 lua require("my_lsp_config")
 
+"compe
+lua package.loaded["my_compe_config"] = nil
+lua require("my_compe_config")
 "tree sitter
 lua package.loaded["my_treesitter_config"] = nil
 lua require("my_treesitter_config")
+
+let g:completion_chain_complete_list = {
+			\'default' : {
+			\	'default' : [
+			\		{'complete_items' : ['lsp', 'snippet']},
+			\		{'mode' : 'file'}
+			\	],
+			\	'comment' : [],
+			\	'string' : []
+			\	},
+			\'vim' : [
+			\	{'complete_items': ['snippet']},
+			\	{'mode' : 'cmd'}
+			\	],
+			\'c' : [
+			\	{'complete_items': ['ts']}
+			\	],
+			\'python' : [
+			\	{'complete_items': ['ts']}
+			\	],
+			\'lua' : [
+			\	{'complete_items': ['ts']}
+			\	],
+			\}
+
+"telescope
+lua package.loaded["my_telescope_config"] = nil
+lua require("my_telescope_config")
+
 
 "font
 if has('gui_running')
