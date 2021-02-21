@@ -28,23 +28,14 @@ set foldexpr=nvim_treesitter#foldexpr()
 set fml=10
 set fdl=2
 
-"colorscheme 
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-endif
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme='wombat'
-let g:ycm_autoclose_preview_window_after_insertion = 0
-let g:gruvbox_contrast_dark = 'hard'
 let g:rainbow_active = 1
 let g:python_host_prog = "/usr/bin/python2"
 let g:python3_host_prog = "/usr/local/bin/python3.8"
 
-autocmd Filetype cpp,rust,python,typescript,java,haskell,lua setlocal omnifunc=v:lua.vim.lsp.omnifunc
-" Use completion-nvim in every buffer
-"autocmd BufEnter * lua require'completion'.on_attach()
+autocmd Filetype cpp,rust,python,typescript,java,haskell,lua,csharp setlocal omnifunc=v:lua.vim.lsp.omnifunc
 
 call plug#begin('~/.config/nvim/plugged')
 "Completer and formatter
@@ -96,6 +87,13 @@ call plug#end()
 
 colorscheme gruvbox-material
 
+let g:gruvbox_contrast_dark = 'hard'
+"colorscheme 
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
+
 " === REMAPPING ===
 "
 " You can't stop me
@@ -104,6 +102,8 @@ inoremap <C-c> <esc>
 noremap <C-c> <esc>
 noremap <leader>5 :vertical resize +5<CR>
 noremap <leader>6 :vertical resize -5<CR>
+vnoremap < <gv
+vnoremap > >gv
 
 "Open term in nvim
 noremap <leader>t <C-w>s<C-w><C-p>:resize 10<CR>:ter<CR>
