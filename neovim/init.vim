@@ -35,7 +35,7 @@ let g:rainbow_active = 1
 let g:python_host_prog = "/usr/bin/python2"
 let g:python3_host_prog = "/usr/local/bin/python3.8"
 
-autocmd Filetype cpp,rust,python,typescript,java,haskell,lua,csharp setlocal omnifunc=v:lua.vim.lsp.omnifunc
+autocmd Filetype cpp,rust,python,typescript,java,haskell,lua,cs setlocal omnifunc=v:lua.vim.lsp.omnifunc
 
 call plug#begin('~/.config/nvim/plugged')
 "Completer and formatter
