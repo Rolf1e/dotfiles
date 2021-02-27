@@ -5,7 +5,7 @@ filetype plugin on
 set number 
 set relativenumber 
 set termguicolors
-set background=dark
+"set background=dark
 set encoding=UTF-8
 set formatoptions-=cro                  " Stop newline continution of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
@@ -28,14 +28,11 @@ set foldexpr=nvim_treesitter#foldexpr()
 set fml=10
 set fdl=2
 
-
 let g:airline_powerline_fonts = 1
 let g:airline_theme='wombat'
 let g:rainbow_active = 1
 let g:python_host_prog = "/usr/bin/python2"
 let g:python3_host_prog = "/usr/local/bin/python3.8"
-
-autocmd Filetype cpp,rust,python,typescript,java,haskell,lua,cs setlocal omnifunc=v:lua.vim.lsp.omnifunc
 
 call plug#begin('~/.config/nvim/plugged')
 "Completer and formatter
@@ -86,13 +83,9 @@ Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
 colorscheme gruvbox-material
+"colorscheme gruvbox
 
-let g:gruvbox_contrast_dark = 'hard'
-"colorscheme 
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-endif
+autocmd Filetype cpp,rust,python,typescript,java,haskell,lua,cs setlocal omnifunc=v:lua.vim.lsp.omnifunc
 
 " === REMAPPING ===
 "

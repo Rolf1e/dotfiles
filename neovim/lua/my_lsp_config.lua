@@ -35,11 +35,37 @@ local on_attach = function(client, bufnr)
   end
 
   -- Set autocommands conditional on server_capabilities
+  --
+  --highlight! link LspDiagnosticsDefaultError ErrorLine
+  --highlight! link LspDiagnosticsDefaultWarning WarningLine
+  --highlight! link LspDiagnosticsDefaultInformation InfoLine
+  --highlight! link LspDiagnosticsDefaultHint HintLine
+  
+  --highlight! link LspDiagnosticsVirtualTextError Grey
+  --highlight! link LspDiagnosticsVirtualTextWarning Grey
+  --highlight! link LspDiagnosticsVirtualTextInformation Grey
+  --highlight! link LspDiagnosticsVirtualTextHint Grey
+  
+  --highlight! link LspDiagnosticsUnderlineError ErrorLine
+  --highlight! link LspDiagnosticsUnderlineWarning WarningLine
+  --highlight! link LspDiagnosticsUnderlineInformation InfoLine
+  --highlight! link LspDiagnosticsUnderlineHint HintLine
+  
+  --highlight! link LspDiagnosticsSignError RedSign
+  --highlight! link LspDiagnosticsSignWarning YellowSign
+  --highlight! link LspDiagnosticsSignInformation BlueSign
+  --highlight! link LspDiagnosticsSignHint AquaSign
   if client.resolved_capabilities.document_highlight then
     vim.api.nvim_exec([[
       hi LspReferenceRead cterm=bold ctermbg=red guibg=Blue
       hi LspReferenceText cterm=bold ctermbg=red guibg=Blue
       hi LspReferenceWrite cterm=bold ctermbg=red guibg=Blue
+
+      hi link LspDiagnosticsVirtualTextError Red
+      hi link LspDiagnosticsVirtualTextWarning Yellow
+      hi link LspDiagnosticsVirtualTextInformation Grey
+      hi link LspDiagnosticsVirtualTextHint White
+
       augroup lsp_document_highlight
         autocmd!
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
