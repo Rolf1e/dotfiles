@@ -8,9 +8,7 @@ require('telescope').setup{
       '--line-number',
       '--column',
       '--smart-case',
-      '--hidden',
-      '--no-ignore-vcs',
-      '--glob "!{node_modules/*,.git/*,target/*}"'
+      '--hidden'
     },
     prompt_position = "bottom",
     prompt_prefix = ">",
