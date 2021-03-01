@@ -34,6 +34,11 @@ let g:rainbow_active = 1
 let g:python_host_prog = "/usr/bin/python2"
 let g:python3_host_prog = "/usr/local/bin/python3.8"
 
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 15
+
 call plug#begin('~/.config/nvim/plugged')
 "Completer and formatter
 Plug 'neovim/nvim-lspconfig'
@@ -62,12 +67,9 @@ Plug 'szw/vim-maximizer'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
+"
 "Tree
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
 Plug 'mbbill/undotree'
 Plug 'preservim/tagbar'
 
@@ -130,8 +132,7 @@ nmap <F8> :TagbarToggle<CR>
 " Highlight
 nnoremap <F1> :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
 
-"NERDTree
-nnoremap <silent> <space>e :NERDTree<cr>
+nnoremap <silent> <space>e <cmd>Sex!<CR>
 
 "telescope vim
 nnoremap <C-p> <cmd>Telescope find_files<cr>
