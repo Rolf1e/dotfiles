@@ -1,1 +1,0 @@
-/home/rolfie/.config/nvim/lua/my_telescope_config.lua

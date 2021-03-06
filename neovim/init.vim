@@ -1,1 +1,0 @@
-/home/rolfie/.config/nvim/init.vim

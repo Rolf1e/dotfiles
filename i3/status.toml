@@ -1,1 +1,54 @@
-/home/rolfie/.config/i3/status.toml
+theme = "gruvbox-dark"
+icons = "material"
+
+
+[[block]]
+block = "watson"
+show_time = true
+state_path = "/home/rolfie/.config/watson/state"
+
+[[block]]
+block = "nvidia_gpu"
+show_memory = false
+show_clocks = true
+interval = 1
+
+[[block]]
+block = "load"
+format = "{1m} {5m}"
+interval = 1
+
+[[block]]
+block = "cpu"
+interval = 1
+format = "{barchart} {utilization}% {frequency}GHz"
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{Mup}%"
+format_swap = "{SUp}%"
+
+[[block]]
+block = "battery"
+interval = 10
+format = "{percentage}% {time}"
+
+[[block]]
+block = "music"
+player = "mpd"
+buttons = ["play", "next"]
+
+[[block]]
+block = "sound"
+
+[[block]]
+block = "keyboard_layout"
+driver = "setxkbmap"
+interval = 15
+
+[[block]]
+block = "time"
+interval = 60
+format = "%a %d/%m %R"
+
