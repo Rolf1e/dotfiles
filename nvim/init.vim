@@ -2,6 +2,8 @@ filetype on
 filetype indent on 
 filetype plugin on
 
+"source ./status_bar.vim
+
 set number 
 set relativenumber 
 set termguicolors
@@ -76,8 +78,8 @@ Plug 'mbbill/undotree'
 Plug 'preservim/tagbar'
 
 "colorscheme
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'hoob3rt/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'sainnhe/gruvbox-material'
 
 "Fun
@@ -88,6 +90,32 @@ call plug#end()
 colorscheme gruvbox-material
 
 autocmd Filetype cpp,rust,python,typescript,java,haskell,lua,cs setlocal omnifunc=v:lua.vim.lsp.omnifunc
+let g:lualine = {
+    \'options' : {
+    \  'theme' : 'gruvbox_material',
+    \  'section_separators' : ['', ''],
+    \  'component_separators' : ['', ''],
+    \  'icons_enabled' : v:true,
+    \},
+    \'sections' : {
+    \  'lualine_a' : [ ['mode', {'upper': v:true,},], ],
+    \  'lualine_b' : [ ['branch', {'icon': '',}, ], ],
+    \  'lualine_c' : [ ['filename', {'file_status': v:true,},], ],
+    \  'lualine_x' : [ 'encoding', 'fileformat', 'filetype' ],
+    \  'lualine_y' : [ 'progress' ],
+    \  'lualine_z' : [ 'location'  ],
+    \},
+    \'inactive_sections' : {
+    \  'lualine_a' : [  ],
+    \  'lualine_b' : [  ],
+    \  'lualine_c' : [ 'filename' ],
+    \  'lualine_x' : [ 'location' ],
+    \  'lualine_y' : [  ],
+    \  'lualine_z' : [  ],
+    \},
+    \'extensions' : [ 'fzf' ],
+    \}
+lua require("lualine").status()
 
 " === REMAPPING ===
 "
@@ -102,6 +130,8 @@ vnoremap > >gv
 
 "Open term in nvim
 noremap <leader>t <C-w>s<C-w><C-p>:resize 10<CR>:ter<CR>
+tnoremap <leader>q <C-\><C-N>
+
 
 " Strange remapping I know
 noremap l h

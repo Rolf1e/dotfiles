@@ -157,3 +157,5 @@ alias ftb="/opt/FTBA/FTBApp &"
 
 #keyboard
 alias wally='~/software/wally &'
+
+alias pdf='function _() { lesspipe $1 | bat; }; _'
