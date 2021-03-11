@@ -1,14 +1,13 @@
 filetype on
 filetype indent on 
 filetype plugin on
-
 "source ./status_bar.vim
 
 set number 
 set relativenumber 
 set termguicolors
 set encoding=UTF-8
-set formatoptions-=cro                  " Stop newline continution of comments
+set formatoptions-=cro                  " Stop newline continution of comments 
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set cmdheight=2
 set showtabline=2                       " Always show tabs
@@ -21,7 +20,7 @@ set nohlsearch                          " no highlight on search
 
 " === LSP ===
 " Set completeopt to have a better completion experience
-set completeopt=menu,menuone,noinsert,noselect " Avoid showing message extra message when using completion
+set completeopt=menu,menuone,noselect " Avoid showing message extra message when using completion
 set shortmess+=c
 set noshowmode                          " We don't need to see things like -- INSERT -- anymore
 

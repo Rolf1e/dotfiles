@@ -180,6 +180,7 @@ bar {
     }
 }
 
+bindsym $mod+Shift+o exec "~/software/.sh/mouse_screenshot.sh"
 bindsym $mod+Shift+i exec "~/software/.sh/screenshot.sh"
 
 bindsym $mod+Shift+l exec "systemctl suspend"
