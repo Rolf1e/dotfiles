@@ -30,12 +30,12 @@ alias mscn="bash ~/software/.sh/mouse_screenshot.sh"
 
 #grep
 alias grep="rg"
-alias erg='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git,target}"'
+alias erg='function _(){ rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git,target}" $1; }; _'
 
 alias vi="nvim"
 alias vim="nvim"
 
-alias fzfi='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git,target}" | fzf'
+alias fzfi='function _(){ erg $1; };_ | fzf'
 alias vifi='vim $(fzfi)'
 
 #keyboard
@@ -48,21 +48,25 @@ alias bg='function _(){ feh --bg-scale $1; }; _'
 #tmux
 tmux_load() {
 	case $1 in
+		"minigames") 
+			path='/media/rolfie/ssd2/projects/mini_games'
+			create_session mini_games $path vim nvim
+			create_window mini_games ts $path
+			;;
 		"stratego") 
 			path='/media/rolfie/ssd2/projects/cours/stratego/game-engine'
-			watson_start stratego
-
 			create_session stratego $path vim nvim
 			create_window stratego ts $path
 			;;
-		"stratego-rust")
+		"qlearning") 
+			path='/media/rolfie/ssd2/projects/cours/qleaning'
+			create_session qlearning $path vim nvim
+			create_window qlearning ts $path
 			;;
-		"optim")
-			path='/media/rolfie/ssd2/projects/cours/optim-master'
-			watson_start optim-master
-
-			create_session optim $path vim nvim
-			create_window optim ts $path
+		"cinemator") 
+			path='/media/rolfie/ssd2/projects/cours/cinemator'
+			create_session cinemator $path vim nvim
+			create_window cinemator ts $path
 			;;
     "aoc")
       path='/media/rolfie/ssd2/projects/aoc/'
