@@ -1,12 +1,11 @@
 filetype on
 filetype indent on 
 filetype plugin on
-"source ./status_bar.vim
 
 set number 
 set relativenumber 
 set termguicolors
-set encoding=UTF-8
+set encoding=utf-8
 set formatoptions-=cro                  " Stop newline continution of comments 
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set cmdheight=2
@@ -72,7 +71,6 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 "
 "Tree
-Plug 'scrooloose/nerdcommenter'
 Plug 'mbbill/undotree'
 Plug 'preservim/tagbar'
 
@@ -88,7 +86,6 @@ call plug#end()
 
 colorscheme gruvbox-material
 
-autocmd Filetype cpp,rust,python,typescript,java,haskell,lua,cs setlocal omnifunc=v:lua.vim.lsp.omnifunc
 let g:lualine = {
     \'options' : {
     \  'theme' : 'gruvbox_material',
@@ -131,7 +128,6 @@ vnoremap > >gv
 noremap <leader>t <C-w>s<C-w><C-p>:resize 10<CR>:ter<CR>
 tnoremap <leader>q <C-\><C-N>
 
-
 " Strange remapping I know
 noremap l h
 noremap ; l
@@ -161,6 +157,14 @@ nmap <F8> :TagbarToggle<CR>
 " Highlight
 nnoremap <F1> :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
 
+" CommentLine
+augroup comment_symbol
+    autocmd!
+    autocmd Filetype * let b:comment_leader = SelectSymbol()
+augroup END
+nnoremap <leader>q <cmd>call CommentLine()<CR>
+vnoremap <leader>q <cmd>call CommentLine()<CR>
+
 nnoremap <silent> <space>e <cmd>Sex!<CR>
 
 "telescope vim
@@ -177,6 +181,8 @@ nnoremap <leader>b <cmd>VBGtoggleBreakpointThisLine
 lua require("my_lsp_config")
 "compe
 lua require("my_compe_config")
+"telescope
+lua require("my_telescope_config")
 "tree sitter
 lua require("my_treesitter_config")
 
@@ -204,14 +210,29 @@ let g:completion_chain_complete_list = {
 			\	],
 			\}
 
-"telescope
-lua require("my_telescope_config")
+function! SelectSymbol()
+  let python_like = ["python", "bash"]
+  if count(python_like, &filetype)
+    return '# '
+  endif
 
+  let vim_like = ["vim"]
+  if count(vim_like, &filetype)
+    return '" '
+  endif
 
-"font
-if has('gui_running')
-  set guifont=Mono Regular Nerd Font Complete
-endif
+  return '\/\/ '
+endfunction
+
+function! CommentLine() 
+  if getline(".") =~ '^\s*' . b:comment_leader 
+      " Uncomment the line
+      execute "silent '<,'>s/^\\(\\s*\\)" . b:comment_leader . "/\\1/"
+  else
+      " Comment the line
+      execute "silent '<,'>s/^\\(\\s*\\)/\\1" . b:comment_leader . "/"
+  endif
+endfunction
 
 " Highlight all instances of word under cursor, when idle.
 " Useful when studying strange source code.
