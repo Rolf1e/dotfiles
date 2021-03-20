@@ -48,12 +48,11 @@ Plug 'RishabhRD/nvim-lsputils'
 Plug 'hrsh7th/nvim-compe'
 Plug 'rust-lang/rust.vim'
 Plug 'rhysd/vim-clang-format'
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'nvim-treesitter/completion-treesitter'
+Plug 'mfussenegger/nvim-jdtls'
 
 "Debugger
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
@@ -162,14 +161,15 @@ augroup comment_symbol
     autocmd!
     autocmd Filetype * let b:comment_leader = SelectSymbol()
 augroup END
-nnoremap <leader>q <cmd>call CommentLine()<CR>
-vnoremap <leader>q <cmd>call CommentLine()<CR>
+nnoremap <leader>q <C-c><cmd>call CommentLine()<CR>
+vnoremap <leader>q <C-c><cmd>call CommentLine()<CR>
 
 nnoremap <silent> <space>e <cmd>Sex!<CR>
 
 "telescope vim
 nnoremap <C-p> <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>g <cmd>Telescope git_status<cr>
 nnoremap <A-p> <cmd>Telescope buffers show_all_buffers=true<cr>
 
 "vebugger
@@ -179,6 +179,15 @@ nnoremap <leader>b <cmd>VBGtoggleBreakpointThisLine
 
 "lsp
 lua require("my_lsp_config")
+" jdtls
+if has('nvim-0.5')
+  augroup lsp
+    au!
+    au FileType java lua require('jdtls').start_or_attach({cmd = {'/home/rolfie/.config/nvim/java-jdtls.sh'}, root_dir = require('jdtls.setup').find_root({'gradle.build', 'pom.xml'})})
+  augroup end
+endif
+command! -buffer JdtCompile lua require('jdtls').compile()
+
 "compe
 lua require("my_compe_config")
 "telescope
@@ -211,7 +220,7 @@ let g:completion_chain_complete_list = {
 			\}
 
 function! SelectSymbol()
-  let python_like = ["python", "bash"]
+  let python_like = ["python", "bash", "sh", "yaml"]
   if count(python_like, &filetype)
     return '# '
   endif
@@ -219,6 +228,10 @@ function! SelectSymbol()
   let vim_like = ["vim"]
   if count(vim_like, &filetype)
     return '" '
+  endif
+  let lua_like = ["lua"]
+  if count(lua_like, &filetype)
+    return '-- '
   endif
 
   return '\/\/ '

@@ -77,10 +77,11 @@ end
 
 -- Use a loop to conveniently both setup defined servers 
 -- and map buffer local keybindings when the language server attaches
-local servers = { "tsserver", "bashls", "hls", "jedi_language_server", "ccls", "cssls", "jdtls" }
+local servers = { "tsserver", "bashls", "hls", "jedi_language_server", "ccls", "cssls"}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
+
 nvim_lsp["rust_analyzer"].setup { 
    on_attach = on_attach,
    capabilities = capabilities,
@@ -92,3 +93,5 @@ nvim_lsp["omnisharp"].setup{
   cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) };
   on_attach = on_attach,
 }
+
+

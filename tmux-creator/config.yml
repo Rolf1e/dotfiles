@@ -1,0 +1,76 @@
+-
+  name: tmux-creator
+  working_directory: /media/rolfie/ssd2/projects/tmux-creator
+  enter_command: nvim
+  window_name: vim
+  windows:
+    - name: rust
+      session_name: tmux-creator
+      working_directory: /media/rolfie/ssd2/projects/tmux-creator
+    - name: test
+      session_name: tmux-creator
+      working_directory: /media/rolfie/ssd2/projects/tmux-creator
+-
+  name: mini_games
+  working_directory: /media/rolfie/ssd2/projects/mini_games
+  enter_command: nvim
+  window_name: vim
+  windows:
+    - name: rust
+      session_name: mini_games
+      working_directory: /media/rolfie/ssd2/projects/mini_games
+-
+  name: stratego
+  working_directory: /media/rolfie/ssd2/projects/mini_games
+  enter_command: nvim
+  window_name: vim
+  windows:
+    - name: rust
+      session_name: stratego
+      working_directory: /media/rolfie/ssd2/projects/mini_games
+-
+  name: qlearning
+  working_directory: /media/rolfie/ssd2/projects/cours/qleaning
+  enter_command: nvim
+  window_name: vim
+  windows:
+    - name: python
+      session_name: qlearning
+      working_directory: /media/rolfie/ssd2/projects/cours/qleaning
+-
+  name: cinemator
+  working_directory: /media/rolfie/ssd2/projects/cours/cinemator
+  enter_command: nvim
+  window_name: vim
+  windows:
+    - name: client
+      session_name: cinemator
+      working_directory: /media/rolfie/ssd2/projects/cours/cinemator/client
+    - name: server
+      session_name: cinemator
+      working_directory: /media/rolfie/ssd2/projects/cours/cinemator/server
+-
+  name: dotfiles
+  working_directory: /home/rolfie/Documents/dotfiles
+  enter_command: nvim
+  window_name: vim
+  windows: []
+-
+  name: ray_tracing
+  working_directory: /media/rolfie/ssd2/projects/cours/init-search/search/LR
+  enter_command: nvim
+  window_name: vim
+  windows:
+    - name: cpp
+      session_name: ray_tracing
+      working_directory: /media/rolfie/ssd2/projects/cours/init-search/search/LR/build
+-
+  name: aoc
+  working_directory: /media/rolfie/ssd2/projects/aoc
+  enter_command: nvim
+  window_name: vim
+  windows:
+    - name: term
+      session_name: aoc
+      working_directory: /media/rolfie/ssd2/projects/aoc
+

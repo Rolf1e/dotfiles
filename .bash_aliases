@@ -10,9 +10,9 @@ alias :q="exit"
 alias c="clear"
 alias dwn="cd ~/Downloads"
 alias doc="cd ~/Documents"
-alias tz='function _(){ tar czvf $1.tar.gz $1; }; _'
-alias tx="tar xzvf"
-alias txc='function _(){ tar xzvf $1 -C $2; }; _'
+alias tz='function _(){ tar -czvf $1.tar.gz $1; }; _'
+alias tx="tar -xzvf"
+alias txc='function _(){ tar -xzvf $1 -C $2; }; _'
 alias cours='function _(){ cd /media/rolfie/ssd2/projects/cours/$1; }; _'
 alias vlm="pavucontrol &"
 
@@ -46,63 +46,9 @@ alias dotfiles="cd ~/Documents/dotfiles"
 alias bg='function _(){ feh --bg-scale $1; }; _'
 
 #tmux
-tmux_load() {
-	case $1 in
-		"minigames") 
-			path='/media/rolfie/ssd2/projects/mini_games'
-			create_session mini_games $path vim nvim
-			create_window mini_games ts $path
-			;;
-		"stratego") 
-			path='/media/rolfie/ssd2/projects/cours/stratego/game-engine'
-			create_session stratego $path vim nvim
-			create_window stratego ts $path
-			;;
-		"qlearning") 
-			path='/media/rolfie/ssd2/projects/cours/qleaning'
-			create_session qlearning $path vim nvim
-			create_window qlearning ts $path
-			;;
-		"cinemator") 
-			path='/media/rolfie/ssd2/projects/cours/cinemator'
-			create_session cinemator $path vim nvim
-			create_window cinemator ts $path
-			;;
-    "aoc")
-      path='/media/rolfie/ssd2/projects/aoc/'
-      create_session aoc $path vim nvim
-      create_window aoc term $path
-      ;;
-		*) 
-			echo "I need a correct session name, dumb ass !!"
-			;;
-	esac
-}
 
-watson_start() {
-	watson start $1
-}
-
-create_session() {
-	session=$1
-	working_directory=$2
-	window=$3
-	cmd=$4
-	tmux new-session -s $session -c $working_directory -n $window -d $cmd
-}
-
-# $1 link to session
-# $2 window name 
-# $3 working directory
-create_window() {
-	session=$1
-	window=$2
-	working_directory=$3
-	tmux new-window -t $session: -n $window -c $working_directory 
-}
-
-alias tconn='function _(){ tmux attach-session -t $1; }; _'
-alias tc='function _() { tmux_load $1; tmux attach-session -t $1; }; _'
+alias tmcr="/media/rolfie/ssd2/projects/tmux-creator/target/release/tmux-executor"
+alias tc='function _(){ tmux attach-session -t $1; }; _'
 
 # == DEV  == 
 
