@@ -187,6 +187,7 @@ bindsym $mod+Shift+l exec "systemctl suspend"
 
 # startup
 exec nm-applet
+exec compton
 
 # FKeys
 # Pulse Audio controls

@@ -94,6 +94,8 @@ alias postman="~/software/Postman/Postman &"
 alias jm="mvn clean install"
 alias nmvn='function _(){ mvn -B archetype:generate -DgroupId=com.rolfie.$1 -DartifactId=$1 -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4; }; _'
 alias mvntest='function _(){ mvn -Dtest=$1 test; }; _'
+#dbeaver
+alias dbeaver="~/software/dbeaver/product/community/target/products/org.jkiss.dbeaver.core.product/linux/gtk/x86_64/dbeaver/dbeaver &"
 
 # ==  Software ==
 

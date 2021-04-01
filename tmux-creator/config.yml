@@ -21,13 +21,13 @@
       working_directory: /media/rolfie/ssd2/projects/mini_games
 -
   name: stratego
-  working_directory: /media/rolfie/ssd2/projects/mini_games
+  working_directory: /media/rolfie/ssd2/projects/cours/stratego
   enter_command: nvim
   window_name: vim
   windows:
     - name: rust
       session_name: stratego
-      working_directory: /media/rolfie/ssd2/projects/mini_games
+      working_directory: /media/rolfie/ssd2/projects/cours/stratego
 -
   name: qlearning
   working_directory: /media/rolfie/ssd2/projects/cours/qleaning
@@ -73,4 +73,21 @@
     - name: term
       session_name: aoc
       working_directory: /media/rolfie/ssd2/projects/aoc
-
+-
+  name: ulco-psql
+  working_directory: /media/rolfie/ssd2/projects/cours/psql
+  enter_command: nvim
+  window_name: vim
+  windows:
+    - name: ssh
+      session_name: ulco-psql
+      working_directory: /media/rolfie/ssd2/projects/cours/psql
+-
+  name: ulco-hpc
+  working_directory: /media/rolfie/ssd2/projects/cours/hpc
+  enter_command: nvim
+  window_name: vim
+  windows:
+    - name: cpp
+      session_name: ulco-hpc
+      working_directory: /media/rolfie/ssd2/projects/cours/hpc

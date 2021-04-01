@@ -78,9 +78,11 @@ Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'sainnhe/gruvbox-material'
 
+Plug 'tjdevries/nlua.nvim'
 "Fun
 Plug 'ThePrimeagen/vim-be-good'
 
+Plug '/media/rolfie/ssd2/projects/tmux-creator'
 call plug#end()
 
 colorscheme gruvbox-material
@@ -90,14 +92,14 @@ let g:lualine = {
     \  'theme' : 'gruvbox_material',
     \  'section_separators' : ['', ''],
     \  'component_separators' : ['', ''],
-    \  'icons_enabled' : v:true,
+    \  'icons_enabled' : v:false,
     \},
     \'sections' : {
     \  'lualine_a' : [ ['mode', {'upper': v:true,},], ],
     \  'lualine_b' : [ ['branch', {'icon': '',}, ], ],
     \  'lualine_c' : [ ['filename', {'file_status': v:true,},], ],
     \  'lualine_x' : [ 'encoding', 'fileformat', 'filetype' ],
-    \  'lualine_y' : [ 'progress' ],
+    \  'lualine_y' : [],
     \  'lualine_z' : [ 'location'  ],
     \},
     \'inactive_sections' : {
@@ -110,7 +112,7 @@ let g:lualine = {
     \},
     \'extensions' : [ 'fzf' ],
     \}
-lua require("lualine").status()
+lua require("lualine").setup{}
 
 " === REMAPPING ===
 "
@@ -122,6 +124,8 @@ noremap <leader>5 :vertical resize +5<CR>
 noremap <leader>6 :vertical resize -5<CR>
 vnoremap < <gv
 vnoremap > >gv
+noremap <C-i> <cmd>bnext<CR>
+noremap <C-o> <cmd>bprevious<CR>
 
 "Open term in nvim
 noremap <leader>t <C-w>s<C-w><C-p>:resize 10<CR>:ter<CR>
@@ -135,6 +139,9 @@ noremap h ;
 noremap <C-w>l <C-w>h
 noremap <C-w>; <C-w>l
 noremap <C-w>h <C-w>;
+
+nnoremap <leader>k <cmd>cnext<CR>
+nnoremap <leader>j <cmd>cprevious<CR>
 
 " LSP 
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -173,9 +180,9 @@ nnoremap <leader>g <cmd>Telescope git_status<cr>
 nnoremap <A-p> <cmd>Telescope buffers show_all_buffers=true<cr>
 
 "vebugger
-nnoremap <leader>d <cmd>VBGcontinue
-nnoremap <leader>e <cmd>VBGevalWordUnderCursor
-nnoremap <leader>b <cmd>VBGtoggleBreakpointThisLine
+nnoremap <leader>d <cmd>VBGcontinue<CR>
+nnoremap <leader>e <cmd>VBGevalWordUnderCursor<CR>
+nnoremap <leader>b <cmd>VBGtoggleBreakpointThisLine<CR>
 
 "lsp
 lua require("my_lsp_config")
@@ -194,30 +201,6 @@ lua require("my_compe_config")
 lua require("my_telescope_config")
 "tree sitter
 lua require("my_treesitter_config")
-
-let g:completion_chain_complete_list = {
-			\'default' : {
-			\	'default' : [
-			\		{'complete_items' : ['lsp', 'snippet']},
-			\		{'mode' : 'file'}
-			\	],
-			\	'comment' : [],
-			\	'string' : []
-			\	},
-			\'vim' : [
-			\	{'complete_items': ['snippet']},
-			\	{'mode' : 'cmd'}
-			\	],
-			\'c' : [
-			\	{'complete_items': ['ts']}
-			\	],
-			\'python' : [
-			\	{'complete_items': ['ts']}
-			\	],
-			\'lua' : [
-			\	{'complete_items': ['ts']}
-			\	],
-			\}
 
 function! SelectSymbol()
   let python_like = ["python", "bash", "sh", "yaml"]
