@@ -1,5 +1,10 @@
-alacritty:
+#alacritty
+alacritty-install:
 	cargo install alacritty
+alacritty-symlinks:
+	ln -s ~/Documents/dotfiles/alacritty ~/.config/alacritty
+
+alacritty: alacritty-install alacritty-symlinks
 
 # unix tools
 tmux:
@@ -22,6 +27,20 @@ tools-cargo: bat ripgrep
 
 tools: tools-cargo tools-apt
 
+# i3
+i3-symlinks:
+	ln -s ~/Documents/dotfiles/i3 ~/.config/i3
+
+# starship
+starship-symlinks:
+	ln -s ~/Documents/dotfiles/starship.toml ~/.config/starship.toml
+
+starship-install: 
+	cargo install starship
+
+starship: starship-install starship-symlinks
+
+
 
 # neovim
 vim-plug:
@@ -32,9 +51,24 @@ neovim-build:
 	make -C ~/software/neovim CMAKE_BUILD_TYPE=RelWithDebInfo
 	sudo make -C ~/software/neovim install
 
+
 neovim-clone:
-	cd ~/software/ git clone https://github.com/neovim/neovim 
+	cd ~/software && git clone https://github.com/neovim/neovim 
+
+neovim-symlinks:
+	ln -s ~/Documents/dotfiles/nvim ~/.config/nvim
 
 first-neovim: clone-neovim build-neovim
 
-neovim: neovim-build
+neovim: neovim-build neovim-symlinks
+
+# Personal - tmux creator
+tmux-creator-build:
+	cd ~/software && git clone https://github.com/Rolf1e/tmux-creator
+	cargo build --release --manifest-path ~/software/tmux-creator/Cargo.toml
+
+tmux-creator-symlinks:
+	ln -s ~/Documents/dotfiles/tmux-creator ~/.config/tmux-creator
+
+symlinks: tmux-creator-symlinks neovim-symlinks alacritty-symlinks i3-symlinks
+
