@@ -156,6 +156,7 @@ export TEX_LIVE="/usr/local/texlive/2020/bin/x86_64-linux"
 #path
 export PATH=$PATH:"/home/rolfie/.local/bin":$TEX_LIVE:$RUST:$MAVEN_HOME:$HASKELL_PATH:$JAVA_HOME:$OWN_SOFTWARE:$GHCUP:$TERMINAL
 
+source ~/.config/alacritty/alacritty.bash
 
 #starship rust (always at end)
 eval "$(starship init bash)"
