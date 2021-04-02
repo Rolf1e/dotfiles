@@ -24,3 +24,4 @@ let g:lualine = {
     \'extensions' : [ 'fzf' ],
     \}
 lua require("lualine").setup{}
+

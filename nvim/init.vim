@@ -74,8 +74,14 @@ source ~/.config/nvim/vebugger.vim
 source ~/.config/nvim/lualine.vim
 source ~/.config/nvim/personal_functions.vim
 
-colorscheme gruvbox-material
+"transparent
+let g:gruvbox_material_transparent_background = 1
+augroup GruvboxMaterialCustom
+  autocmd!
+  autocmd ColorScheme gruvbox-material highlight Normal guibg=None ctermbg=None
+augroup END
 
+colorscheme gruvbox-material
 
 " === REMAPPING ===
 "
