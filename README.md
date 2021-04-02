@@ -7,17 +7,16 @@ This repo aims to store all my linux configs !
 ## Dependencies
   (Some dependencies can be installed threw Makefile)
 
- - rust (cargo)
-    rustup: `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+ - [rust](https://www.rust-lang.org/tools/install) (cargo) `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 
  - terminal
     - [alacritty](https://github.com/alacritty/alacritty)
     - [tmux](https://github.com/tmux/tmux) 
     - [compton](https://github.com/chjj/compton)
     - [starship](https://github.com/starship/starship)
-    - xclip: `apt install xclip`
-    - bat: `cargo install --locked bat`
-    - ripgrep: `cargo install ripgrep`
+    - [xclip](https://github.com/astrand/xclip): `apt install xclip`
+    - [bat](https://github.com/sharkdp/bat): `cargo install --locked bat`
+    - [ripgrep](https://github.com/BurntSushi/ripgrep): `cargo install ripgrep`
 
  - vim
     - [vim-plug](https://github.com/junegunn/vim-plug)
