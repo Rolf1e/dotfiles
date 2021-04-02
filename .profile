@@ -27,4 +27,4 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
-feh --bg-fill '/home/rolfie/Documents/wallpaper/AhsokaVaderBackWards.jpg'
+feh --bg-fill "$HOME/Documents/dotfiles/images/AhsokaVaderBackWards.jpg"
