@@ -63,6 +63,7 @@ Plug 'tjdevries/nlua.nvim'
 "Fun
 Plug 'ThePrimeagen/vim-be-good'
 
+Plug '/media/rolfie/ssd2/projects/neovim-calculator'
 Plug '/media/rolfie/ssd2/projects/tmux-creator'
 call plug#end()
 
@@ -107,8 +108,8 @@ noremap <C-w>l <C-w>h
 noremap <C-w>; <C-w>l
 noremap <C-w>h <C-w>;
 
-nnoremap <leader>k <cmd>cnext<CR>
-nnoremap <leader>j <cmd>cprevious<CR>
+nnoremap <leader>j <cmd>cnext<CR>
+nnoremap <leader>k <cmd>cprevious<CR>
 
 nnoremap <silent> <space>e <cmd>Sex!<CR>
 

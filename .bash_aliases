@@ -17,7 +17,7 @@ alias cours='function _(){ cd /media/rolfie/ssd2/projects/cours/$1; }; _'
 alias vlm="pavucontrol &"
 
 tree_settings() {
-	tree -a -L $1 -I ".git|.github|.vscode|.idea|*node_modules|*dist|$2" --ignore-case
+	tree -a -L $1 -I ".git|.github|.vscode|.idea|*node_modules|*dist|*target|*__pycache__|$2" --ignore-case
 }
 
 alias t3="tree_settings 3"

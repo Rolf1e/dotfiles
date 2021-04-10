@@ -34,11 +34,15 @@ just use `make` on this file, are it will install everything !
 
 - alacritty: `make alacritty`
 - basic unix tools: `sudo make tools`
-- vim: `make neovim` (do `make vim-plug` if never installed)
-- vim-update: `make neovim-build`
+- first neovim install: `make neovim-first` 
+- vim-update: `make neovim`
   `:PlugInstall` inside of vim to install plugins
   `:PlugUpdate` inside of vim to update plugins
   **Before using lsp completion**, you might need some [requirements](https://github.com/neovim/nvim-lspconfig)
 
 
 
+
+## Docker  (WIP)
+Build docker image: `docker build -t dotfiles .`
+Connect to docker container `docker run -it --rm --name my_dotfiles dotfiles`

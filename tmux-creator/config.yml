@@ -7,9 +7,9 @@
     - name: rust
       session_name: tmux-creator
       working_directory: /media/rolfie/ssd2/projects/tmux-creator
-    - name: test
+    - name: log
       session_name: tmux-creator
-      working_directory: /media/rolfie/ssd2/projects/tmux-creator
+      working_directory: /home/rolfie
 -
   name: mini_games
   working_directory: /media/rolfie/ssd2/projects/mini_games
