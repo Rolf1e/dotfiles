@@ -7,7 +7,7 @@ nnoremap <leader>q <C-c><cmd>call CommentLine()<CR>
 vnoremap <leader>q <C-c><cmd>call CommentLine()<CR>
 
 function! SelectSymbol()
-  let python_like = ["python", "bash", "sh", "yaml", "dockerfile", "toml"]
+  let python_like = ["python", "bash", "sh", "yaml", "dockerfile", "toml", "elixir"]
   if count(python_like, &filetype)
     return '# '
   endif

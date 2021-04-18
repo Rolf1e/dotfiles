@@ -34,6 +34,7 @@ Plug 'nvim-treesitter/playground'
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'nvim-treesitter/completion-treesitter'
 Plug 'mfussenegger/nvim-jdtls'
+Plug 'elixir-editors/vim-elixir'
 
 "Debugger
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
@@ -63,7 +64,6 @@ Plug 'tjdevries/nlua.nvim'
 "Fun
 Plug 'ThePrimeagen/vim-be-good'
 
-Plug '/media/rolfie/ssd2/projects/neovim-calculator'
 Plug '/media/rolfie/ssd2/projects/tmux-creator'
 call plug#end()
 
@@ -117,5 +117,4 @@ nnoremap <silent> <space>e <cmd>Sex!<CR>
 nnoremap <F5> :UndotreeToggle<cr>
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
-
 

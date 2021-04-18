@@ -91,3 +91,12 @@
     - name: cpp
       session_name: ulco-hpc
       working_directory: /media/rolfie/ssd2/projects/cours/hpc
+-
+  name: elixir-algo
+  working_directory: /media/rolfie/ssd2/projects/Elixir
+  enter_command: nvim
+  window_name: vim
+  windows:
+    - name: elixir
+      session_name: elixir-algo
+      working_directory: /media/rolfie/ssd2/projects/Elixir

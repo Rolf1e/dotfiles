@@ -10,7 +10,7 @@ let g:lualine = {
     \  'lualine_b' : [ ['branch', {'icon': '',}, ], ],
     \  'lualine_c' : [ ['filename', {'file_status': v:true,},], ],
     \  'lualine_x' : [ 'encoding', 'fileformat', 'filetype' ],
-    \  'lualine_y' : [],
+    \  'lualine_y' : [ ['diagnostics', {'sources': ['nvim_lsp'], 'color_error': '#ec5f67', 'color_warn': '#ECBE7B', 'color_info': '#FFFFFF' }], ],
     \  'lualine_z' : [ 'location'  ],
     \},
     \'inactive_sections' : {

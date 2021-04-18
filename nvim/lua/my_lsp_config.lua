@@ -87,6 +87,10 @@ nvim_lsp["rust_analyzer"].setup {
    capabilities = capabilities,
 }
 
+nvim_lsp["elixirls"].setup {
+    cmd = { "/home/rolfie/software/elixir-ls/language_server.sh"},
+}
+
 local pid = vim.fn.getpid()
 local omnisharp_bin = "/home/rolfie/software/omnisharp-linux-x64/run"
 nvim_lsp["omnisharp"].setup{
