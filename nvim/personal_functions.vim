@@ -1,3 +1,6 @@
+" Tmux Creator
+nnoremap <F4> <cmd>RegisteredSession<CR>
+nnoremap <F6> <cmd>ListSession<CR>
 " CommentLine
 augroup comment_symbol
     autocmd!
