@@ -47,7 +47,7 @@ alias bg='function _(){ feh --bg-scale $1; }; _'
 
 #tmux
 
-alias tmcr="/media/rolfie/ssd2/projects/tmux-creator/target/release/tmux-executor"
+# alias tmcr="/media/rolfie/ssd2/projects/tmux-creator/target/release/tmux-executor"
 alias tc='function _(){ tmux attach-session -t $1; }; _'
 
 # == DEV  == 
@@ -100,7 +100,8 @@ alias dbeaver="~/software/dbeaver/product/community/target/products/org.jkiss.db
 # ==  Software ==
 
 #firefox
-alias firefox="~/software/firefox/firefox -search $1 &"
+# alias firefox='function _(){ ~/software/firefox/firefox -new-tab=$1; }; _'
+alias firefox='~/software/firefox/firefox &'
 
 # = game =
 

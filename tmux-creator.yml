@@ -1,16 +1,4 @@
 -
-  name: tmux-creator
-  working_directory: /media/rolfie/ssd2/projects/tmux-creator
-  enter_command: nvim
-  window_name: vim
-  windows:
-    - name: rust
-      session_name: tmux-creator
-      working_directory: /media/rolfie/ssd2/projects/tmux-creator
-    - name: log
-      session_name: tmux-creator
-      working_directory: /home/rolfie
--
   name: mini_games
   working_directory: /media/rolfie/ssd2/projects/mini_games
   enter_command: nvim
@@ -100,3 +88,24 @@
     - name: elixir
       session_name: elixir-algo
       working_directory: /media/rolfie/ssd2/projects/Elixir
+-
+  name: rapport
+  working_directory: /media/rolfie/ssd2/projects/cours/rapport-alternance
+  enter_command: nvim
+  window_name: vim
+  windows:
+    - name: LaTeX
+      session_name: rapport
+      working_directory: /media/rolfie/ssd2/projects/cours/rapport-alternance
+-
+  name: tmux-creator
+  working_directory: /media/rolfie/ssd2/projects/tmux-creator
+  enter_command: nvim
+  window_name: vim
+  windows:
+    - name: rust
+      session_name: tmux-creator
+      working_directory: /media/rolfie/ssd2/projects/tmux-creator
+    - name: log
+      session_name: tmux-creator
+      working_directory: /media/rolfie/ssd2/projects/tmux-creator

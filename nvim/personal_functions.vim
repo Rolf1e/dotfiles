@@ -1,6 +1,6 @@
 " Tmux Creator
-nnoremap <F4> <cmd>RegisteredSession<CR>
-nnoremap <F6> <cmd>ListSession<CR>
+nnoremap <F4> <cmd>TmuxCreatorRegisteredSession<CR>
+nnoremap <F6> <cmd>TmuxCreatorListSession<CR>
 " CommentLine
 augroup comment_symbol
     autocmd!
@@ -15,10 +15,16 @@ function! SelectSymbol()
     return '# '
   endif
 
+  let vim_like = ["tex"]
+  if count(vim_like, &filetype)
+    return '% '
+  endif
+
   let vim_like = ["vim"]
   if count(vim_like, &filetype)
     return '" '
   endif
+
   let lua_like = ["lua"]
   if count(lua_like, &filetype)
     return '-- '

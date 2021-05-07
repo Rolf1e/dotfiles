@@ -64,7 +64,9 @@ Plug 'tjdevries/nlua.nvim'
 "Fun
 Plug 'ThePrimeagen/vim-be-good'
 
-Plug '/media/rolfie/ssd2/projects/tmux-creator'
+"personal
+Plug 'Rolf1e/tmux-creator', {'do': 'make vim-install'}
+" Plug '/media/rolfie/ssd2/projects/tmux-creator'
 call plug#end()
 
 source ~/.config/nvim/net_rw.vim
