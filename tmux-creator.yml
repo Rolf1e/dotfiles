@@ -62,31 +62,31 @@
       session_name: aoc
       working_directory: /media/rolfie/ssd2/projects/aoc
 -
-  name: ulco-psql
+  name: ulco_psql
   working_directory: /media/rolfie/ssd2/projects/cours/psql
   enter_command: nvim
   window_name: vim
   windows:
     - name: ssh
-      session_name: ulco-psql
+      session_name: ulco_psql
       working_directory: /media/rolfie/ssd2/projects/cours/psql
 -
-  name: ulco-hpc
+  name: ulco_hpc
   working_directory: /media/rolfie/ssd2/projects/cours/hpc
   enter_command: nvim
   window_name: vim
   windows:
     - name: cpp
-      session_name: ulco-hpc
+      session_name: ulco_hpc
       working_directory: /media/rolfie/ssd2/projects/cours/hpc
 -
-  name: elixir-algo
+  name: elixir_algo
   working_directory: /media/rolfie/ssd2/projects/Elixir
   enter_command: nvim
   window_name: vim
   windows:
     - name: elixir
-      session_name: elixir-algo
+      session_name: elixir_algo
       working_directory: /media/rolfie/ssd2/projects/Elixir
 -
   name: rapport
@@ -98,14 +98,14 @@
       session_name: rapport
       working_directory: /media/rolfie/ssd2/projects/cours/rapport-alternance
 -
-  name: tmux-creator
+  name: tmux_creator
   working_directory: /media/rolfie/ssd2/projects/tmux-creator
   enter_command: nvim
   window_name: vim
   windows:
     - name: rust
-      session_name: tmux-creator
+      session_name: tmux_creator
       working_directory: /media/rolfie/ssd2/projects/tmux-creator
     - name: log
-      session_name: tmux-creator
+      session_name: tmux_creator
       working_directory: /media/rolfie/ssd2/projects/tmux-creator

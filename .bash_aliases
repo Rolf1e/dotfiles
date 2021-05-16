@@ -43,7 +43,10 @@ alias us="setxkbmap us"
 alias fr="setxkbmap fr"
 alias dotfiles="cd ~/Documents/dotfiles"
 
-alias bg='function _(){ feh --bg-scale $1; }; _'
+alias background='function _(){ feh --bg-scale $1; }; _'
+
+#docker
+alias docker_stopall='docker stop $(docker ps -a -q) && docker rm -fv $(docker ps -aq)'
 
 #tmux
 
