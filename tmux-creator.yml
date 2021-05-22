@@ -42,7 +42,10 @@
   working_directory: /home/rolfie/Documents/dotfiles
   enter_command: nvim
   window_name: vim
-  windows: []
+  windows:
+    - name: ~/.config
+      session_name: dotfiles
+      working_directory: /home/rolfie/.config
 -
   name: ray_tracing
   working_directory: /media/rolfie/ssd2/projects/cours/init-search/search/LR

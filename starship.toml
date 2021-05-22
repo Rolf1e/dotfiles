@@ -1,7 +1,7 @@
-add_newline = false
 
 [character]
-symbol = "➜"
+success_symbol = "[➜](bold green) "
+error_symbol = "[✗](bold red) "
 
 [battery]
 full_symbol = "🔋"
@@ -12,3 +12,8 @@ discharging_symbol = "💀"
 threshold = 10
 style = "bold red"
 
+[time]
+disabled = false
+format = '[\[$time\]]($style) '
+time_format = "%T"
+style = "bold blue"
