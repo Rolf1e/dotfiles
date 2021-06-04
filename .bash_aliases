@@ -104,7 +104,7 @@ alias dbeaver="~/software/dbeaver/product/community/target/products/org.jkiss.db
 
 #firefox
 # alias firefox='function _(){ ~/software/firefox/firefox -new-tab=$1; }; _'
-alias firefox='~/software/firefox/firefox &'
+alias firefox='~/Documents/dotfiles/firefox.sh 2>&1>/dev/null &'
 
 # = game =
 

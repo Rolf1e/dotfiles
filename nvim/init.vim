@@ -56,9 +56,9 @@ Plug 'mbbill/undotree'
 Plug 'preservim/tagbar'
 
 "colorscheme
-Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'sainnhe/gruvbox-material'
+Plug 'morhetz/gruvbox'
 
 Plug 'tjdevries/nlua.nvim'
 "Fun
@@ -74,7 +74,8 @@ source ~/.config/nvim/treesitter.vim
 source ~/.config/nvim/lsp.vim
 source ~/.config/nvim/telescope.vim
 source ~/.config/nvim/vebugger.vim
-source ~/.config/nvim/lualine.vim
+" source ~/.config/nvim/lualine.vim
+source ~/.config/nvim/statusline.vim
 source ~/.config/nvim/personal_functions.vim
 
 "transparent

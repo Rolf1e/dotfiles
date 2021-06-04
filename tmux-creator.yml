@@ -112,3 +112,12 @@
     - name: log
       session_name: tmux_creator
       working_directory: /media/rolfie/ssd2/projects/tmux-creator
+-
+  name: ulco_compilation
+  working_directory: /media/rolfie/ssd2/projects/cours/compilation
+  enter_command: nvim
+  window_name: vim
+  windows:
+    - name: bash
+      session_name: ulco_compilation
+      working_directory: /media/rolfie/ssd2/projects/cours/compilation
