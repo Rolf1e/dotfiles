@@ -2,15 +2,11 @@ set laststatus=2
 set statusline=
 set statusline+=%{StatusLineLeft()} 
 set statusline+=%=
-set statusline+=lsp[E:
-set statusline+=%{LspStatus('Error')}
-set statusline+=\ W:
-set statusline+=%{LspStatus('Warning')}
-set statusline+=]
+set statusline+=%{LspStatus()}
 set statusline+=%{StatusLineRight()} 
 
-
 let s:exclude_status_line = ["netrw", "tagbar"]
+
 function! StatusLineLeft() 
   if count(s:exclude_status_line, &filetype)
     return '[' . &filetype . ']:' . expand("%:~")
@@ -23,7 +19,14 @@ function! StatusLineLeft()
   return s:line
 endfunction
 
-function! LspStatus(...)
+function! LspStatus()
+  if count(s:exclude_status_line, &filetype)
+    return ' '
+  endif
+  return 'lsp[E:' . s:LspStatus('Error') . ' W:' . s:LspStatus('Warning') . '] '
+endfunction
+
+function! s:LspStatus(...)
   let s:level = get(a:, 1, 0)
   return luaeval("vim.lsp.diagnostic.get_count(0, [[" . s:level . "]])")
 endfunction
