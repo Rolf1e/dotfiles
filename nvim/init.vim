@@ -98,6 +98,10 @@ noremap <leader>6 :vertical resize -5<CR>
 vnoremap < <gv
 vnoremap > >gv
 
+noremap <leader>y "*y
+noremap <leader>p "*p
+
+
 "Open term in nvim
 noremap <leader>t <C-w>s<C-w><C-p>:resize 10<CR>:ter<CR>
 tnoremap <leader>q <C-\><C-N>
