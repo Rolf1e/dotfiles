@@ -50,6 +50,9 @@ Plug 'szw/vim-maximizer'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 "
 "Tree
 Plug 'mbbill/undotree'
@@ -59,10 +62,12 @@ Plug 'preservim/tagbar'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'sainnhe/gruvbox-material'
 Plug 'morhetz/gruvbox'
+Plug 'soywod/himalaya', {'rtp': 'vim'}
 
 Plug 'tjdevries/nlua.nvim'
 "Fun
 Plug 'ThePrimeagen/vim-be-good'
+
 
 "personal
 Plug 'Rolf1e/tmux-creator', {'do': 'make vim-install'}
@@ -72,11 +77,13 @@ call plug#end()
 source ~/.config/nvim/net_rw.vim
 source ~/.config/nvim/treesitter.vim
 source ~/.config/nvim/lsp.vim
-source ~/.config/nvim/telescope.vim
+" source ~/.config/nvim/telescope.vim
+source ~/.config/nvim/fzf.vim
 source ~/.config/nvim/vebugger.vim
 " source ~/.config/nvim/lualine.vim
 source ~/.config/nvim/statusline.vim
 source ~/.config/nvim/personal_functions.vim
+source ~/.config/nvim/himalaya.vim
 
 "transparent
 let g:gruvbox_material_transparent_background = 1
@@ -117,6 +124,8 @@ noremap <C-w>h <C-w>;
 
 nnoremap <leader>j <cmd>cnext<CR>
 nnoremap <leader>k <cmd>cprevious<CR>
+nnoremap <leader>m <cmd>tabNext<CR>
+
 
 nnoremap <silent> <space>e <cmd>Sex!<CR>
 

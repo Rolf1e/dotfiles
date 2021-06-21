@@ -1,0 +1,22 @@
+name = "SLAMA Tigran"
+downloads-dir = "/home/rolfie/Downloads/mails"
+signature = """
+Cordialement,
+Tigran SLAMA 
+"""
+
+[laposte]
+default = true
+downloads-dir = "/home/rolfie/Downloads/mails/laposte"
+
+email = "tigran.slama@laposte.net"
+
+imap-host = "imap.laposte.net"
+imap-port = 993
+imap-login = "tigran.slama@laposte.net"
+imap-passwd-cmd = "pass show mail/laposte"
+
+smtp-host = "smtp.laposte.net"
+smtp-port = 465
+smtp-login = "tigran.slama@laposte.net"
+smtp-passwd-cmd = "pass show mail/laposte"

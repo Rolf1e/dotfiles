@@ -1,5 +1,17 @@
-theme = "gruvbox-dark"
-icons = "material"
+# theme = "gruvbox-dark"
+# icons = "material"
+theme = "plain"
+icons = "none"
+
+# [[block]]
+# block = "watson"
+# show_time = true
+# state_path = "/home/rolfie/.config/watson/state"
+
+[[block]]
+block = "docker"
+interval = 2
+format = "{running}/{total}"
 
 # [[block]]
 # block = "xrandr"
@@ -8,20 +20,11 @@ icons = "material"
 # interval = 15
 
 [[block]]
-block = "docker"
-interval = 2
-format = "{running}/{total}"
-
-[[block]]
 block = "hueshift"
 hue_shifter = "redshift"
 step = 50
 click_temp = 3500
 
-[[block]]
-block = "watson"
-show_time = true
-state_path = "/home/rolfie/.config/watson/state"
 
 [[block]]
 block = "nvidia_gpu"
