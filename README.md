@@ -29,20 +29,25 @@ This repo aims to store all my linux configs !
 
 
 ## Install 
-A Makefile is there to help me keep easy installation of my setup  **DO NOT**
+A Makefile is there to help me keep easy installation of my setup **DO NOT**
 just use `make` on this file, are it will install everything !
 
 - alacritty: `make alacritty`
 - basic unix tools: `sudo make tools`
 - first neovim install: `make neovim-first` 
 - vim-update: `make neovim`
+
   `:PlugInstall` inside of vim to install plugins
+
   `:PlugUpdate` inside of vim to update plugins
+
   **Before using lsp completion**, you might need some [requirements](https://github.com/neovim/nvim-lspconfig)
 
 
 
 
 ## Docker  (WIP)
+
 Build docker image: `docker build -t dotfiles .`
+
 Connect to docker container `docker run -it --rm --name my_dotfiles dotfiles`
