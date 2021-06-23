@@ -24,6 +24,7 @@ let g:python3_host_prog = "/usr/local/bin/python3.8"
 call plug#begin('~/Documents/dotfiles/nvim/plugged')
 "Completer and formatter
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/lsp_extensions.nvim'
 Plug 'RishabhRD/popfix'
 Plug 'RishabhRD/nvim-lsputils'
 Plug 'hrsh7th/nvim-compe'
@@ -49,7 +50,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'szw/vim-maximizer'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
+" Plug 'nvim-telescope/telescope.nvim'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -57,6 +58,7 @@ Plug 'junegunn/fzf.vim'
 "Tree
 Plug 'mbbill/undotree'
 Plug 'preservim/tagbar'
+Plug 'simrat39/symbols-outline.nvim'
 
 "colorscheme
 Plug 'kyazdani42/nvim-web-devicons'
@@ -70,8 +72,7 @@ Plug 'ThePrimeagen/vim-be-good'
 
 
 "personal
-Plug 'Rolf1e/tmux-creator', {'do': 'make vim-install'}
-" Plug '/media/rolfie/ssd2/projects/tmux-creator'
+Plug 'Rolf1e/tmux-creator', {'rtp': 'vim'}
 call plug#end()
 
 source ~/.config/nvim/net_rw.vim
@@ -84,6 +85,7 @@ source ~/.config/nvim/vebugger.vim
 source ~/.config/nvim/statusline.vim
 source ~/.config/nvim/personal_functions.vim
 source ~/.config/nvim/himalaya.vim
+source ~/.config/nvim/symbols_outline.vim
 
 "transparent
 let g:gruvbox_material_transparent_background = 1
@@ -132,5 +134,5 @@ nnoremap <silent> <space>e <cmd>Sex!<CR>
 " Undotree
 nnoremap <F5> :UndotreeToggle<cr>
 " Tagbar
-nmap <F8> :TagbarToggle<CR>
+" nmap <F8> :TagbarToggle<CR>
 

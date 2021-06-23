@@ -61,18 +61,18 @@ _curl() {
   body=$3
   auth=$4
 
-  if [ $# -eq 4 ] #With auth
+  if [ $# -eq 5 ] #With auth
   then
-    echo "Request HTTP $1 with Auth"
-    curl -X $verb $url -d "$body" -H "Content-Type: application/json" -H "Authorization: $4"
+    echo "Request HTTP $1 with Auth $4 $5"
+    curl -X $verb $url -d "$body" -H "Content-Type: application/json" -H "Authorization: $4 $5"
   else
     echo "Request HTTP $1"
     curl -X $verb $url -d "$body" -H "Content-Type: application/json"
   fi
 }
 alias get='function _(){ curl $1; }; _'
-alias post='function _(){ _curl POST $1 $2 $3; }; _'
-alias put='function _(){ _curl PUT $1 $2 $3; }; _'
+alias post='function _(){ _curl POST $1 $2 $3 $4; }; _'
+alias put='function _(){ _curl PUT $1 $2 $3 $4; }; _'
 
 # == DEV  == 
 
