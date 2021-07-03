@@ -116,8 +116,8 @@ alias pg="psql"
 alias dbeaver="~/software/dbeaver/product/community/target/products/org.jkiss.dbeaver.core.product/linux/gtk/x86_64/dbeaver/dbeaver &"
 
 #firefox
-# alias firefox='function _(){ ~/software/firefox/firefox -new-tab=$1; }; _'
-alias firefox='~/Documents/dotfiles/firefox.sh 2>&1>/dev/null &'
+alias firefox='function _(){ ~/software/firefox/firefox -new-tab=$1; }; _'
+# alias firefox='~/Documents/dotfiles/firefox.sh 2>&1>/dev/null &'
 
 #postman 
 alias postman="~/software/Postman/Postman &"

@@ -15,8 +15,8 @@ function! SelectSymbol()
     return '# '
   endif
 
-  let vim_like = ["tex"]
-  if count(vim_like, &filetype)
+  let latex_like = ["tex"]
+  if count(latex_like, &filetype)
     return '% '
   endif
 

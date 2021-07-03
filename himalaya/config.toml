@@ -17,6 +17,24 @@ imap-login = "tigran.slama@laposte.net"
 imap-passwd-cmd = "pass show mail/laposte"
 
 smtp-host = "smtp.laposte.net"
-smtp-port = 465
+smtp-port = 587
 smtp-login = "tigran.slama@laposte.net"
+smtp-starttls = true
 smtp-passwd-cmd = "pass show mail/laposte"
+
+[ffvelo]
+downloads-dir = "/home/rolfie/Downloads/mails/ffvelo"
+
+email = "slama.jeunes2024@ffvelo.fr"
+
+
+imap-host = "imap-mail.outlook.com"
+imap-port = 993
+imap-login = "slama.jeunes2024@ffvelo.fr"
+imap-passwd-cmd = "pass show mail/ffvelo"
+
+smtp-host = "smtp-mail.outlook.com"
+smtp-port = 587
+smtp-login = "slama.jeunes2024@ffvelo.fr"
+smtp-passwd-cmd = "pass show mail/ffvelo"
+smtp-starttls = true

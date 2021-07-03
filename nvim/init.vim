@@ -24,7 +24,6 @@ let g:python3_host_prog = "/usr/local/bin/python3.8"
 call plug#begin('~/Documents/dotfiles/nvim/plugged')
 "Completer and formatter
 Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/lsp_extensions.nvim'
 Plug 'RishabhRD/popfix'
 Plug 'RishabhRD/nvim-lsputils'
 Plug 'hrsh7th/nvim-compe'
@@ -32,14 +31,14 @@ Plug 'rust-lang/rust.vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
-Plug 'nvim-treesitter/nvim-treesitter-refactor'
+" Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'nvim-treesitter/completion-treesitter'
 Plug 'mfussenegger/nvim-jdtls'
 Plug 'elixir-editors/vim-elixir'
 
 "Debugger
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'idanarye/vim-vebugger'
+" Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+" Plug 'idanarye/vim-vebugger'
 
 "Git
 Plug 'tpope/vim-fugitive'
@@ -63,10 +62,9 @@ Plug 'simrat39/symbols-outline.nvim'
 "colorscheme
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'sainnhe/gruvbox-material'
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
 Plug 'soywod/himalaya', {'rtp': 'vim'}
 
-Plug 'tjdevries/nlua.nvim'
 "Fun
 Plug 'ThePrimeagen/vim-be-good'
 
@@ -80,7 +78,7 @@ source ~/.config/nvim/treesitter.vim
 source ~/.config/nvim/lsp.vim
 " source ~/.config/nvim/telescope.vim
 source ~/.config/nvim/fzf.vim
-source ~/.config/nvim/vebugger.vim
+" source ~/.config/nvim/vebugger.vim
 " source ~/.config/nvim/lualine.vim
 source ~/.config/nvim/statusline.vim
 source ~/.config/nvim/personal_functions.vim

@@ -5,7 +5,7 @@ set statusline+=%=
 set statusline+=%{LspStatus()}
 set statusline+=%{StatusLineRight()} 
 
-let s:exclude_status_line = ["netrw", "tagbar"]
+let s:exclude_status_line = ["netrw", "tagbar", "Outline"]
 
 function! StatusLineLeft() 
   if count(s:exclude_status_line, &filetype)
