@@ -9,34 +9,34 @@
       working_directory: /media/rolfie/ssd2/projects/mini_games
 -
   name: stratego
-  working_directory: /media/rolfie/ssd2/projects/cours/stratego
+  working_directory: /media/rolfie/ssd2/projects/cours/m1/stratego
   enter_command: nvim
   window_name: vim
   windows:
     - name: rust
       session_name: stratego
-      working_directory: /media/rolfie/ssd2/projects/cours/stratego
+      working_directory: /media/rolfie/ssd2/projects/cours/m1/stratego
 -
   name: qlearning
-  working_directory: /media/rolfie/ssd2/projects/cours/qleaning
+  working_directory: /media/rolfie/ssd2/projects/cours/m1/qleaning
   enter_command: nvim
   window_name: vim
   windows:
     - name: python
       session_name: qlearning
-      working_directory: /media/rolfie/ssd2/projects/cours/qleaning
+      working_directory: /media/rolfie/ssd2/projects/cours/m1/qleaning
 -
   name: cinemator
-  working_directory: /media/rolfie/ssd2/projects/cours/cinemator
+  working_directory: /media/rolfie/ssd2/projects/cours/m1/cinemator
   enter_command: nvim
   window_name: vim
   windows:
     - name: client
       session_name: cinemator
-      working_directory: /media/rolfie/ssd2/projects/cours/cinemator/client
+      working_directory: /media/rolfie/ssd2/projects/cours/m1/cinemator/client
     - name: server
       session_name: cinemator
-      working_directory: /media/rolfie/ssd2/projects/cours/cinemator/server
+      working_directory: /media/rolfie/ssd2/projects/cours/m1/cinemator/server
 -
   name: dotfiles
   working_directory: /home/rolfie/Documents/dotfiles
@@ -48,13 +48,13 @@
       working_directory: /home/rolfie/.config
 -
   name: ray_tracing
-  working_directory: /media/rolfie/ssd2/projects/cours/init-search/search/LR
+  working_directory: /media/rolfie/ssd2/projects/cours/m1/init-search/search/LR
   enter_command: nvim
   window_name: vim
   windows:
     - name: cpp
       session_name: ray_tracing
-      working_directory: /media/rolfie/ssd2/projects/cours/init-search/search/LR/build
+      working_directory: /media/rolfie/ssd2/projects/cours/m1/init-search/search/LR/build
 -
   name: aoc
   working_directory: /media/rolfie/ssd2/projects/aoc
@@ -66,22 +66,22 @@
       working_directory: /media/rolfie/ssd2/projects/aoc
 -
   name: ulco_psql
-  working_directory: /media/rolfie/ssd2/projects/cours/psql
+  working_directory: /media/rolfie/ssd2/projects/cours/m1/psql
   enter_command: nvim
   window_name: vim
   windows:
     - name: ssh
       session_name: ulco_psql
-      working_directory: /media/rolfie/ssd2/projects/cours/psql
+      working_directory: /media/rolfie/ssd2/projects/cours/m1/psql
 -
   name: ulco_hpc
-  working_directory: /media/rolfie/ssd2/projects/cours/hpc
+  working_directory: /media/rolfie/ssd2/projects/cours/m1/hpc
   enter_command: nvim
   window_name: vim
   windows:
     - name: cpp
       session_name: ulco_hpc
-      working_directory: /media/rolfie/ssd2/projects/cours/hpc
+      working_directory: /media/rolfie/ssd2/projects/cours/m1/hpc
 -
   name: elixir_algo
   working_directory: /media/rolfie/ssd2/projects/Elixir
@@ -114,10 +114,10 @@
       working_directory: /media/rolfie/ssd2/projects/tmux-creator
 -
   name: ulco_compilation
-  working_directory: /media/rolfie/ssd2/projects/cours/compilation
+  working_directory: /media/rolfie/ssd2/projects/cours/m1/compilation
   enter_command: nvim
   window_name: vim
   windows:
     - name: bash
       session_name: ulco_compilation
-      working_directory: /media/rolfie/ssd2/projects/cours/compilation
+      working_directory: /media/rolfie/ssd2/projects/cours/m1/compilation

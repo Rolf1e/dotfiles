@@ -1,0 +1,10 @@
+set relativenumber
+set smartindent
+set showmode
+set number
+
+source ~/.config/nvim/init.vim
+
+:map <space>f <Action>(ReformatCode)
+:map <leader>q <Action>(CommentByLineComment)
+:map K <Action>(QuickJavaDoc)

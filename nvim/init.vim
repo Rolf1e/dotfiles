@@ -53,7 +53,8 @@ Plug 'nvim-lua/plenary.nvim'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-"
+
+Plug 'vim-test/vim-test'
 "Tree
 Plug 'mbbill/undotree'
 Plug 'preservim/tagbar'
