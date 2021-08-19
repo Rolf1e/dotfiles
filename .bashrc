@@ -166,3 +166,7 @@ eval "$(starship init bash)"
 
 
 
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/rolfie/.sdkman"
+[[ -s "/home/rolfie/.sdkman/bin/sdkman-init.sh" ]] && source "/home/rolfie/.sdkman/bin/sdkman-init.sh"

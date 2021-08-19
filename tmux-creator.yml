@@ -121,3 +121,16 @@
     - name: bash
       session_name: ulco_compilation
       working_directory: /media/rolfie/ssd2/projects/cours/m1/compilation
+-
+  name: ffvelo_api
+  working_directory: /media/rolfie/ssd2/projects/ffvelo/generation2024
+  enter_command: nvim
+  window_name: vim
+  windows:
+    - name: bash
+      session_name: ffvelo_api
+      working_directory: /media/rolfie/ssd2/projects/ffvelo/generation2024
+    - name: docker
+      session_name: ffvelo_api
+      working_directory: /media/rolfie/ssd2/projects/ffvelo/generation2024
+
