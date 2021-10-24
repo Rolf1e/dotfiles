@@ -74,6 +74,15 @@ Plug 'ThePrimeagen/vim-be-good'
 Plug 'Rolf1e/tmux-creator', {'rtp': 'vim'}
 call plug#end()
 
+"transparent
+let g:gruvbox_material_transparent_background = 1
+augroup GruvboxMaterialCustom
+  autocmd!
+  autocmd ColorScheme gruvbox-material highlight Normal guibg=None ctermbg=None
+augroup END
+
+colorscheme gruvbox-material
+
 source ~/.config/nvim/net_rw.vim
 source ~/.config/nvim/treesitter.vim
 source ~/.config/nvim/lsp.vim
@@ -86,14 +95,6 @@ source ~/.config/nvim/personal_functions.vim
 source ~/.config/nvim/himalaya.vim
 source ~/.config/nvim/symbols_outline.vim
 
-"transparent
-let g:gruvbox_material_transparent_background = 1
-augroup GruvboxMaterialCustom
-  autocmd!
-  autocmd ColorScheme gruvbox-material highlight Normal guibg=None ctermbg=None
-augroup END
-
-colorscheme gruvbox-material
 
 " === REMAPPING ===
 "
@@ -131,7 +132,7 @@ nnoremap <leader>m <cmd>tabNext<CR>
 nnoremap <silent> <space>e <cmd>Sex!<CR>
 
 " Undotree
-nnoremap <F5> :UndotreeToggle<cr>
+nnoremap <silent> <F5> :UndotreeToggle<cr>
 " Tagbar
 " nmap <F8> :TagbarToggle<CR>
 

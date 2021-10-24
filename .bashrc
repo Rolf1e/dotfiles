@@ -141,6 +141,11 @@ export WORKSPACE=$HOME/workspace
 export HASKELL_PATH="/opt/ghc/bin"
 export GHCUP="/home/rolfie/.ghcup/env"
 [ -f "/home/rolfie/.ghcup/env" ] && source "/home/rolfie/.ghcup/env" # ghcup-env
+#dart
+export DART_PATH="/home/rolfie/software/flutter/bin"
+
+#go
+export GO_PATH="/usr/local/go/bin"
 
 export TERMINAL="alacritty"
 
@@ -156,7 +161,7 @@ export EDITOR="nvim"
 export TEX_LIVE="/usr/local/texlive/2020/bin/x86_64-linux"
 
 #path
-export PATH=$PATH:"/home/rolfie/.local/bin":$TEX_LIVE:$RUST:$MAVEN_HOME:$HASKELL_PATH:$JAVA_HOME:$OWN_SOFTWARE:$GHCUP:$TERMINAL:$EDITOR
+export PATH=$PATH:"/home/rolfie/.local/bin":$TEX_LIVE:$RUST:$MAVEN_HOME:$HASKELL_PATH:$JAVA_HOME:$OWN_SOFTWARE:$GHCUP:$TERMINAL:$EDITOR:$DART_PATH:$GO_PATH
 
 source ~/.config/alacritty/alacritty.bash
 

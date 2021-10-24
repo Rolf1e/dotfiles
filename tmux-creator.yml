@@ -133,4 +133,14 @@
     - name: docker
       session_name: ffvelo_api
       working_directory: /media/rolfie/ssd2/projects/ffvelo/generation2024
+-
+  name: socials
+  working_directory: /media/rolfie/ssd2/projects/socials
+  enter_command: nvim
+  window_name: vim
+  windows:
+    - name: bash
+      session_name: socials
+      working_directory: /media/rolfie/ssd2/projects/socials
+
 

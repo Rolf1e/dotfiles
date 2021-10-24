@@ -37,3 +37,22 @@ if has('nvim-0.5')
   augroup end
 endif
 command! -buffer JdtCompile lua require('jdtls').compile()
+
+" colors
+hi LspReferenceRead cterm=bold ctermbg=blue 
+hi LspReferenceText cterm=bold ctermbg=blue 
+hi LspReferenceWrite cterm=bold ctermbg=blue 
+
+hi link LspDiagnosticsVirtualTextError Red
+hi link LspDiagnosticsVirtualTextWarning Yellow
+hi link LspDiagnosticsVirtualTextInformation Grey
+hi link LspDiagnosticsVirtualTextHint White
+
+hi link LspCodeLens Red
+hi link LspCodeLensSeparator Blue
+
+augroup lsp_document_highlight
+autocmd!
+autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+augroup END
