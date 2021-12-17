@@ -23,12 +23,12 @@ function! LspStatus()
   if count(s:exclude_status_line, &filetype)
     return ' '
   endif
-  return 'lsp[E:' . s:LspStatus('Error') . ' W:' . s:LspStatus('Warning') . '] '
+  return 'lsp[E:' . len(s:LspStatus('ERROR')) . ' W:' . len(s:LspStatus('WARN')) . '] '
 endfunction
 
 function! s:LspStatus(...)
   let s:level = get(a:, 1, 0)
-  return luaeval("vim.lsp.diagnostic.get_count(0, [[" . s:level . "]])")
+  return luaeval("vim.diagnostic.get(0, { severity = vim.diagnostic.severity." . s:level . " })")
 endfunction
 
 function! StatusLineRight() 

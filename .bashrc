@@ -142,7 +142,8 @@ export HASKELL_PATH="/opt/ghc/bin"
 export GHCUP="/home/rolfie/.ghcup/env"
 [ -f "/home/rolfie/.ghcup/env" ] && source "/home/rolfie/.ghcup/env" # ghcup-env
 #dart
-export DART_PATH="/home/rolfie/software/flutter/bin"
+export FLUTTER_DART_PATH="/home/rolfie/software/flutter/bin"
+export DART_PATH="/usr/bin/dart/bin"
 
 #go
 export GO_PATH="/usr/local/go/bin"
@@ -156,12 +157,14 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS='--height 96% --reverse --preview "cat {}"'
 
+export QT_PATH='/home/rolfie/software/mozilla-vpn-client/qt/qt/bin'
+
 export EDITOR="nvim"
 
 export TEX_LIVE="/usr/local/texlive/2020/bin/x86_64-linux"
 
 #path
-export PATH=$PATH:"/home/rolfie/.local/bin":$TEX_LIVE:$RUST:$MAVEN_HOME:$HASKELL_PATH:$JAVA_HOME:$OWN_SOFTWARE:$GHCUP:$TERMINAL:$EDITOR:$DART_PATH:$GO_PATH
+export PATH=$PATH:"/home/rolfie/.local/bin":$TEX_LIVE:$RUST:$MAVEN_HOME:$HASKELL_PATH:$JAVA_HOME:$OWN_SOFTWARE:$GHCUP:$TERMINAL:$EDITOR:$DART_PATH:$GO_PATH:$QT_PATH
 
 source ~/.config/alacritty/alacritty.bash
 

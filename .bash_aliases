@@ -83,6 +83,7 @@ alias ga="git add"
 alias gc="git commit -m"
 alias gp="git push"
 alias gco="git checkout"
+alias grm="git rm --cached -r "
 
 alias ug="ungit &"
 
