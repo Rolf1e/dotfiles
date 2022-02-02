@@ -126,7 +126,7 @@ fi
 export RUST="~/.cargo/bin"
 
 #java - maven
-export MAVEN_HOME="~/software/apache-maven-3.6.3/bin"
+export MAVEN_HOME="/home/rolfie/software/apache-maven-3.6.3/bin"
 export NVIM_SCRIPT="~/.config/nvim"
 #jdtfls
 
@@ -164,7 +164,7 @@ export EDITOR="nvim"
 export TEX_LIVE="/usr/local/texlive/2020/bin/x86_64-linux"
 
 #path
-export PATH=$PATH:"/home/rolfie/.local/bin":$TEX_LIVE:$RUST:$MAVEN_HOME:$HASKELL_PATH:$JAVA_HOME:$OWN_SOFTWARE:$GHCUP:$TERMINAL:$EDITOR:$DART_PATH:$GO_PATH:$QT_PATH
+export PATH=$PATH:"/home/rolfie/.local/bin":$TEX_LIVE:$RUST:$MAVEN_HOME:$HASKELL_PATH:$JAVA_HOME:$OWN_SOFTWARE:$GHCUP:$TERMINAL:$EDITOR:$DART_PATH:$FLUTTER_DART_PATH:$GO_PATH:$QT_PATH
 
 source ~/.config/alacritty/alacritty.bash
 
@@ -178,3 +178,7 @@ eval "$(starship init bash)"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/rolfie/.sdkman"
 [[ -s "/home/rolfie/.sdkman/bin/sdkman-init.sh" ]] && source "/home/rolfie/.sdkman/bin/sdkman-init.sh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
