@@ -44,10 +44,3 @@ just use `make` on this file, are it will install everything !
   **Before using lsp completion**, you might need some [requirements](https://github.com/neovim/nvim-lspconfig)
 
 
-
-
-## Docker  (WIP)
-
-Build docker image: `docker build -t dotfiles .`
-
-Connect to docker container `docker run -it --rm --name my_dotfiles dotfiles`
