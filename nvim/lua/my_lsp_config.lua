@@ -16,7 +16,7 @@ end
 
 -- Use a loop to conveniently both setup defined servers 
 -- and map buffer local keybindings when the language server attaches
-local servers = { "tsserver", "bashls", "hls", "jedi_language_server", "ccls", "cssls", "texlab", "phpactor"}
+local servers = { "tsserver", "bashls", "jedi_language_server"}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
@@ -39,16 +39,5 @@ nvim_lsp["rust_analyzer"].setup({
         }
     }
 })
-
-nvim_lsp["elixirls"].setup {
-    cmd = { "/home/rolfie/software/elixir-ls/language_server.sh"},
-}
-
-local pid = vim.fn.getpid()
-local omnisharp_bin = "/home/rolfie/software/omnisharp-linux-x64/run"
-nvim_lsp["omnisharp"].setup{
-  cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) };
-  on_attach = on_attach,
-}
 
 

@@ -33,8 +33,8 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 " Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'nvim-treesitter/completion-treesitter'
-Plug 'mfussenegger/nvim-jdtls'
-Plug 'elixir-editors/vim-elixir'
+" Plug 'mfussenegger/nvim-jdtls'
+" Plug 'elixir-editors/vim-elixir'
 
 "Debugger
 " Plug 'Shougo/vimproc.vim', {'do' : 'make'}
@@ -135,4 +135,7 @@ nnoremap <silent> <space>e <cmd>Sex!<CR>
 nnoremap <silent> <F5> :UndotreeToggle<cr>
 " Tagbar
 " nmap <F8> :TagbarToggle<CR>
+
+" Git
+nmap <F9> :Git<CR>
 

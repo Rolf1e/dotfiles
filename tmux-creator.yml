@@ -1,4 +1,34 @@
 -
+  name: dotfiles
+  working_directory: /home/rolfie/Documents/dotfiles
+  enter_command: nvim
+  window_name: vim
+  windows:
+    - name: ~/.config
+      session_name: dotfiles
+      working_directory: /home/rolfie/.config
+-
+  name: aoc
+  working_directory: /media/rolfie/ssd2/projects/aoc
+  enter_command: nvim
+  window_name: vim
+  windows:
+    - name: term
+      session_name: aoc
+      working_directory: /media/rolfie/ssd2/projects/aoc
+-
+  name: tmux_creator
+  working_directory: /media/rolfie/ssd2/projects/tmux-creator
+  enter_command: nvim
+  window_name: vim
+  windows:
+    - name: rust
+      session_name: tmux_creator
+      working_directory: /media/rolfie/ssd2/projects/tmux-creator
+    - name: log
+      session_name: tmux_creator
+      working_directory: /media/rolfie/ssd2/projects/tmux-creator
+-
   name: mini_games
   working_directory: /media/rolfie/ssd2/projects/mini_games
   enter_command: nvim
@@ -16,111 +46,6 @@
     - name: rust
       session_name: stratego
       working_directory: /media/rolfie/ssd2/projects/cours/m1/stratego
--
-  name: qlearning
-  working_directory: /media/rolfie/ssd2/projects/cours/m1/qleaning
-  enter_command: nvim
-  window_name: vim
-  windows:
-    - name: python
-      session_name: qlearning
-      working_directory: /media/rolfie/ssd2/projects/cours/m1/qleaning
--
-  name: cinemator
-  working_directory: /media/rolfie/ssd2/projects/cours/m1/cinemator
-  enter_command: nvim
-  window_name: vim
-  windows:
-    - name: client
-      session_name: cinemator
-      working_directory: /media/rolfie/ssd2/projects/cours/m1/cinemator/client
-    - name: server
-      session_name: cinemator
-      working_directory: /media/rolfie/ssd2/projects/cours/m1/cinemator/server
--
-  name: dotfiles
-  working_directory: /home/rolfie/Documents/dotfiles
-  enter_command: nvim
-  window_name: vim
-  windows:
-    - name: ~/.config
-      session_name: dotfiles
-      working_directory: /home/rolfie/.config
--
-  name: ray_tracing
-  working_directory: /media/rolfie/ssd2/projects/cours/m1/init-search/search/LR
-  enter_command: nvim
-  window_name: vim
-  windows:
-    - name: cpp
-      session_name: ray_tracing
-      working_directory: /media/rolfie/ssd2/projects/cours/m1/init-search/search/LR/build
--
-  name: aoc
-  working_directory: /media/rolfie/ssd2/projects/aoc
-  enter_command: nvim
-  window_name: vim
-  windows:
-    - name: term
-      session_name: aoc
-      working_directory: /media/rolfie/ssd2/projects/aoc
--
-  name: ulco_psql
-  working_directory: /media/rolfie/ssd2/projects/cours/m1/psql
-  enter_command: nvim
-  window_name: vim
-  windows:
-    - name: ssh
-      session_name: ulco_psql
-      working_directory: /media/rolfie/ssd2/projects/cours/m1/psql
--
-  name: ulco_hpc
-  working_directory: /media/rolfie/ssd2/projects/cours/m1/hpc
-  enter_command: nvim
-  window_name: vim
-  windows:
-    - name: cpp
-      session_name: ulco_hpc
-      working_directory: /media/rolfie/ssd2/projects/cours/m1/hpc
--
-  name: elixir_algo
-  working_directory: /media/rolfie/ssd2/projects/Elixir
-  enter_command: nvim
-  window_name: vim
-  windows:
-    - name: elixir
-      session_name: elixir_algo
-      working_directory: /media/rolfie/ssd2/projects/Elixir
--
-  name: rapport
-  working_directory: /media/rolfie/ssd2/projects/cours/rapport-alternance
-  enter_command: nvim
-  window_name: vim
-  windows:
-    - name: LaTeX
-      session_name: rapport
-      working_directory: /media/rolfie/ssd2/projects/cours/rapport-alternance
--
-  name: tmux_creator
-  working_directory: /media/rolfie/ssd2/projects/tmux-creator
-  enter_command: nvim
-  window_name: vim
-  windows:
-    - name: rust
-      session_name: tmux_creator
-      working_directory: /media/rolfie/ssd2/projects/tmux-creator
-    - name: log
-      session_name: tmux_creator
-      working_directory: /media/rolfie/ssd2/projects/tmux-creator
--
-  name: ulco_compilation
-  working_directory: /media/rolfie/ssd2/projects/cours/m1/compilation
-  enter_command: nvim
-  window_name: vim
-  windows:
-    - name: bash
-      session_name: ulco_compilation
-      working_directory: /media/rolfie/ssd2/projects/cours/m1/compilation
 -
   name: ffvelo_api
   working_directory: /media/rolfie/ssd2/projects/ffvelo/generation2024
@@ -142,5 +67,16 @@
     - name: bash
       session_name: socials
       working_directory: /media/rolfie/ssd2/projects/socials
-
+-
+  name: rts_rust_m2
+  working_directory: /media/rolfie/ssd2/projects/cours/m2/rust_graphql/rts-m2-rust
+  enter_command: nvim
+  window_name: vim
+  windows:
+    - name: bash
+      session_name: rts_m2_rust
+      working_directory: /media/rolfie/ssd2/cours/m2/rust_graphql/rts-m2-rust
+    - name: docker
+      session_name: rts_m2_rust
+      working_directory: /media/rolfie/ssd2/cours/m2/rust_graphql/rts-m2-rust
 

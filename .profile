@@ -28,3 +28,4 @@ fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
 feh --bg-fill "$HOME/Documents/dotfiles/images/AhsokaVaderBackWards.jpg"
+source "/home/rolfie/.rover/env"

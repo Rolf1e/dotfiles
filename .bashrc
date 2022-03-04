@@ -163,8 +163,11 @@ export EDITOR="nvim"
 
 export TEX_LIVE="/usr/local/texlive/2020/bin/x86_64-linux"
 
+export DOTNET_CLI_TELEMETRY_OUTPUT="1"
+export APOLLO_TELEMETRY_DISABLED=1
+
 #path
-export PATH=$PATH:"/home/rolfie/.local/bin":$TEX_LIVE:$RUST:$MAVEN_HOME:$HASKELL_PATH:$JAVA_HOME:$OWN_SOFTWARE:$GHCUP:$TERMINAL:$EDITOR:$DART_PATH:$FLUTTER_DART_PATH:$GO_PATH:$QT_PATH
+export PATH=$PATH:"/home/rolfie/.local/bin":$TEX_LIVE:$RUST:$MAVEN_HOME:$HASKELL_PATH:$JAVA_HOME:$OWN_SOFTWARE:$GHCUP:$TERMINAL:$EDITOR:$DART_PATH:$FLUTTER_DART_PATH:$GO_PATH:$QT_PATH:$DOTNET_CLI_TELEMETRY_OUTPUT$APOLLO_TELEMETRY_DISABLED
 
 source ~/.config/alacritty/alacritty.bash
 
@@ -182,3 +185,4 @@ export SDKMAN_DIR="/home/rolfie/.sdkman"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source "/home/rolfie/.rover/env"

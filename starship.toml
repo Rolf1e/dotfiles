@@ -17,3 +17,11 @@ disabled = false
 format = '[\[$time\]]($style) '
 time_format = "%T"
 style = "bold blue"
+
+[docker_context]
+format = "via [🐋 $context](blue bold)"
+
+[sudo]
+style = "bold green"
+symbol = "💻"
+disabled = false
