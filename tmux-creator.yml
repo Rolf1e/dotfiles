@@ -4,9 +4,18 @@
   enter_command: nvim
   window_name: vim
   windows:
-    - name: ~/.config
+    - name: config
       session_name: dotfiles
-      working_directory: /home/rolfie/.config
+      working_directory: /home/rolfie/\.config
+-
+  name: cv
+  working_directory: /media/rolfie/ssd2/docs/cv
+  enter_command: nvim
+  window_name: vim
+  windows:
+    - name: bash
+      session_name: cv
+      working_directory: /media/rolfie/ssd2/docs/cv
 -
   name: aoc
   working_directory: /media/rolfie/ssd2/projects/aoc

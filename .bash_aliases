@@ -18,6 +18,9 @@ alias tz='function _(){ tar -czvf $1.tar.gz $1; }; _'
 alias tx="tar -xzvf"
 alias txc='function _(){ tar -xzvf $1 -C $2; }; _'
 
+#network
+alias netstat_tcp='netstat -lntp'
+
 #keyboard
 alias us="setxkbmap us"
 alias fr="setxkbmap fr"
@@ -51,6 +54,7 @@ alias background='function _(){ feh --bg-scale $1; }; _'
 
 #docker
 alias docker_stopall='docker stop $(docker ps -a -q) && docker rm -fv $(docker ps -aq)'
+alias docker_ip_find="docker inspect -f \ '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
 
 #tmux
 alias tc='function _(){ tmux attach-session -t $1; }; _'
@@ -89,11 +93,11 @@ alias grm="git rm --cached -r "
 alias ug="ungit &"
 
 #rust
-alias cr="cargo run"
+alias cr="clear; cargo run"
 alias crb="RUST_BACKTRACE=1 cargo run"
-alias cb="cargo build"
-alias cc="cargo clippy"
-alias ct="cargo test"
+alias cb="clear; cargo build"
+alias cc="clear; cargo clippy"
+alias ct="clear; cargo test"
 alias ctb="RUST_BACKTRACE=1 cargo test -- --nocapture"
 alias cf="cargo fmt"
 
