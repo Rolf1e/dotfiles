@@ -64,7 +64,7 @@ Plug 'simrat39/symbols-outline.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'sainnhe/gruvbox-material'
 " Plug 'morhetz/gruvbox'
-Plug 'soywod/himalaya', {'rtp': 'vim'}
+" Plug 'soywod/himalaya', {'rtp': 'vim'}
 
 "Fun
 Plug 'ThePrimeagen/vim-be-good'
@@ -92,7 +92,7 @@ source ~/.config/nvim/fzf.vim
 " source ~/.config/nvim/lualine.vim
 source ~/.config/nvim/statusline.vim
 source ~/.config/nvim/personal_functions.vim
-source ~/.config/nvim/himalaya.vim
+" source ~/.config/nvim/himalaya.vim
 source ~/.config/nvim/symbols_outline.vim
 
 

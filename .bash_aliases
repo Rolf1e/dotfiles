@@ -5,6 +5,8 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 
+alias big_files="du -ahx . | sort -rh | head -5"
+
 alias :q="exit"
 alias c="clear"
 
@@ -17,6 +19,10 @@ alias doc="cd ~/Documents"
 alias tz='function _(){ tar -czvf $1.tar.gz $1; }; _'
 alias tx="tar -xzvf"
 alias txc='function _(){ tar -xzvf $1 -C $2; }; _'
+
+#screen
+alias pc_tower_mod="xrandr --output DP-1 --auto && xrandr --output DP-4 --off"
+alias pc_lap_top_mod="xrandr --output DP-4 --auto && xrandr --output DP-1 --off"
 
 #network
 alias netstat_tcp='netstat -lntp'
@@ -48,7 +54,7 @@ alias vim="nvim"
 alias fzfi='function _(){ erg $1; };_ | fzf'
 alias vifi='vim $(fzfi)'
 
-alias dotfiles="cd ~/Documents/dotfiles"
+alias dotfiles="tmcr -a dotfiles; tc dotfiles"
 
 alias background='function _(){ feh --bg-scale $1; }; _'
 
