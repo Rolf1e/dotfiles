@@ -30,8 +30,8 @@ Plug 'hrsh7th/nvim-compe'
 Plug 'rust-lang/rust.vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/playground'
-" Plug 'nvim-treesitter/nvim-treesitter-refactor'
+" Plug 'nvim-treesitter/playground'
+Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'nvim-treesitter/completion-treesitter'
 " Plug 'mfussenegger/nvim-jdtls'
 " Plug 'elixir-editors/vim-elixir'
@@ -62,8 +62,6 @@ Plug 'simrat39/symbols-outline.nvim'
 
 "colorscheme
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'sainnhe/gruvbox-material'
-" Plug 'morhetz/gruvbox'
 " Plug 'soywod/himalaya', {'rtp': 'vim'}
 
 "Fun
@@ -74,14 +72,7 @@ Plug 'ThePrimeagen/vim-be-good'
 Plug 'Rolf1e/tmux-creator', {'rtp': 'vim'}
 call plug#end()
 
-"transparent
-let g:gruvbox_material_transparent_background = 1
-augroup GruvboxMaterialCustom
-  autocmd!
-  autocmd ColorScheme gruvbox-material highlight Normal guibg=None ctermbg=None
-augroup END
-
-colorscheme gruvbox-material
+colorscheme rolfie
 
 source ~/.config/nvim/net_rw.vim
 source ~/.config/nvim/treesitter.vim
@@ -138,4 +129,3 @@ nnoremap <silent> <F5> :UndotreeToggle<cr>
 
 " Git
 nmap <F9> :Git<CR>
-

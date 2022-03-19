@@ -9,6 +9,13 @@ augroup END
 nnoremap <leader>q <C-c><cmd>call CommentLine()<CR>
 vnoremap <leader>q <C-c><cmd>call CommentLine()<CR>
 
+function! SyntaxGroup()                                                            
+    let l:s = synID(line('.'), col('.'), 1)                                       
+    echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
+endfun
+
+nnoremap <F12> <cmd>call SyntaxGroup()<CR> 
+
 function! SelectSymbol()
   let python_like = ["python", "bash", "sh", "yaml", "dockerfile", "toml", "elixir"]
   if count(python_like, &filetype)
