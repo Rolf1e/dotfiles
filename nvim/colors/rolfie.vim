@@ -53,6 +53,9 @@ let g:sections = {
   \ 'TabLineFill': ['light_grey', 'transparent'],
   \ 'NonText': ['NONE', 'NONE'],
   \ 'Directory': ['green', 'NONE'],
+  \ 'DiffAdd': ['green', 'NONE'],
+  \ 'DiffChange': ['green', 'NONE'],
+  \ 'DiffDelete': ['bold_red', 'NONE'],
 \}
 
 function! ApplyHighlights(sections, palette)
