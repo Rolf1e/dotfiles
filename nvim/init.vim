@@ -35,6 +35,7 @@ Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'nvim-treesitter/completion-treesitter'
 " Plug 'mfussenegger/nvim-jdtls'
 " Plug 'elixir-editors/vim-elixir'
+Plug 'vim-test/vim-test'
 
 "Debugger
 " Plug 'Shougo/vimproc.vim', {'do' : 'make'}
@@ -121,6 +122,7 @@ nnoremap <leader>m <cmd>tabNext<CR>
 
 
 nnoremap <silent> <space>e <cmd>Sex!<CR>
+nnoremap <silent> <space>E <cmd>Ex<CR>
 
 " Undotree
 nnoremap <silent> <F5> :UndotreeToggle<cr>

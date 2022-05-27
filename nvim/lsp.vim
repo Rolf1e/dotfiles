@@ -30,13 +30,13 @@ lua require("my_compe_config")
 lua require("my_lsp_config")
 
 " jdtls
-if has('nvim-0.5')
-  augroup lsp
-    au!
-    au FileType java lua require('jdtls').start_or_attach({cmd = {'/home/rolfie/.config/nvim/java-jdtls.sh'}, root_dir = require('jdtls.setup').find_root({'gradle.build', 'pom.xml'})})
-  augroup end
-endif
-command! -buffer JdtCompile lua require('jdtls').compile()
+" if has('nvim-0.5')
+  " augroup lsp
+    " au!
+    " au FileType java lua require('jdtls').start_or_attach({cmd = {'/home/rolfie/.config/nvim/java-jdtls.sh'}, root_dir = require('jdtls.setup').find_root({'gradle.build', 'pom.xml'})})
+  " augroup end
+" endif
+" command! -buffer JdtCompile lua require('jdtls').compile()
 
 " colors
 hi LspReferenceRead cterm=bold ctermbg=blue 

@@ -1,4 +1,8 @@
 
+if [ -f ~/.bash_aliases_ffvelo ]; then
+    . ~/.bash_aliases_ffvelo
+fi
+
 # === SYSTEM ===
 #system
 alias ll='ls -l'
@@ -9,6 +13,8 @@ alias big_files="du -ahx . | sort -rh | head -5"
 
 alias :q="exit"
 alias c="clear"
+alias cd..="cd.."
+alias ..="cd .."
 
 alias mdev="sudo ~/software/.sh/config-ssd.sh"
 alias cours='function _(){ cd /media/rolfie/ssd2/projects/cours/$1; }; _'

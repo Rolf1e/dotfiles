@@ -68,6 +68,15 @@
       session_name: ffvelo_api
       working_directory: /media/rolfie/ssd2/projects/ffvelo/generation2024
 -
+  name: rust_lessons
+  working_directory: /media/rolfie/ssd2/projects/cours/rust
+  enter_command: nvim
+  window_name: vim
+  windows:
+    - name: bash
+      session_name: rust_lessons
+      working_directory: /media/rolfie/ssd2/projects/cours/rust
+-
   name: socials
   working_directory: /media/rolfie/ssd2/projects/socials
   enter_command: nvim
@@ -77,15 +86,15 @@
       session_name: socials
       working_directory: /media/rolfie/ssd2/projects/socials
 -
-  name: rts_rust_m2
-  working_directory: /media/rolfie/ssd2/projects/cours/m2/rust_graphql/rts-m2-rust
+  name: front_crypto
+  working_directory: /media/rolfie/ssd2/projects/cours/m2/front/crypto-dashboard
   enter_command: nvim
   window_name: vim
   windows:
-    - name: bash
-      session_name: rts_m2_rust
-      working_directory: /media/rolfie/ssd2/cours/m2/rust_graphql/rts-m2-rust
-    - name: docker
-      session_name: rts_m2_rust
-      working_directory: /media/rolfie/ssd2/cours/m2/rust_graphql/rts-m2-rust
+    - name: front
+      session_name: front_crypto
+      working_directory: /media/rolfie/ssd2/cours/m2/front/crypto-dashboard/front
+    - name: back
+      session_name: front_crypto
+      working_directory: /media/rolfie/ssd2/cours/m2/front/crypto-dashboard/server
 

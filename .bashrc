@@ -131,7 +131,7 @@ export NVIM_SCRIPT="~/.config/nvim"
 #jdtfls
 
 export JAR="$HOME/software/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/plugins/org.eclipse.equinox.launcher_*.jar"
-export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
+export JAVA_HOME="$HOME/software/jdk-18.0.1.1"
 export GRADLE_HOME=$HOME/gradle 
 # $JAVA_HOME/bin/java -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultStartLevel=4 -Declipse.product=org.eclipse.jdt.ls.core.product -Dlog.protocol=true -Dlog.level=ALL -Xms1g -Xmx2G -jar $(echo "$JAR") -configuration "$HOME/software/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/config_linux" -data "${1:-$HOME/workspace}" --add-modules=ALL-SYSTEM --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED
 export JDTLS_CONFIG="$HOME/software/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/config_linux"
