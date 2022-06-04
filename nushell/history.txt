@@ -1,0 +1,272 @@
+ls
+dev
+vim
+nvim
+alias
+ls
+cours
+cat /etc/shells
+env | each { |it| echo $"let-env ($it.name) = '($it.raw)'" } | str collect (char nl)
+cat /etc/shells
+env | each { |it| echo $"let-env ($it.name) = '($it.raw)'" } | str collect (char nl)
+tmux
+env | each { |it| echo $"let-env ($it.name) = '($it.raw)'" } | str collect (char nl)
+cat /etc/shells
+chsh ~/.cargo/bin/nu
+ls
+clear
+ct
+cleart
+clear
+cargo test
+vim
+clear
+help cargo
+man cargo
+clear
+cargo --help 
+cargo test --help
+ct
+cargo test
+cargo test should_auto_complete_p
+ct
+cargo test
+clear
+cargo test
+clear
+clear; cargo test
+ls
+rm -rf ./:w
+ls
+ct
+rm -rf ./:w
+clear; cargo test
+cb
+clear; cargo test
+cb
+clear; cargo build
+clear; cargo test
+cb
+clear; cargo build
+clear; cargo test
+clear; cargo build
+clear; cargo test
+ct
+clear; cargo test
+code .
+clear; cargo test
+ls
+rm ./2
+ls
+clear; cargo test
+cargo build
+clear; cargo test
+cargo clippy 
+clear; cargo test
+cargo clippy 
+clear; cargo test
+cargo clippy 
+clear
+wc -l /usr/share/dict
+wc -l /usr/share/dict/american-english
+ll /usr/share/dict/american-english
+ls -l /usr/share/dict/american-english
+less /usr/share/dict/american-english
+clear
+cargo build
+cargo run
+cb
+cargo build
+cargo run /usr/share/dict/american-english 10
+cargo run /usr/share/dict/american-english 15
+code .
+cargo run /usr/share/dict/american-english 15
+cargo run /usr/share/dict/american-english 15 bon
+time cargo run /usr/share/dict/american-english 15 bon
+cargo run ./inputs/base.txt 4 prog
+cargo run ./inputs/base.txt 4 pro
+cargo run ./inputs/base.txt 4 a
+cargo run ./inputs/base.txt 4 b
+cargo run ./inputs/base.txt 4 re
+rm ./inputs/base_bugged.txt
+clear
+tree
+cargo run ./inputs/base.txt 4 re
+cargo run ./inputs/base.txt 4 prog
+cargo run ./inputs/base.txt 4 pro
+cargo run /usr/share/dict/american-english 15 wel
+cargo test
+l
+ls
+cargo clean
+ls
+tree
+cargo run ./inputs/base.txt 4 pro
+cargo clean
+ls
+cd ..
+gzip ./auto-complete
+ls
+man gzip
+nautilus .
+ls
+rm ./tigran_slama_auto-complete.zip
+cd ..
+ls
+cd ./content-square/
+ls
+clear
+less /usr/share/dict/american-english 
+cargo run /usr/share/dict/american-english 15 wel 
+ls
+cd ./auto-complete/
+cargo run /usr/share/dict/american-english 15 wel 
+2ls
+ls
+env | each { |it| echo $"let-env ($it.name) = '($it.raw)'" } | str collect (char nl)
+cat /etc/shells
+chsh ~/.cargo/bin/nu
+chsh ~/.cargo/bin/nu rolfie
+chsh /home/rolfie/.cargo/bin/nu rolfie
+chsh
+cd ~/.cargo/bin/nu
+cd ~/.cargo/bin
+ls
+bash
+ls
+chsh
+chsh -s ~/.cargo/bin/nu 
+ls
+tmux
+tc dotfiles
+ls
+bash
+cd ./software/
+ls
+cd ~/Documents/
+ls
+cd ./dotfiles/
+ls
+vim ./alacritty/
+nvim ./alacritty/alacritty.yml
+ls
+nvim ./.bash_aliases
+cls
+ls
+vim ./README.md
+nvim ./README.md
+ls
+dotfiles
+cd ./Documents/dotfiles/
+ls
+nvim ./nushell/
+ls
+nvim ./nushell/
+ls
+nvim ./Documents/dotfiles/nushell/config.nu
+ls
+mkdir ~/.cache/starship
+nvim ./Documents/dotfiles/nushell/config.nu
+mkdir ~/.cache/starship
+nvim ./Documents/dotfiles/nushell/config.nu
+starship init nu | save ~/.cache/starship/init.nu
+bash
+starship init nu | save ~/.cache/starship/init.nu
+$nu.env-path
+nvim ./Documents/dotfiles/nushell/env.nu
+nvim ./README.md
+nu
+nu --version
+cat $SHELL
+l
+ls
+pwd
+clear
+nvim ~/Documents/dotfiles/nushell/config.nu
+jeekjek
+ls
+nvim ~/Documents/dotfiles/nushell/config.nu
+ls
+nvim ~/Documents/dotfiles/nushell/config.nu
+kejwkje
+ls
+:q
+lssl
+ls
+:q
+eixt
+nvim ~/Documents/dotfiles/nushell/config.nu
+exiot
+ls
+:q
+nvim ~/Documents/dotfiles/nushell/config.nu
+^:q
+ls
+^ls
+clear
+:q
+nvim ~/Documents/dotfiles/nushell/config.nu
+cd  ~/Documents/dotfiles
+ls
+vim
+nvim
+^wally
+:q
+cd..
+cd 
+..
+wally
+tree
+t3
+big_files
+/bash/bin
+bash
+rg
+grep
+vi
+:q
+vim
+:q
+vi
+vim
+tmcr
+dotfiles
+tmcr -l
+tc dotfiles
+:q
+;q
+dev
+:q
+dev 
+dev ""
+cours m2
+dev
+mdev
+dev
+ls
+dev
+ls
+cours m2
+dev 
+ls
+cd ./aoc/
+cb
+:q
+t1
+dev
+t1
+t2
+t3
+ls
+cours 
+cours
+:q
+cours 
+ls
+cd ./content-square/
+ls
+cd ./auto-complete/
+ls
+pdf './Test DE Auto-complete.pdf'
+:w
+bat

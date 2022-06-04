@@ -47,16 +47,16 @@ vim-plug:
 	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 neovim-pull:
-	cd ~/software/neovim && git pull
+	cd /media/rolfie/ssd2/softwares/neovim && git pull
 
 neovim-build:
-	make -C ~/software/neovim CMAKE_BUILD_TYPE=RelWithDebInfo
-	sudo make -C ~/software/neovim install
+	make -C /media/rolfie/ssd2/softwares/neovim CMAKE_BUILD_TYPE=RelWithDebInfo
+	sudo make -C /media/rolfie/ssd2/softwares/neovim install
 
 neovim-update: neovim-pull neovim-build
 
 neovim-clone:
-	cd ~/software && git clone https://github.com/neovim/neovim 
+	cd /media/rolfie/ssd2/softwares && git clone https://github.com/neovim/neovim 
 
 neovim-symlinks:
 	ln -s ~/Documents/dotfiles/nvim ~/.config/nvim

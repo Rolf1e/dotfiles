@@ -12,7 +12,7 @@ alias l='ls -CF'
 alias big_files="du -ahx . | sort -rh | head -5"
 
 alias :q="exit"
-alias c="clear"
+
 alias cd..="cd.."
 alias ..="cd .."
 
@@ -86,9 +86,9 @@ _curl() {
     curl -X $verb $url -d "$body" -H "Content-Type: application/json"
   fi
 }
-alias get='function _(){ curl $1; }; _'
-alias post='function _(){ _curl POST $1 $2 $3 $4; }; _'
-alias put='function _(){ _curl PUT $1 $2 $3 $4; }; _'
+alias http_get='function _(){ curl $1; }; _'
+alias http_post='function _(){ _curl POST $1 $2 $3 $4; }; _'
+alias http_put='function _(){ _curl PUT $1 $2 $3 $4; }; _'
 
 # == DEV  == 
 
@@ -113,9 +113,6 @@ alias ct="clear; cargo test"
 alias ctb="RUST_BACKTRACE=1 cargo test -- --nocapture"
 alias cf="cargo fmt"
 
-#typeScript
-alias tsw="tsc -w"
-
 #java - maven
 alias jm="mvn clean install"
 alias nmvn='function _(){ mvn -B archetype:generate -DgroupId=com.rolfie.$1 -DartifactId=$1 -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4; }; _'
@@ -127,30 +124,4 @@ alias mysqlc="mysql -u root -p"
 
 #psql
 alias pg="psql"
-
-# ==  Software ==
-
-#dbeaver
-alias dbeaver="~/software/dbeaver/product/community/target/products/org.jkiss.dbeaver.core.product/linux/gtk/x86_64/dbeaver/dbeaver &"
-
-#firefox
-alias firefox='function _(){ ~/software/firefox/firefox -new-tab=$1; }; _'
-# alias firefox='~/Documents/dotfiles/firefox.sh 2>&1>/dev/null &'
-
-#postman 
-alias postman="~/software/Postman/Postman &"
-
-#minizinc
-alias mzide="~/software/MiniZincIDE-2.5.1-bundle-linux-x86_64/MiniZincIDE.sh &"
-
-#jetbrains 
-alias idea="~/software/idea-IU-202.6397.94/bin/idea.sh &"
-
-alias vlm="pavucontrol &"
-
-# = game =
-
-#ftb
-alias ftb="/opt/FTBA/FTBApp &"
-
 alias pdf='function _() { lesspipe $1 | bat; }; _'
