@@ -1,7 +1,9 @@
 # Nushell Environment Config File
-let-env STARSHIP_SHELL = "nu"
+# let-env STARSHIP_SHELL = "nu"
 def create_left_prompt [] {
-    starship prompt --cmd-duration $env.CMD_DURATION_MS $'--status=($env.LAST_EXIT_CODE)'
+    let path_segment = ($env.PWD)
+
+    $path_segment
 }
 
 def create_right_prompt [] {
@@ -55,5 +57,3 @@ let-env NU_PLUGIN_DIRS = [
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # let-env PATH = ($env.PATH | prepend '/some/path')
 #
-mkdir ~/.cache/starship
-starship init nu | save ~/.cache/starship/init.nu

@@ -21,9 +21,6 @@ alias rg = grep
 alias vi = nvim
 alias vim = nvim
 
-# tmux
-alias tc = tmux attach-session -t
-
 alias dotfiles = (tmcr -a dotfiles; tc dotfiles)
 
 # docker

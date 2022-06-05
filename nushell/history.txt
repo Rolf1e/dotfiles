@@ -1,272 +1,478 @@
+rm ./history.txt
+cd ..
+ls
+vim ./.gitignore
+ls
+cd ./nushell/ls
+cd ./nushell
+ls
+bat ./history.txt
+ls
+gs
+clear
+touch tmux.nu
+vim ./config.nu
+mv ../tmux-creator.yml .
+ls
+mv ./tmux-creator.yml tmux-session-config.yml
+clear
+ls
+tmcr -l
+tmux list-session
+clear
+:q
+hello
+hello tigran
+tl
+tmux
+tc 0
+tl
+tmux
+tk 0
+tl
+cleart
+tclear
+clear
+tl
+tmux
+tc 0
+tmux
+tc 0
+tmux
+tk 0
+tl
+cd ~/Documents/dotfiles/
+ls
+cd ./nushell/
+ls
+op
+clear
+open ./tmux-session-config.yml
+:q
+tl
+open_tmux_session
+open_tmux_session a
+tmo
+open ~/.config/nushell/tmux-session-config.yml
+tmo 
+:q
+tmo 
+tmo
+:q
+vim ./tmux.nu
+ls
+cd ..
+vim
+vim 
+vim
+tmo
+open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles'
+help where
+:q
+tmo dotfiles
+open ~/.config/nushell/tmux-session-config.yml 
+:q
+tmo dotfiles
+j:q
+tmo dotfiles
+open ~/.config/nushell/tmux-session-config.yml | select name
+"dotfiles" in (open ~/.config/nushell/tmux-session-config.yml | select name)
+dotfiles in (open ~/.config/nushell/tmux-session-config.yml | select name)
+tmo dotfiles
+:q
+tmo dotfiles
+open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles'
+open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles' | empty ?
+open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles' | empty?
+tmo dotfiles
+tmo dotfile
+tl
+clear
+tmo dotfiles
+man tmux
+open ~/.config/nushell/tmux-session-config.yml
+open ~/.config/nushell/tmux-session-config.yml | select windows
+open ~/.config/nushell/tmux-session-config.yml | select windows | get 0
+open ~/.config/nushell/tmux-session-config.yml | select windows 
+open ~/.config/nushell/tmux-session-config.yml | select windows | select name
+open ~/.config/nushell/tmux-session-config.yml | select windows 
+open ~/.config/nushell/tmux-session-config.yml | select windows | get 0 | select name
+open ~/.config/nushell/tmux-session-config.yml | select windows | get 0 
+cd ~/Documents/dotfiles/
+ls
+vim ./nushell/2
+rm ./nushell/2
+vim 
+nu
+vim 
+pwd
+cd ~/Documents/dotfiles/
+ls
+vim 
+tl
+ps 
+vi
+open ~/.config/nushell/tmux-session-config.yml | select windows | get 0:q
+vim 
+clear
+open ~/.config/nushell/tmux-session-config.yml 
+open ~/.config/nushell/tmux-session-config.yml | select windows | get 0
+open ~/.config/nushell/tmux-session-config.yml | select windows | get 0 | select windows
+open ~/.config/nushell/tmux-session-config.yml | select windows | get 0 | get 1
+open ~/.config/nushell/tmux-session-config.yml | select windows | get 0 
+open ~/.config/nushell/tmux-session-config.yml | select windows | get 0 | select session_name
+open ~/.config/nushell/tmux-session-config.yml | select windows | get 0 | select windows
+open ~/.config/nushell/tmux-session-config.yml | select windows | get 0 | select windows | get name
+open ~/.config/nushell/tmux-session-config.yml | select windows | get 0 | select windows 
+open ~/.config/nushell/tmux-session-config.yml | select windows | get 0 | select windows
+open ~/.config/nushell/tmux-session-config.yml | select windows | get 0 | select windows | get
+open ~/.config/nushell/tmux-session-config.yml | select windows | get 0 | select windows | get name
+open ~/.config/nushell/tmux-session-config.yml | select windows | get 0 | get windows
+open ~/.config/nushell/tmux-session-config.yml | select windows | get windows
+open ~/.config/nushell/tmux-session-config.yml | select windows | get 0 | get windows
+ls
+cd ~/Documents/dotfiles/
+ls
+vim
+nvim 
+:q
+tl
+nvim
+:q
+ls
+vim ~/Documents/dotfiles/
+rm ~/.local/state/nvim/swap/%home%rolfie%Documents%dotfiles%nushell%tmux.nu.swp
+:q
+history
+open ~/.config/nushell/tmux-session-config.yml | select windows | get 0 | get windows
+open ~/.config/nushell/tmux-session-config.yml | select windows  | get windows
+open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles' 
+open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles' | get windows
+open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles' | get windows | get windows
+open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles' | get windows | get name
+open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles' | get windows | get 0 
+open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles' | get windows | get 0 | get name
+:q
+open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles' | get windows | get 0 | get name
+open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles' | get windows | get 0 
+open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles' | get windows | get 0 | get working_directory
+open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles' | get windows | get 0 | get working_directory | get 0
+nvim ~/Documents/dotfiles/
+pwd
+dev
+:q
+tmo dotfiles
+nvim ~/Documents/dotfiles/
 ls
 dev
-vim
-nvim
-alias
 ls
 cours
-cat /etc/shells
-env | each { |it| echo $"let-env ($it.name) = '($it.raw)'" } | str collect (char nl)
-cat /etc/shells
-env | each { |it| echo $"let-env ($it.name) = '($it.raw)'" } | str collect (char nl)
-tmux
-env | each { |it| echo $"let-env ($it.name) = '($it.raw)'" } | str collect (char nl)
-cat /etc/shells
-chsh ~/.cargo/bin/nu
-ls
-clear
-ct
-cleart
-clear
-cargo test
-vim
-clear
-help cargo
-man cargo
-clear
-cargo --help 
-cargo test --help
-ct
-cargo test
-cargo test should_auto_complete_p
-ct
-cargo test
-clear
-cargo test
-clear
-clear; cargo test
-ls
-rm -rf ./:w
-ls
-ct
-rm -rf ./:w
-clear; cargo test
-cb
-clear; cargo test
-cb
-clear; cargo build
-clear; cargo test
-cb
-clear; cargo build
-clear; cargo test
-clear; cargo build
-clear; cargo test
-ct
-clear; cargo test
-code .
-clear; cargo test
-ls
-rm ./2
-ls
-clear; cargo test
-cargo build
-clear; cargo test
-cargo clippy 
-clear; cargo test
-cargo clippy 
-clear; cargo test
-cargo clippy 
-clear
-wc -l /usr/share/dict
-wc -l /usr/share/dict/american-english
-ll /usr/share/dict/american-english
-ls -l /usr/share/dict/american-english
-less /usr/share/dict/american-english
-clear
-cargo build
-cargo run
-cb
-cargo build
-cargo run /usr/share/dict/american-english 10
-cargo run /usr/share/dict/american-english 15
-code .
-cargo run /usr/share/dict/american-english 15
-cargo run /usr/share/dict/american-english 15 bon
-time cargo run /usr/share/dict/american-english 15 bon
-cargo run ./inputs/base.txt 4 prog
-cargo run ./inputs/base.txt 4 pro
-cargo run ./inputs/base.txt 4 a
-cargo run ./inputs/base.txt 4 b
-cargo run ./inputs/base.txt 4 re
-rm ./inputs/base_bugged.txt
-clear
-tree
-cargo run ./inputs/base.txt 4 re
-cargo run ./inputs/base.txt 4 prog
-cargo run ./inputs/base.txt 4 pro
-cargo run /usr/share/dict/american-english 15 wel
-cargo test
-l
-ls
-cargo clean
-ls
-tree
-cargo run ./inputs/base.txt 4 pro
-cargo clean
-ls
-cd ..
-gzip ./auto-complete
-ls
-man gzip
-nautilus .
-ls
-rm ./tigran_slama_auto-complete.zip
-cd ..
 ls
 cd ./content-square/
 ls
+cd ./auto-complete/
+ls
+gs
+ga ./README.md ./inputs/ ./src/
+gs
+gc "First working version" 
 clear
-less /usr/share/dict/american-english 
-cargo run /usr/share/dict/american-english 15 wel 
+vim
+cb
+tmux
+ls
+cb
+vim
+cb
+ct
+cb
+ct
+cb
+ct
+clear
+ct
+clear
+ct
+clear
+ct
+clear
+ct
+clear
+ct
+vim 
+git reset --hard
+vim
+ct
+vim
+ct
+cargo run /usr/share/dict/american-english 15 wel
+time cargo run /usr/share/dict/american-english 15 wel
+cargo run /usr/share/dict/american-english 15 wel
+help
+help timedatectl
+clear
+bash
+vim
+cargo run /usr/share/dict/american-english 15 wel
+vim
+ct
+vim
+ct
+size
+man size
+size cargo run /usr/share/dict/american-english 15 wel
+help size
+bash
+ cargo run /usr/share/dict/american-english 15 wel
+top
+bash
+vim
+ct
+vim
+ct
+clear
+cargo build --release
+help timeout
+clear
+ls
+cd ./target/
+ls
+mscn
+bash
+bash
+cours 
+cd ./content-square/
 ls
 cd ./auto-complete/
-cargo run /usr/share/dict/american-english 15 wel 
-2ls
 ls
-env | each { |it| echo $"let-env ($it.name) = '($it.raw)'" } | str collect (char nl)
-cat /etc/shells
-chsh ~/.cargo/bin/nu
-chsh ~/.cargo/bin/nu rolfie
-chsh /home/rolfie/.cargo/bin/nu rolfie
-chsh
-cd ~/.cargo/bin/nu
-cd ~/.cargo/bin
-ls
+vim 
+cargo build
+cargo build --release
+hyperfine './target/release/auto-complete /usr/share/dict/american-english 15 bon'
+hyperfine './target/release/auto-complete /usr/share/dict/american-english 15 tig'
+vim 
+cargo build --release
+hyperfine './target/release/auto-complete /usr/share/dict/american-english 15 tig'
+hyperfine --warmup './target/release/auto-complete /usr/share/dict/american-english 15 tig'
+hyperfine --warmup 3 './target/release/auto-complete /usr/share/dict/american-english 15 tig'
+vim ./README.md
+mscn
 bash
+clear
+vim 
+cargo clippy
+vim
+gs
+ga ./README.md ./src/
+gc "Final version"
+gp
+clear
+dotfiles
+tl
+open ~/.config/nushell/tmux-session-config.yml | select windows | get 0 | get windows 
+tmo dotfiles
+open ~/.config/nushell/tmux-session-config.yml | select windows | get 0 | get windows 
+open ~/.config/nushell/tmux-session-config.yml | select windows | get 0 | get windows | get working_directory 
+open ~/.config/nushell/tmux-session-config.yml | select windows | get 0 | get windows | get working_directory | get
+open ~/.config/nushell/tmux-session-config.yml | select windows | get 0 | get windows | get working_directory | ge 0
+open ~/.config/nushell/tmux-session-config.yml | select windows | get 0 | get windows | get working_directory | get 0e
+open ~/.config/nushell/tmux-session-config.yml | select windows | get 0 | get windows | get working_directory | get 0
+tmo dotfiles
+tl
 ls
-chsh
-chsh -s ~/.cargo/bin/nu 
+bat ./nushell/tmux-session-config.yml
+sat ./nushell/tmux-session-config.yml
+cat ./nushell/tmux-session-config.yml
+tmo dotfiles
+tmo
+tmo dotfiles
+:Q
+tmo dotfiles
+:q
+tmo dotfiles
+open ~/.config/nushell/tmux-session-config.yml
+open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles' 
+tmo dotfiles
+tl
+tmo dotfiles
+0;1600;1ctl
+tl
+tmo aoc
+tl
+ls
+tmo aoc
+tl
+ls
+tmo aoc
+clear
+ls
+tmo aoc
+man tmux
+tl
+tmo aoc
+tl
+ls
+tc aoc
+pwd
+tmux
+cd ~/Documents/dotfiles/
 ls
 tmux
-tc dotfiles
+cd ~/Documents/dotfiles/
 ls
-bash
-cd ./software/
-ls
-cd ~/Documents/
-ls
-cd ./dotfiles/
-ls
-vim ./alacritty/
-nvim ./alacritty/alacritty.yml
-ls
-nvim ./.bash_aliases
-cls
-ls
-vim ./README.md
-nvim ./README.md
-ls
-dotfiles
-cd ./Documents/dotfiles/
-ls
-nvim ./nushell/
-ls
-nvim ./nushell/
-ls
-nvim ./Documents/dotfiles/nushell/config.nu
-ls
-mkdir ~/.cache/starship
-nvim ./Documents/dotfiles/nushell/config.nu
-mkdir ~/.cache/starship
-nvim ./Documents/dotfiles/nushell/config.nu
-starship init nu | save ~/.cache/starship/init.nu
-bash
-starship init nu | save ~/.cache/starship/init.nu
-$nu.env-path
-nvim ./Documents/dotfiles/nushell/env.nu
-nvim ./README.md
+clear
 nu
-nu --version
-cat $SHELL
-l
+ls
+tmux
+tmo aoc
+tl
+tk aoc
+tmo a
+tmo aoc
+tl
+tk aoc
+tmo aoc
+tl
+tk aoc
+tmo aaa
+tl
+open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles'
+open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles' | get windows
+open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles'
+open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles' | select working_directory
+open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles' | select working_directory | get 0
+open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles' | select working_directory
+open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles' | select working_directory | get 0
+open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles' | select working_directory | get working_directory
+open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles' | select working_directory | get working_directory | get 0
+clear
+tmo aoc
+tl
+tk aoc
+tmoc aoc
+tmo aoc
+tl
+tk aoc
+clear
+tmo aoc
+ls
+tl
+tk aoc
+tmo aoc
+tl aoc
+tl
+tk aoc
+tl
+tmux
+clear
+tmo aoc
 ls
 pwd
+tc aoc
+vim
+open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles' | select windows
+open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles' | select windows | get 0
+open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles' | select windows | get 0 | get windows
+open ~/.config/nushell/tmux-session-config.yml | where name == 'aoc' | select windows | get 0 | get window
+open ~/.config/nushell/tmux-session-config.yml | where name == 'aoc' | select windows | get 0 | get windows
+open ~/.config/nushell/tmux-session-config.yml | where name == 'aoc'
+open ~/.config/nushell/tmux-session-config.yml
+open ~/.config/nushell/tmux-session-config.yml | where name == 'front_crypto'
+bat ./nushell/tmux-session-config.yml
+cat ./nushell/tmux-session-config.yml
+bat ~/Documents/dotfiles/nushell/tmux-session-config.yml
+open ~/.config/nushell/tmux-session-config.yml | where name == 'front_crypto' | get windows
+open ~/.config/nushell/tmux-session-config.yml | where name == 'front_crypto' | get windows | get 0
+tl
+tmo aoc
+tl 
+tco aoc
+tc aoc
+tl
+tmo aoc
+tl
+tk aoc
+tmo aoc
+tco aoc
+tl 
+tc aoc
+tmo aoc
+tl 
+tco aoc
 clear
-nvim ~/Documents/dotfiles/nushell/config.nu
-jeekjek
-ls
-nvim ~/Documents/dotfiles/nushell/config.nu
-ls
-nvim ~/Documents/dotfiles/nushell/config.nu
-kejwkje
-ls
-:q
-lssl
-ls
-:q
-eixt
-nvim ~/Documents/dotfiles/nushell/config.nu
-exiot
-ls
-:q
-nvim ~/Documents/dotfiles/nushell/config.nu
-^:q
-ls
-^ls
+tc aoc
+tmo aoc
+tl aoc
+tl
 clear
-:q
-nvim ~/Documents/dotfiles/nushell/config.nu
-cd  ~/Documents/dotfiles
+tc aoc
+clear
+tmo aoc
+tl
+tk aoc
+tmo aoc
+tl
+tk aoc
+tmo aoc
+tk aoc
+tmo aoc
+tl 
+tk aoc
+tmo front_crypto
+tl
+tk front_crypto
+clear
+tmo front_crypto
+tl
+tl;
+tk front_crypto
+tmo front_crypto
+tk front_crypto
+tmo front_crypto
+tl
+clear
+tl
+tk front_crypto
+tmo front_crypto
+tl
+tk front_crypto
+tmo front_crypto
+tl
+tk front_crypto
+tmo front_crypto
+tl
+tc front_crypto
+tl
+tmo front_crypto
+tl
+tc front_crypto
+tmo front_crypto
 ls
-vim
-nvim
-^wally
+clear
+:Q
+tc front_crypto
+tmux --help
+tmux new-window --help
+tmux new-window -h
+tmux 
+man tmux
+open ~/.config/nushell/tmux-session-config.yml | where name == 'front_crypto' 
+open ~/.config/nushell/tmux-session-config.yml | where name == 'front_crypto'  | get enter_command
+open ~/.config/nushell/tmux-session-config.yml | where name == 'front_crypto'  | get enter_command | get 0
+open ~/.config/nushell/tmux-session-config.yml | where name == 'front_crypto'  | get working_directory 
+open ~/.config/nushell/tmux-session-config.yml | where name == 'front_crypto'  | get working_directory | get 0
 :q
-cd..
-cd 
-..
-wally
-tree
-t3
-big_files
-/bash/bin
-bash
-rg
-grep
-vi
-:q
-vim
-:q
-vi
-vim
-tmcr
-dotfiles
-tmcr -l
-tc dotfiles
-:q
-;q
-dev
-:q
-dev 
-dev ""
-cours m2
-dev
-mdev
-dev
-ls
-dev
-ls
-cours m2
-dev 
-ls
-cd ./aoc/
-cb
-:q
-t1
-dev
-t1
-t2
-t3
-ls
-cours 
-cours
-:q
-cours 
-ls
-cd ./content-square/
-ls
-cd ./auto-complete/
-ls
-pdf './Test DE Auto-complete.pdf'
-:w
-bat
+tl
+tmo front_crypto
+tc front_crypto
+clear
+open ~/.config/nushell/tmux-session-config.yml | where name == 'front_crypto' 
+open ~/.config/nushell/tmux-session-config.yml | where name == 'front_crypto' | get windows 
+open ~/.config/nushell/tmux-session-config.yml | where name == 'front_crypto' | get windows  | get 0
+tl
+tmo front_crypto
+pwd
+tc front_crypto
+open ~/.config/nushell/tmux-session-config.yml | where name == 'front_crypto' | get windows  | get 0
+open ~/.config/nushell/tmux-session-config.yml | where name == 'front_crypto' | get windows  | get 0 | get wording_directory
+open ~/.config/nushell/tmux-session-config.yml | where name == 'front_crypto' | get windows  | get 0 | get working_directory

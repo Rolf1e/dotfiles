@@ -333,5 +333,5 @@ let $config = {
 }
 
 source ~/.config/nushell/aliases.nu
-source ~/.cache/starship/init.nu
+source ~/.config/nushell/tmux.nu
 
