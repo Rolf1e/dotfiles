@@ -1,5 +1,3 @@
-
-
 alias :q = exit
 alias cd.. = cd ..
 alias .. = cd ..
@@ -21,23 +19,30 @@ alias rg = grep
 alias vi = nvim
 alias vim = nvim
 
-alias dotfiles = (tmcr -a dotfiles; tc dotfiles)
+alias dotfiles = tmo dotfiles
 
 # docker
 alias docker_stopall = docker stop $(docker ps -a -q) && docker rm -fv $(docker ps -aq)
 alias docker_ip_find = docker inspect -f \ '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'
 
 alias mdev = sudo ~/software/.sh/config-ssd.sh
-alias dev = cd /media/rolfie/ssd2/projects/
-alias cours = cd /media/rolfie/ssd2/projects/cours/
 
-def tree_settings [depth: int] {
-	tree -a -L $depth -I ".git|.github|.vscode|.idea|*node_modules|*dist|*target|*__pycache__" --ignore-case
+def-env dev [dir?: string] { 
+  cd $"/media/rolfie/ssd2/projects/($dir)"
+}
+
+def-env cours [dir?: string] { 
+  cd $"/media/rolfie/ssd2/projects/cours/($dir)"
+}
+
+def tree_settings [depth: int, to_ignore?: string] {
+	tree -a -L $depth -I $".git|.github|.vscode|.idea|*node_modules|*dist|*target|*__pycache__|($to_ignore)" --ignore-case
 }
 
 alias t3 = tree_settings 3
 alias t2 = tree_settings 2
 alias t1 = tree_settings 1
+alias tn = tree_settings
 
 # == DEV == 
 
@@ -62,7 +67,6 @@ alias ct = (clear; cargo test)
 alias ctb = RUST_BACKTRACE=1 cargo test -- --nocapture
 alias cf = cargo fmt
 
-def display_pdf [file: string] {
+def pdf [file: string] {
     lesspipe $file | bat; 
 }
-alias pdf = display_pdf 

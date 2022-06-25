@@ -61,6 +61,10 @@ endfunction
 
 function! StatuslineGitBranch()
   let b:gitbranch=""
+  if executable("git") 
+    return
+  endif
+
   if &modifiable
     try
       let l:dir=expand('%:p:h')

@@ -2,7 +2,6 @@
 # let-env STARSHIP_SHELL = "nu"
 def create_left_prompt [] {
     let path_segment = ($env.PWD)
-
     $path_segment
 }
 

@@ -1,69 +1,3 @@
-rm ./history.txt
-cd ..
-ls
-vim ./.gitignore
-ls
-cd ./nushell/ls
-cd ./nushell
-ls
-bat ./history.txt
-ls
-gs
-clear
-touch tmux.nu
-vim ./config.nu
-mv ../tmux-creator.yml .
-ls
-mv ./tmux-creator.yml tmux-session-config.yml
-clear
-ls
-tmcr -l
-tmux list-session
-clear
-:q
-hello
-hello tigran
-tl
-tmux
-tc 0
-tl
-tmux
-tk 0
-tl
-cleart
-tclear
-clear
-tl
-tmux
-tc 0
-tmux
-tc 0
-tmux
-tk 0
-tl
-cd ~/Documents/dotfiles/
-ls
-cd ./nushell/
-ls
-op
-clear
-open ./tmux-session-config.yml
-:q
-tl
-open_tmux_session
-open_tmux_session a
-tmo
-open ~/.config/nushell/tmux-session-config.yml
-tmo 
-:q
-tmo 
-tmo
-:q
-vim ./tmux.nu
-ls
-cd ..
-vim
-vim 
 vim
 tmo
 open ~/.config/nushell/tmux-session-config.yml | where name == 'dotfiles'
@@ -476,3 +410,623 @@ tc front_crypto
 open ~/.config/nushell/tmux-session-config.yml | where name == 'front_crypto' | get windows  | get 0
 open ~/.config/nushell/tmux-session-config.yml | where name == 'front_crypto' | get windows  | get 0 | get wording_directory
 open ~/.config/nushell/tmux-session-config.yml | where name == 'front_crypto' | get windows  | get 0 | get working_directory
+cours
+ls
+cd ./content-square/
+ls
+cd ./auto-complete/
+ls
+gs
+git -C . rev-parse --abbrev-ref HEAD
+git status
+git branch 
+cours
+ls
+gs
+ls
+tc 0
+ls
+vim ~/Documents/dotfiles/
+vim 
+vim
+tc 0
+cours 
+l
+ls
+cd ./content-square/auto-complete/
+ls
+cargo clean
+gs
+ls
+cd ..
+..
+cd ./content-square/
+nautilus .
+ls
+cd ./auto-complete/
+ls
+bat ./README.md
+cd
+cd -
+cd 
+clear
+tl
+tmo dotfiles
+clear
+dotfiles
+tl
+tc dotfiles
+ls
+tc dotfiles
+clear
+tl
+tmo front_crypto
+tc front_crypto
+ls
+doc
+ls
+cd ./dotfiles/
+ls
+$env.PWD
+ls
+vim ~/Documents/dotfiles/
+tl
+ps -aux 
+ps
+ps -e
+ps --help
+ps
+vim 
+vim ~/Documents/dotfiles/
+ls
+clear
+cours
+ls
+cd ./content-square/
+ls
+cd ./auto-complete/
+ls
+cb
+cargo build
+cargo
+env
+clear
+cargo
+clear
+bash
+ls
+cargo
+tmux
+clear
+vim
+git
+clear
+git stastus
+git status
+clear
+vim
+clear
+ls
+bash
+ls
+vim ~/Documents/dotfiles/
+cd ~/Documents/dotfiles/
+vim
+cargo
+clear
+git 
+clear
+cours
+ls
+cd ./content-square/
+ls
+cd ./auto-complete/
+vim
+cours
+cd ./content-square/
+ls
+cd ./auto-complete/
+ls
+git status
+git reset --hard
+clear
+vim 
+cours 
+cd ./content-square/
+ls
+cd ./auto-complete/
+ls
+vim 
+bas
+bash
+clear
+cours
+ls
+cd ./content-square/
+ls
+cd ./auto-complete/
+ls
+doc
+cd ./dotfiles/
+ls
+vim 
+vim
+vim 
+vim ./nvim/statusline.vim
+vim
+cours 
+ls
+cd ./content-square/
+ls
+cd ./auto-complete/
+vim
+cd ..
+cd ./content-square/
+cd ./auto-complete/
+enter
+enter ~/Documents/dotfiles/
+ls
+n
+p
+ls
+vim ./nvim/statusline.vim
+p
+vim
+n
+ls
+vim ./nvim/statusline.vim
+p
+vim 
+n
+p
+vim 
+n
+vi 
+n
+vim
+n
+vim
+vim ./nvim/statusline.vim
+n
+p
+vim 
+n
+vim 
+:q
+bash
+dev
+ls
+cours
+ls
+cd ./content-square/auto-complete/
+ls
+vim 
+ls
+clear
+ls
+cours
+ls
+mdev
+cours
+ls
+cd ./algo/
+ls
+cd ./leet_code/
+ls
+cd ./src/
+ls
+touch strstr.rs
+vim ./strstr.rs
+cd ..
+vim
+vim 
+ls
+cd ./src/
+ls
+rustc ./strstr.rs
+vim ./strstr.rs
+rustc ./strstr.rs
+vim ./strstr.rs
+rustc ./strstr.rs
+vim ./strstr.rs
+rustc ./strstr.rs
+vim ./strstr.rs
+rustc ./strstr.rs
+vim ./strstr.rs
+vim
+ls
+cours
+ls
+cd ./algo/
+ls
+cd ./leet_code/
+ls
+touch Cargo.toml
+cd ..
+cd ./core
+cd ..
+ls
+cd ./content-square/
+cd ./auto-complete/
+ls
+vim ./Cargo.toml
+cd ..
+..
+cd ./algo/
+ls
+cd ./leet_code/
+vim ./Cargo.toml
+ls
+cd ..
+mv ./leet_code/ leet-code
+cd ./leet-code/
+cb
+vim ./src/main.rs
+cb
+ls
+cd src
+ls
+list.rs
+touch list.rs
+vim ./main.rs
+vim ./list.rs
+cours
+ls
+cd m2
+ls
+cd ./english/
+ls
+vim ./questions.txt
+vim
+dotfiles
+cd ~/Documents/dotfiles/
+ls
+cd ./nvim/
+ls
+cd ..
+ls
+make neovim-update
+clear
+vim
+vim 
+vim
+ls
+ll
+ls -al
+clear
+vim
+ls
+cours 
+ls
+cd ./m2/
+ls
+cd ./english/
+ls 
+ls | where size > 1.1KiB
+ls | seect type 
+ls | select type 
+clear
+cd ~/Documents/dotfiles/
+ls
+vim ./nushell/
+cours m2
+cour
+ls
+cours
+cd m2
+ls
+cd ./english/
+ls
+vim ./questions.txt
+bat ./README.md
+bat ./questions.txt
+vim ./questions.txt
+sudo apt-get install pandoc texlive-latex-base texlive-fonts-recommended texlive-extra-utils texlive-latex-extra
+clear
+ls
+cours 
+cd ./m2/english/
+sudo apt-get install pandoc texlive-latex-base texlive-fonts-recommended texlive-extra-utils texlive-latex-extra
+ls
+mv ./questions.txt ./questions.md
+pandoc questions.md -o questions.pdf
+ls
+vim ./questions.md
+pandoc questions.md -o questions.pdf
+ls
+vim ./questions.txt
+vim ./questions.md
+bash
+pdf ./questions.pdf
+clear
+vim ./questions.md
+/sbin/reboot
+neofetch
+clear
+mdev
+clear
+cours n2
+cours m2
+cours
+cd m2
+ls
+cd ./system_embarque/
+clear
+ls
+cd ./ManetteSerie/
+l
+ls
+lsusb
+ls
+bat ./adc.c
+clear
+bash
+clear
+ll
+ls
+cour s
+cours 
+cd m2
+ls
+..
+ls
+cd ./content-square/auto-complete/
+ls
+make clearn
+make clean
+ls
+..
+nautilus . 
+gcc -v
+clear
+make
+ls
+cd ./ManetteSerie/
+ls
+make
+vim 
+bash
+ls
+clear
+netstat
+netstat -lntp
+clear
+ls
+clear
+df -h
+cd '~/VirtualBox VMs/'
+ls
+rm -rf './Rocky Linux/'
+clear
+ls
+rm -rf './Rocky Linux/'
+ls
+cd ..
+htop
+ssh root@localhost:2222
+ssh root@localhost -p 2222
+clea
+clear
+tmux
+ssh root@localhost -p 2222
+bash
+ssh root@localhost -p 2222
+ssh root@localhost -p 2222 --noprofile
+ssh root@localhost -p 2222 bash --noprofile
+ssh -t root@localhost -p 2222 bash --noprofile
+ssh root@localhost -p 2222 "bash --noprofile"
+ssh -t root@localhost -p 2222 "bash --noprofile"
+ssh -t root@localhost -p 2222 /bin/sh
+les
+ls
+clear
+ssh root@localhost -p 2222 
+pass 
+pass games/store.steampowered.com#[tigran.slama@protonmail.com] -c
+bash
+ssh root@localhost -p 2222 
+cd ~/Documents/dotfiles/
+ls
+vim ./nushell/
+vim ~/Documents/dotfiles/
+tmux
+clear
+tmu
+ls
+clear
+ls
+clear
+ls
+clear
+cours 
+ls
+cd ./content-square/auto-complete/
+ls
+vim
+tmux
+tmux
+dict
+/usr/share/dict/american-english e
+/usr/share/dict/american-english 
+clear
+bash
+cal
+help cal
+cal -m
+cal
+clear
+cours
+ls
+cd ./content-square/
+ls
+cd ./auto-complete/
+ls
+clear
+ls
+ls -l
+man ls
+bash
+clear
+ls -al
+ls
+touch interview.md
+vim ./interview.md
+/sbin/shutdown
+/sbin/shutdown -c
+/sbin/shutdown -n
+/sbin/shutdown -i
+/sbin/shutdown -h
+man /sbin/shutdown
+clear
+/sbin/reboot
+ls
+dev
+ls
+mdev
+dev
+cours
+ls
+dev
+mdev
+clear
+dev
+bash
+dev
+cours
+ls
+/sbin/reboot
+mdev
+cours
+ls
+dev
+ls
+clear
+ll
+ls
+dotfiles
+ls
+help dotfiles
+alias
+cd ~/Documents/dotfiles/
+ls
+tl
+dotfiles
+cd ./.config/
+ls
+dotfiles
+cat ./tmux-creator.yml
+rm ./tmux-creator.yml
+ls
+cd ./nushell/
+ls
+cd ..
+ls
+cd ./nushell/
+ls
+cat ./tmux-session-config.yml
+dotfiles
+tl
+ls
+vim
+clear
+tc dotfiles
+ls
+tl
+clear
+tr
+tr --help
+clear
+dev
+ls
+cours
+ls
+cd ./content-square/
+ls
+clear
+cd ~/Documents/dotfiles/
+cours
+dev
+cours
+ls
+cd cours
+ls
+cd ..
+cours m2
+ls
+help cours
+cours
+cours m2
+help str
+cours
+dev
+cours
+cours m2
+cours
+ls
+cours
+help enter
+cours
+dev
+cours
+cours m2
+cd ~/.config/nushell/
+ls
+cours
+cours m2
+cours
+cour
+man str
+help str
+:q
+cours
+dev
+cours
+cours m2
+cours
+cours m2
+cours
+cours m2
+clea:q
+cours
+pwd
+cours
+dev
+clear
+bash
+:q
+cours
+cours m2
+nu --version
+clear
+cargo install nu
+nu --version
+:q
+cours
+cours m2
+clear
+cours 
+cours m2
+cours
+alias cours [] { cd /media/rolfie }
+alias cours = [] { cd /media/rolfie }
+cours
+dev cours
+cours
+cours 
+cd
+cours m2
+ls
+dev
+dev cours
+ls
+dev
+ls
+dev aoc
+ls
+clear
+cours
+tn 5
+clar
+cours
+tn 5
+clear

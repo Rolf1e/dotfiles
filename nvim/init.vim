@@ -67,10 +67,6 @@ Plug 'kyazdani42/nvim-web-devicons'
 
 "Fun
 Plug 'ThePrimeagen/vim-be-good'
-
-
-"personal
-Plug 'Rolf1e/tmux-creator', {'rtp': 'vim'}
 call plug#end()
 
 colorscheme rolfie
