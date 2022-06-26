@@ -2,9 +2,14 @@
 alias tc = tmux_connect
 alias tl = tmux_list_session
 alias tk = tmux_kill
+alias tr = tmux_list_register_session
 alias tmo = open_tmux_session
 
 let TMUX_CONFIG_FILE = "/home/rolfie/.config/nushell/tmux-session-config.yml"
+
+def tmux_list_register_session [] {
+  open $TMUX_CONFIG_FILE | get name
+}
 
 def open_tmux_session [name] {
   let whole_config = open $TMUX_CONFIG_FILE 

@@ -1030,3 +1030,113 @@ clar
 cours
 tn 5
 clear
+vim
+tl
+tmo front_crypto
+tc front_crypto
+tmo aoc
+tc aoc
+tmo front_crypto
+tc front_crypto
+tmo front_crypto
+tc front_crypto
+open ~/.config/nushell/tmux-session-config.yml
+open ~/.config/nushell/tmux-session-config.yml | get name
+:q
+tr
+tc dotfiles
+dotfiles
+clear
+ls
+tr
+dev
+cd mini_games/
+;s
+ls
+cd connect-four-ai/
+ls
+cd ../mg-core/
+ls
+t2
+cd ..
+cr
+vim
+cr
+tr
+tmo mini_games
+ls
+cd ~/Documents/dotfiles/
+ls
+la
+ls -al
+ls
+clear
+:q
+ls
+;s
+ls
+;s
+ls
+Lq
+ls
+true
+1223
+12321
+ls
+:q
+ls
+clear
+ls
+pwd
+open ~/.config/nushell/tmux-session-config.yml | get name
+open ~/.config/nushell/tmux-session-config.yml 
+clear
+ls
+ls -al
+ls -alh
+ls -al
+clear
+ls
+clear
+ls
+clear
+ls
+git status
+ls -al
+clear
+dev 
+ls
+cd aoc/
+ls
+clear
+git status
+dev aoc
+ls
+gstat
+git branch
+dev aoc
+git branch
+git checkout -b aaa
+git branch
+open (git branch)
+open (^git branch)
+git 
+clear
+git status
+git status | open
+tmo mini_games
+clear
+ls
+rm -rf mg-core/ connect-four-ai/
+ls
+rm -rf target/
+ls
+cargo new connect_four --lib  
+ls
+vim Cargo.toml
+ls
+vim MMakefile
+vim Makefile
+rm -rf Makefile
+ls
+clear
