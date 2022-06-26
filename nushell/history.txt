@@ -1159,3 +1159,73 @@ ct
 cb
 ct
 fzf
+awk
+man awk
+help awk
+man awk
+ct
+cb
+ct
+cb
+clear
+cb
+ct
+tc mini_games
+tmo mini_games
+clear
+ct
+tc mini_games
+tk dotfiles
+tl
+tmo mini_games
+ct
+tmo dotfiles
+ls
+$env.PWD
+dev
+$env.PWD
+cd aoc/
+;ls
+$env.PWD
+$env.PWD | split '/'
+$env.PWD | split 
+help split
+split $env.PWD / 
+split $env.PWD '/' 
+$env.PWD | split row '/'
+help reduce
+help filter
+help where
+$env.PWD | split row '/'
+$env.PWD | split row '/' | len
+$env.PWD | split row '/' | length
+let a = $env.PWD | split row '/' 
+let a = ($env.PWD | split row '/' )
+a.01
+a.-1
+a.1
+$a.1
+$a.-1
+$a.0
+dev
+cd aoc
+cours
+l
+ls
+cours
+de
+dev
+ls
+dev aoc
+ls
+cd
+cours
+ls
+cd algo/leet-code/ls
+cd algo/
+ls
+$env.PWD | str reverse | split row '/' 
+$env.PWD | split row '/' | reverse
+cours
+$env.PWD | split row '/' | reverse
+cours

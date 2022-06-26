@@ -1,0 +1,20 @@
+let rolfie_base00 = "#181818" # Default Background
+let rolfie_base01 = "#282828" # Lighter Background (Used for status bars, line number and folding marks)
+let rolfie_base02 = "#383838" # Selection Background
+let rolfie_base04 = "#b8b8b8" # Dark Foreground (Used for status bars)
+let rolfie_base05 = "#d8d8d8" # Default Foreground, Caret, Delimiters, Operators
+let rolfie_base06 = "#e8e8e8" # Light Foreground (Not often used)
+let rolfie_base07 = "#f8f8f8" # Light Background (Not often used)
+
+let rolfie_white = "#fbf1c7"
+let rolfie_white_blue = "#a9b7c6"
+let rolfie_dark_grey = "#2b2b2b"
+let rolfie_light_grey = "#928374"
+let rolfie_dark_green = "#6a8759"
+let rolfie_green = "#a9b665"
+let rolfie_violet = "#d3869b"
+let rolfie_blue = "#7daea3"
+let rolfie_red = "#ea6962"
+let rolfie_bold_red = "#ff0000"
+let rolfie_dark_red = "#cc241d"
+let rolfie_orange = "#fe8019"

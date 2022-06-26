@@ -1,6 +1,20 @@
+source ~/.config/nushell/colors.nu
+
 def create_left_prompt [] {
-    let path_segment = ($env.PWD)
-    $path_segment
+    let path_segment = ($env.PWD | split row '/')
+    let path_len = ($path_segment | length)
+    if $path_len <= 3 {
+      $"(ansi $rolfie_blue)($env.PWD)(ansi reset)"
+    } else {
+      let short_path_segment = [
+        $"/($path_segment | get ($path_len - 3))",
+        $"/($path_segment | get ($path_len - 2))",
+        $"/($path_segment | get ($path_len - 1))",
+      ]
+
+      $"(ansi $rolfie_blue)($short_path_segment | str collect)(ansi reset)"
+    }
+
 }
 
 def create_right_prompt [] {
