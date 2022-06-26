@@ -99,8 +99,9 @@ noremap <leader>y "*y
 noremap <leader>p "*p
 
 
-"Open term in nvim
+" Open term in nvim
 noremap <leader>t <C-w>s<C-w><C-p>:resize 10<CR>:ter<CR>
+" Quit term mod
 tnoremap <leader>q <C-\><C-N>
 
 " Strange remapping I know

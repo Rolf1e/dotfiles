@@ -1140,3 +1140,22 @@ vim Makefile
 rm -rf Makefile
 ls
 clear
+ls
+clear
+vim
+tc mini_games
+tmo mini_games
+ct
+cb
+ct
+cb
+ct
+cb
+ct
+cb
+cv
+cb
+ct
+cb
+ct
+fzf
