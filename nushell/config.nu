@@ -39,6 +39,11 @@ module completions {
     --pathspec-from-file: string               # read pathspec from file
   ]
 
+  export extern "git status" [
+    -s
+    -b 
+  ]
+
   export extern "git push" [
     remote?: string@"nu-complete git remotes", # the name of the remote
     refspec?: string@"nu-complete git branches"# the branch / refspec
