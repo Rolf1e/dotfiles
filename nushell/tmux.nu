@@ -1,17 +1,34 @@
 # tmux
-alias tc = tmux_connect
-alias tl = tmux_list_session
-alias tk = tmux_kill
-alias tr = tmux_list_register_session
-alias tmo = open_tmux_session
 
 let TMUX_CONFIG_FILE = "/home/rolfie/.config/nushell/tmux-session-config.yml"
 
-def tmux_list_register_session [] {
+# List tmux session registered in $TMUX_CONFIG_FILE
+def tr [] {
   open $TMUX_CONFIG_FILE | get name
 }
 
-def open_tmux_session [name] {
+
+# List launched tmux session
+def tl [] {
+  tmux list-session
+}
+
+# Kill a tmux session
+def tmux_kill [
+  name: string # Session name
+] {
+  tmux kill-session -t $name
+}
+
+# Connect to a tmux session
+def tc [
+  name: string@session_connect_completion # Session name
+] {
+  tmux attach-session -t $name 
+}
+
+# Create tmux session from registered in $TMUX_CONFIG_FILE
+def tmo [name: string@tr] {
   let whole_config = open $TMUX_CONFIG_FILE 
 
   if ($whole_config | where name == $name | empty?) {
@@ -44,18 +61,6 @@ def get_working_directory [name] {
   | get 0
 }
 
-def tmux_list_session [] {
-  tmux list-session
-}
-
-def tmux_connect [name] {
-  tmux attach-session -t $name 
-}
-
-def tmux_kill [name] {
-  tmux kill-session -t $name
-}
-
 def tmux_create_session [name, working_directory, command] {
   tmux new-session -d -s $name -c $working_directory -n $name $command
 }
@@ -68,5 +73,9 @@ def tmux_create_windows [session_name] {
 
 def get_windows_config [name] {
   open $TMUX_CONFIG_FILE | where name == $name | get windows | get 0 
+}
+
+def session_connect_completion [] {
+  tmux list-session -F '#S' | lines | each { |line| $line | str replace '[\*\+] ' '' | str trim }
 }
 
