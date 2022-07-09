@@ -1,4 +1,4 @@
-# Nushell Environment Config File
+#958731 Nushell Environment Config File
 
 # Specifies how environment variables are:
 # - converted from a string to a value on Nushell startup (from_string)
@@ -31,4 +31,26 @@ let-env NU_PLUGIN_DIRS = [
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # let-env PATH = ($env.PATH | prepend '/some/path')
+
+#dart
+let FLUTTER_DART_PATH = "/home/rolfie/software/flutter/bin"
+let DART_PATH = "/usr/bin/dart/bin"
+
+#fzf
+let FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --no-ignore-vcs'
+let FZF_CTRL_T_COMMAND = "$FZF_DEFAULT_COMMAND"
+let FZF_DEFAULT_OPTS = '--height 96% --reverse --preview "cat {}"'
+
+let-env PATH = ($env.PATH | prepend [
+    $FLUTTER_DART_PATH,
+    $DART_PATH,
+    $FZF_CTRL_T_COMMAND, 
+    $FZF_DEFAULT_COMMAND,
+    $FZF_DEFAULT_OPTS
+])
+
+
+
+
+
 source ~/.config/nushell/prompt.nu

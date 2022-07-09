@@ -27,15 +27,16 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'RishabhRD/popfix'
 Plug 'RishabhRD/nvim-lsputils'
 Plug 'hrsh7th/nvim-compe'
-Plug 'rust-lang/rust.vim'
-Plug 'rhysd/vim-clang-format'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Plug 'nvim-treesitter/playground'
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'nvim-treesitter/completion-treesitter'
-Plug 'mfussenegger/nvim-jdtls'
+
+" Plug 'mfussenegger/nvim-jdtls'
 " Plug 'elixir-editors/vim-elixir'
-Plug 'vim-test/vim-test'
+Plug 'rust-lang/rust.vim'
+Plug 'thosakwe/vim-flutter'
+Plug 'rhysd/vim-clang-format'
 
 "Debugger
 " Plug 'Shougo/vimproc.vim', {'do' : 'make'}
@@ -56,17 +57,11 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 Plug 'vim-test/vim-test'
+
 "Tree
 Plug 'mbbill/undotree'
-Plug 'preservim/tagbar'
 Plug 'simrat39/symbols-outline.nvim'
 
-"colorscheme
-Plug 'kyazdani42/nvim-web-devicons'
-" Plug 'soywod/himalaya', {'rtp': 'vim'}
-
-"Fun
-Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
 colorscheme rolfie
@@ -90,14 +85,11 @@ source ~/.config/nvim/symbols_outline.vim
 cmap w!! w !sudo tee %
 inoremap <C-c> <esc>
 noremap <C-c> <esc>
-noremap <leader>5 :vertical resize +5<CR>
-noremap <leader>6 :vertical resize -5<CR>
 vnoremap < <gv
 vnoremap > >gv
 
 noremap <leader>y "*y
 noremap <leader>p "*p
-
 
 " Open term in nvim
 noremap <leader>t <C-w>s<C-w><C-p>:resize 10<CR>:ter<CR>
@@ -117,14 +109,10 @@ nnoremap <leader>j <cmd>cnext<CR>
 nnoremap <leader>k <cmd>cprevious<CR>
 nnoremap <leader>m <cmd>tabNext<CR>
 
-
-nnoremap <silent> <space>e <cmd>Sex!<CR>
-nnoremap <silent> <space>E <cmd>Ex<CR>
+nnoremap <silent> <space>e <cmd>Ex!<CR>
 
 " Undotree
 nnoremap <silent> <F5> :UndotreeToggle<cr>
-" Tagbar
-" nmap <F8> :TagbarToggle<CR>
 
 " Git
 nmap <F9> :Git<CR>
