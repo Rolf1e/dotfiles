@@ -14,12 +14,19 @@ inoremap <silent><expr> <C-e>     compe#close('<C-e>')
 
 noremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
 noremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
-noremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 noremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
-noremap <silent> <leader>i <cmd>lua vim.lsp.buf.code_action()<CR>
-noremap <silent> grr <cmd>lua vim.lsp.buf.rename()<CR>
 noremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
-noremap <silent> <space>f <cmd>lua vim.lsp.buf.formatting()<CR>
+noremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
+noremap <silent> <space>f <cmd>lua vim.lsp.buf.format { async = true }<CR>
+noremap <silent> <leader>r <cmd>lua vim.lsp.buf.rename()<CR>
+noremap <silent> <leader>i <cmd>lua vim.lsp.buf.code_action()<CR>
+noremap <silent> <leader>e <cmd>lua vim.diagnostic.open_float()<CR>
+
+function! LspStatus()
+  echo luaeval("vim.diagnostic.get(nil, { severity = vim.diagnostic.severity.ERROR })")
+endfunction
+noremap <silent> <leader>u <cmd>call LspStatus()<CR>
+
 
 lua require("my_compe_config")
 lua require("my_lsp_config")

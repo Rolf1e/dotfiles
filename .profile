@@ -28,3 +28,7 @@ fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
 feh --bg-fill "$HOME/Documents/dotfiles/images/AhsokaVaderBackWards.jpg"
+
+# >>> coursier install directory >>>
+export PATH="$PATH:/home/rolfie/.local/share/coursier/bin"
+# <<< coursier install directory <<<

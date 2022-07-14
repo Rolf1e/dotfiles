@@ -32,7 +32,8 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'nvim-treesitter/completion-treesitter'
 
-" Plug 'mfussenegger/nvim-jdtls'
+Plug 'scalameta/nvim-metals'
+Plug 'mfussenegger/nvim-jdtls'
 " Plug 'elixir-editors/vim-elixir'
 Plug 'rust-lang/rust.vim'
 Plug 'thosakwe/vim-flutter'

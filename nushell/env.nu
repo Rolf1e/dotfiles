@@ -41,16 +41,19 @@ let FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --no-ignore-vcs'
 let FZF_CTRL_T_COMMAND = "$FZF_DEFAULT_COMMAND"
 let FZF_DEFAULT_OPTS = '--height 96% --reverse --preview "cat {}"'
 
+#scala
+let COURSIER_PATH = '~/.local/share/coursier/bin'
+# Android 
+let-env ANDROID_SDK_ROOT = '/home/rolfie/software/Android'
+
 let-env PATH = ($env.PATH | prepend [
     $FLUTTER_DART_PATH,
     $DART_PATH,
     $FZF_CTRL_T_COMMAND, 
     $FZF_DEFAULT_COMMAND,
-    $FZF_DEFAULT_OPTS
+    $FZF_DEFAULT_OPTS,
+    $COURSIER_PATH,
 ])
-
-
-
 
 
 source ~/.config/nushell/prompt.nu
