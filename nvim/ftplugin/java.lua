@@ -3,6 +3,9 @@ local equinox_version = '1.6.400.v20210924-0641'
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 local workspace_dir = '/home/rolfie/software/eclipse.jdtls/.workspace/' .. project_name
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
+local m2_path = '/home/rolfie/.m2'
+local lombok_version = '1.18.22'
+local lombok_path = m2_path .. '/repository/org/projectlombok/lombok/' .. lombok_version .. '/lombok-' .. lombok_version  .. '.jar'
 local jdtls_config = {
   -- The command that starts the language server
   -- See: https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line
@@ -21,6 +24,7 @@ local jdtls_config = {
     '--add-modules=ALL-SYSTEM',
     '--add-opens', 'java.base/java.util=ALL-UNNAMED',
     '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
+    '-javaagent:' .. lombok_path,
 
     -- 💀
     '-jar', jdtls_path .. '/plugins/org.eclipse.equinox.launcher_'.. equinox_version ..'.jar',

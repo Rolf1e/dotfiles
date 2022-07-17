@@ -16,7 +16,7 @@ alias :q="exit"
 alias cd..="cd.."
 alias ..="cd .."
 
-alias mdev="sudo ~/software/.sh/config-ssd.sh"
+alias mdev="sudo ~/Documents/dotfiles/.sh/config-ssd.sh"
 alias cours='function _(){ cd /media/rolfie/ssd2/projects/cours/$1; }; _'
 alias dev='function _(){ cd /media/rolfie/ssd2/projects/$1; }; _'
 alias dwn="cd ~/Downloads"

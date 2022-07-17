@@ -25,7 +25,7 @@ alias dotfiles = tmo dotfiles
 alias docker_stopall = docker stop $(docker ps -a -q) && docker rm -fv $(docker ps -aq)
 alias docker_ip_find = docker inspect -f \ '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'
 
-alias mdev = sudo ~/software/.sh/config-ssd.sh
+alias mdev = sudo ~/Documents/dotfiles/.sh/config-ssd.sh
 
 def-env dev [dir?: string] { 
   cd $"/media/rolfie/ssd2/projects/($dir)"
