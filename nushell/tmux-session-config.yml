@@ -85,4 +85,13 @@
     - name: bash
       session_name: socials
       working_directory: /media/rolfie/ssd2/projects/socials
+-
+  name: train_simulator
+  working_directory: /media/rolfie/ssd2/projects/train_simulator
+  enter_command: nvim
+  window_name: vim
+  windows:
+    - name: bash
+      session_name: train_simulator
+      working_directory: /media/rolfie/ssd2/projects/train_simulator
 

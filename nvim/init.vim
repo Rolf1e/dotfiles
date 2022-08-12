@@ -78,6 +78,7 @@ source ~/.config/nvim/statusline.vim
 source ~/.config/nvim/personal_functions.vim
 " source ~/.config/nvim/himalaya.vim
 source ~/.config/nvim/symbols_outline.vim
+source ~/.config/nvim/tmux.vim
 
 
 " === REMAPPING ===

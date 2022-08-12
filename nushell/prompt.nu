@@ -1,5 +1,10 @@
 source ~/.config/nushell/colors.nu
 
+
+let BATTERY_FOLDER = '/sys/class/power_supply/BAT0'
+let BATTERY_NOW_FILE = '/energy_now'
+let BATTERY_FULL_FILE = '/energy_full'
+
 module prompt {
 
   export def create_left_prompt [] {
@@ -25,7 +30,7 @@ module prompt {
   }
 
   export def create_right_prompt [] {
-    git_prompt
+    $"(git_prompt)" # (battery_prompt)"
   }
 
   def git_prompt [] {
@@ -35,6 +40,13 @@ module prompt {
       } else {
         ""
       }
+  }
+
+  def battery_prompt [] {
+    let battery_full = (cat $"($BATTERY_FOLDER)($BATTERY_FULL_FILE)" | into int)
+    echo $battery_full
+    let battery_now = (cat $"($BATTERY_FOLDER)($BATTERY_NOW_FILE)" | into int)
+    $"(($battery_now) * 100 / ($battery_full))%"
   }
 }
 

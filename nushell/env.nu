@@ -32,9 +32,13 @@ let-env NU_PLUGIN_DIRS = [
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # let-env PATH = ($env.PATH | prepend '/some/path')
 
+# rust
+let RUST = "~/.cargo/bin"
+
 #dart
 let FLUTTER_DART_PATH = "/home/rolfie/software/flutter/bin"
 let DART_PATH = "/usr/bin/dart/bin"
+
 
 #fzf
 let FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --no-ignore-vcs'
@@ -47,6 +51,7 @@ let COURSIER_PATH = '~/.local/share/coursier/bin'
 let-env ANDROID_SDK_ROOT = '/home/rolfie/software/Android'
 
 let-env PATH = ($env.PATH | prepend [
+    $RUST,
     $FLUTTER_DART_PATH,
     $DART_PATH,
     $FZF_CTRL_T_COMMAND, 
