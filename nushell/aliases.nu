@@ -44,6 +44,18 @@ alias t2 = tree_settings 2
 alias t1 = tree_settings 1
 alias tn = tree_settings
 
+alias mscn = mouse_screenshot
+def mouse_screenshot [] {
+  import ~/Documents/capture.png 
+  cat ~/Documents/capture.png | xclip -selection clipboard -t image/png
+}
+
+def screenshot [] {
+  import -window root ~/Documents/capture.png
+  cat ~/Documents/capture.png | xclip -selection clipboard -t image/png
+}
+
+
 # == DEV == 
 
 #git
