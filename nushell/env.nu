@@ -41,6 +41,7 @@ let DART_PATH = "/usr/bin/dart/bin"
 
 
 #fzf
+let FZF_PATH = "~/.fzf/bin" 
 let FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --no-ignore-vcs'
 let FZF_CTRL_T_COMMAND = "$FZF_DEFAULT_COMMAND"
 let FZF_DEFAULT_OPTS = '--height 96% --reverse --preview "cat {}"'
@@ -51,14 +52,20 @@ let COURSIER_PATH = '~/.local/share/coursier/bin'
 # Android 
 let-env ANDROID_SDK_ROOT = '/home/rolfie/software/Android'
 
+
 let-env PATH = ($env.PATH | prepend [
     $RUST,
+
+    $COURSIER_PATH,
+
     $FLUTTER_DART_PATH,
     $DART_PATH,
+
+
+    $FZF_PATH,
     $FZF_CTRL_T_COMMAND, 
     $FZF_DEFAULT_COMMAND,
     $FZF_DEFAULT_OPTS,
-    $COURSIER_PATH,
 ])
 
 

@@ -18,7 +18,7 @@ set smartindent
 set nohlsearch                          " no highlight on search
 
 let g:python_host_prog = "/usr/bin/python2"
-let g:python3_host_prog = "/usr/local/bin/python3.8"
+let g:python3_host_prog = "/usr/bin/python3.9"
 
 
 call plug#begin('~/Documents/dotfiles/nvim/plugged')
@@ -31,13 +31,13 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Plug 'nvim-treesitter/playground'
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'nvim-treesitter/completion-treesitter'
-
-Plug 'scalameta/nvim-metals'
-Plug 'mfussenegger/nvim-jdtls'
-" Plug 'elixir-editors/vim-elixir'
+" 
+" Plug 'scalameta/nvim-metals'
+" Plug 'mfussenegger/nvim-jdtls'
+" " Plug 'elixir-editors/vim-elixir'
 Plug 'rust-lang/rust.vim'
-Plug 'thosakwe/vim-flutter'
-Plug 'rhysd/vim-clang-format'
+" Plug 'thosakwe/vim-flutter'
+" Plug 'rhysd/vim-clang-format'
 
 "Debugger
 " Plug 'Shougo/vimproc.vim', {'do' : 'make'}
@@ -52,7 +52,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'szw/vim-maximizer'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
-" Plug 'nvim-telescope/telescope.nvim'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -67,18 +66,14 @@ call plug#end()
 
 colorscheme rolfie
 
-source ~/.config/nvim/net_rw.vim
-source ~/.config/nvim/treesitter.vim
-source ~/.config/nvim/lsp.vim
-" source ~/.config/nvim/telescope.vim
-source ~/.config/nvim/fzf.vim
-" source ~/.config/nvim/vebugger.vim
-" source ~/.config/nvim/lualine.vim
 source ~/.config/nvim/statusline.vim
 source ~/.config/nvim/personal_functions.vim
-" source ~/.config/nvim/himalaya.vim
+
+source ~/.config/nvim/fzf.vim
 source ~/.config/nvim/symbols_outline.vim
-source ~/.config/nvim/tmux.vim
+source ~/.config/nvim/lsp.vim
+source ~/.config/nvim/treesitter.vim
+" source ~/.config/nvim/vebugger.vim
 
 
 " === REMAPPING ===

@@ -18,14 +18,14 @@ step = 50
 click_temp = 3500
 
 
-[[block]]
-block = "nvidia_gpu"
-interval = 1
-format = "GT 1030 $utilization $temperature $clocks"
+# [[block]]
+# block = "nvidia_gpu"
+# interval = 1
+# format = "GT 1030 $utilization $temperature $clocks"
 
 [[block]]
 block = "load"
-format = "avg: 1m:$1m 5m:$5m"
+format = "1m:$1m 5m:$5m"
 interval = 1
 
 [[block]]

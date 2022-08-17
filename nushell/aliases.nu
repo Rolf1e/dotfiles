@@ -5,9 +5,17 @@ alias .. = cd ..
 alias dwn = cd ~/Downloads
 alias doc = cd ~/Documents
 
-#screen
-alias pc_tower_mod = xrandr --output DP-1 --auto && xrandr --output DP-4 --off
-alias pc_lap_top_mod = xrandr --output DP-4 --auto && xrandr --output DP-1 --off
+# Both screens show the same thing
+def pc_tower_mod [] {
+  xrandr --output DP-1 --auto;
+  xrandr --output DP-4 --auto;
+}
+
+# Only laptop screen
+def pc_lap_top_mod [] { 
+  xrandr --output DP-4 --auto;
+  xrandr --output DP-1 --off;
+}
 
 #keyboard
 alias us = setxkbmap us

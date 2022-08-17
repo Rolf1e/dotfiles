@@ -25,6 +25,7 @@ noremap <silent> <leader>e <cmd>lua vim.diagnostic.open_float()<CR>
 function! LspStatus()
   echo luaeval("vim.diagnostic.get(nil, { severity = vim.diagnostic.severity.ERROR })")
 endfunction
+
 noremap <silent> <leader>u <cmd>call LspStatus()<CR>
 
 
