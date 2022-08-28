@@ -94,4 +94,12 @@
     - name: bash
       session_name: train_simulator
       working_directory: /media/rolfie/ssd2/projects/train_simulator
-
+-
+  name: dex_map
+  working_directory: /media/rolfie/ssd2/projects/dex_map
+  enter_command: nvim
+  window_name: vim
+  windows:
+    - name: bash
+      session_name: dex_map
+      working_directory: /media/rolfie/ssd2/projects/dex_map
