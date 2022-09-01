@@ -72,7 +72,6 @@ source ~/.config/nvim/statusline.vim
 source ~/.config/nvim/personal_functions.vim
 
 source ~/.config/nvim/fzf.vim
-source ~/.config/nvim/symbols_outline.vim
 source ~/.config/nvim/lsp.vim
 source ~/.config/nvim/treesitter.vim
 " source ~/.config/nvim/vebugger.vim
@@ -115,3 +114,5 @@ nnoremap <silent> <F5> :UndotreeToggle<cr>
 
 " Git
 nmap <F9> :Git<CR>
+nmap <F8> :SymbolsOutlineOpen<CR>
+

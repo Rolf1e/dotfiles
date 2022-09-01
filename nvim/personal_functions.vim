@@ -29,7 +29,7 @@ function! SelectSymbol()
     return '" '
   endif
 
-  let lua_like = ["lua"]
+  let lua_like = ["lua", "sql"]
   if count(lua_like, &filetype)
     return '-- '
   endif

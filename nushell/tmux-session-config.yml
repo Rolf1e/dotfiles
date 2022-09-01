@@ -25,6 +25,7 @@
     - name: term
       session_name: aoc
       working_directory: /media/rolfie/ssd2/projects/aoc
+      command: nu
 -
   name: tmux_creator
   working_directory: /media/rolfie/ssd2/projects/tmux-creator

@@ -33,12 +33,12 @@ block = "cpu"
 interval = 1
 format = "$barchart.str() $utilization.eng() $frequency.eng()"
 
-[[block]]
-block = "memory"
-clickable = false
-interval = 30
-warning_mem = 70
-critical_mem = 90
+# [[block]]
+# block = "memory"
+# clickable = false
+# interval = 30
+# warning_mem = 70
+# critical_mem = 90
 
 [[block]]
 block = "battery"

@@ -23,17 +23,27 @@ module tmux {
   }
 
   def tmux_create_windows [session_name] {
-    get_windows_config $session_name | each { | window | 
-      tmux new-window -a -t $session_name -n $"($window | get name )" -c $"($window | get working_directory)"
+    get_windows_config $session_name 
+    | each { | window |
+      tmux_create_window $session_name $"($window | get name )" $"($window | get working_directory)" ($window | get command --ignore-errors | default 'nu')
     }
   }
 
+  def tmux_create_window [session_name, name, working_directory, command] {
+    tmux new-window -a -t $session_name -n $name -c $working_directory $command
+  }
+
   def get_windows_config [name] {
-    open $TMUX_CONFIG_FILE | where name == $name | get windows | get 0 
+    open $TMUX_CONFIG_FILE 
+    | where name == $name 
+    | get windows 
+    | get 0 
   }
 
   def session_connect_completion [] {
-    tmux list-session -F '#S' | lines | each { |line| $line | str replace '[\*\+] ' '' | str trim }
+    tmux list-session -F '#S'
+    | lines 
+    | each { |line| $line | str replace '[\*\+] ' '' | str trim }
   }
 
   # List tmux session registered in $TMUX_CONFIG_FILE
