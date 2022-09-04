@@ -78,15 +78,6 @@
       session_name: rust_lessons
       working_directory: /media/rolfie/ssd2/projects/cours/rust
 -
-  name: socials
-  working_directory: /media/rolfie/ssd2/projects/socials
-  enter_command: nvim
-  window_name: vim
-  windows:
-    - name: bash
-      session_name: socials
-      working_directory: /media/rolfie/ssd2/projects/socials
--
   name: train_simulator
   working_directory: /media/rolfie/ssd2/projects/train_simulator
   enter_command: nvim
@@ -104,3 +95,13 @@
     - name: bash
       session_name: dex_map
       working_directory: /media/rolfie/ssd2/projects/dex_map
+-
+  name: socials
+  working_directory: /media/rolfie/ssd2/projects/socials
+  enter_command: nvim
+  window_name: vim
+  windows:
+    - name: nu
+      session_name: socials
+      working_directory: /media/rolfie/ssd2/projects/socials
+      command: nu

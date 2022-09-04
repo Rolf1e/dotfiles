@@ -5,8 +5,6 @@ set noshowmode                          " We don't need to see things like -- IN
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 imap <silent> <c-space> <Plug>(completion_trigger)
-nmap <tab> <Plug>(completion_smart_tab)
-nmap <s-tab> <Plug>(completion_smart_s_tab)
 
 inoremap <silent><expr> <C-Space> compe#complete()
 inoremap <silent><expr> <CR>      compe#confirm('<CR>')
@@ -21,13 +19,6 @@ noremap <silent> <space>f <cmd>lua vim.lsp.buf.format { async = true }<CR>
 noremap <silent> <leader>r <cmd>lua vim.lsp.buf.rename()<CR>
 noremap <silent> <leader>i <cmd>lua vim.lsp.buf.code_action()<CR>
 noremap <silent> <leader>e <cmd>lua vim.diagnostic.open_float()<CR>
-
-function! LspStatus()
-  echo luaeval("vim.diagnostic.get(nil, { severity = vim.diagnostic.severity.ERROR })")
-endfunction
-
-noremap <silent> <leader>u <cmd>call LspStatus()<CR>
-
 
 lua require("my_compe_config")
 lua require("my_lsp_config")
@@ -50,3 +41,18 @@ autocmd!
 autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
 autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
 augroup END
+
+" functions
+function! LspDiagnosticInQuickFixList()
+  echo s:LspDiagnosticLevelError()
+endfunction
+
+function! s:LspDiagnosticLevelError()
+  let s:diagnostic = "\"" . luaeval("vim.diagnostic.get(nil, { severity = vim.diagnostic.severity.ERROR })") . "\""
+  echo s:diagnostic
+  return json_decode(s:diagnostic)
+endfunction
+
+" noremap <silent> <leader>u <cmd>call LspDiagnosticInQuickFixList()<CR>
+
+
