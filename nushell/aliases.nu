@@ -18,8 +18,6 @@ def pc_lap_top_mod [] {
 }
 
 #keyboard
-alias us = setxkbmap us
-alias fr = setxkbmap fr
 alias wally = ~/software/wally &
 
 alias rg = grep
@@ -32,8 +30,6 @@ alias dotfiles = tmo dotfiles
 # docker
 alias docker_stopall = docker stop $(docker ps -a -q) && docker rm -fv $(docker ps -aq)
 alias docker_ip_find = docker inspect -f \ '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'
-
-alias mdev = sudo mount /dev/sdb1 /media/rolfie/ssd2 
 
 def-env dev [dir?: string] { 
   cd $"/media/rolfie/ssd2/projects/($dir)"
@@ -79,11 +75,28 @@ alias grm = git rm --cached -r
 alias ug = ungit &
 
 #rust
-alias cr = (clear; cargo run)
+def cr [] {
+  clear
+  cargo run
+}
+
 alias crb = RUST_BACKTRACE=1 cargo run
-alias cb = (clear; cargo build)
-alias cc = (clear; cargo clippy)
-alias ct = (clear; cargo test)
+
+def cb [] {
+  clear
+  cargo build
+}
+
+def cc [] {
+  clear
+  cargo clippy
+}
+
+def ct [] {
+  clear
+  cargo test
+}
+
 alias ctb = RUST_BACKTRACE=1 cargo test -- --nocapture
 alias cf = cargo fmt
 
