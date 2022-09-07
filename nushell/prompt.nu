@@ -34,7 +34,7 @@ module prompt {
   }
 
   def git_prompt [] {
-      if (ls -a | where type == dir && name == .git | empty?) == false {
+      if (ls -a | where type == dir && name == .git | is-empty) == false {
         let branch = (git branch --show-current | str trim -c '')
         $"(ansi $rolfie_violet)git\((ansi $rolfie_red)($branch)(ansi $rolfie_violet)\)"
       } else {

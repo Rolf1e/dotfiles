@@ -1,6 +1,15 @@
 # tmux
 
-let TMUX_CONFIG_FILE = "/home/rolfie/.config/nushell/tmux-session-config.yml"
+let TMUX_CONFIG_FILE = $"(resolve_tmux_config_file_path)"
+
+def resolve_tmux_config_file_path [] {
+  if $env.TMUX_WORKFLOW == "content-square" {
+    $"($env.HOME)/.config/nushell/cs-tmux-session-config.yml"
+  } else {
+    # default home linux 
+    $"($env.HOME)/.config/nushell/tmux-session-config.yml"
+  }
+}
 
 module tmux {
 
@@ -75,7 +84,7 @@ module tmux {
   export def tmo [name: string@tr] {
     let whole_config = open $TMUX_CONFIG_FILE 
 
-    if ($whole_config | where name == $name | empty?) {
+    if ($whole_config | where name == $name | is-empty) {
       echo $"Tmux session ($name) was not found"
     } else {
       
