@@ -1,16 +1,6 @@
 # tmux
 
-let TMUX_CONFIG_FILE = $"(resolve_tmux_config_file_path)"
-
-def resolve_tmux_config_file_path [] {
-  if $env.TMUX_WORKFLOW == "content-square" {
-    $"($env.HOME)/.config/nushell/cs-tmux-session-config.yml"
-  } else {
-    # default home linux 
-    $"($env.HOME)/.config/nushell/tmux-session-config.yml"
-  }
-}
-
+let TMUX_CONFIG_FILE = $env.WORKFLOW_TMUX
 module tmux {
 
   def get_command [name] {

@@ -50,4 +50,22 @@ let-env PATH = ($env.PATH | prepend [
 ])
 
 source ~/.config/nushell/prompt.nu
-source ~/.config/nushell/contentsquare.nu
+source ~/.config/nushell/aliases.nu
+source ~/.config/nushell/theme.nu
+source ~/.config/nushell/completions.nu
+
+let-env WORKFLOW = 'content-square'
+
+setup_workflow
+
+def-env setup_workflow [] {
+  if $env.WORKFLOW == "content-square" {
+    source ~/.config/nushell/contentsquare.nu
+    echo "Launched with Content Square workflow"
+  } else {
+    let-env WORKFLOW_TMUX = $"($env.HOME)/.config/nushell/tmux-session-config.yml"
+    source ~/.config/nushell/tmux.nu
+    echo "Launched with Personal workflow"
+  }
+}
+
