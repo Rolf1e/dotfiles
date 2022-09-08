@@ -54,18 +54,22 @@ source ~/.config/nushell/aliases.nu
 source ~/.config/nushell/theme.nu
 source ~/.config/nushell/completions.nu
 
+
 let-env WORKFLOW = 'content-square'
 
 setup_workflow
 
+source ~/.config/nushell/tmux.nu
+source ~/.config/nushell/contentsquare.nu
+
 def-env setup_workflow [] {
-  if $env.WORKFLOW == "content-square" {
-    source ~/.config/nushell/contentsquare.nu
-    echo "Launched with Content Square workflow"
+  let-env WORKFLOW_TMUX = if $env.WORKFLOW == "content-square" {
+      echo "Launched with Content Square workflow"
+      overlay use content_square
+      $"($env.HOME)/.config/nushell/cs-tmux-session-config.yml"
   } else {
-    let-env WORKFLOW_TMUX = $"($env.HOME)/.config/nushell/tmux-session-config.yml"
-    source ~/.config/nushell/tmux.nu
-    echo "Launched with Personal workflow"
+      echo "Launched with Personal workflow"
+      $"($env.HOME)/.config/nushell/tmux-session-config.yml"
   }
 }
 

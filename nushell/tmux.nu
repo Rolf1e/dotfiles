@@ -1,6 +1,7 @@
 # tmux
 
 let TMUX_CONFIG_FILE = $env.WORKFLOW_TMUX
+
 module tmux {
 
   def get_command [name] {
