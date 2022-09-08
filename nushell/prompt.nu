@@ -30,7 +30,10 @@ module prompt {
   }
 
   export def create_right_prompt [] {
-    $"(git_prompt)" # (battery_prompt)"
+    $"(git_prompt) (workflow_prompt)" 
+  }
+  def workflow_prompt [] {
+    $"(ansi $rolfie_green)[($env.WORKFLOW)](ansi reset)"
   }
 
   def git_prompt [] {
@@ -42,12 +45,6 @@ module prompt {
       }
   }
 
-  def battery_prompt [] {
-    let battery_full = (cat $"($BATTERY_FOLDER)($BATTERY_FULL_FILE)" | into int)
-    echo $battery_full
-    let battery_now = (cat $"($BATTERY_FOLDER)($BATTERY_NOW_FILE)" | into int)
-    $"(($battery_now) * 100 / ($battery_full))%"
-  }
 }
 
 use prompt *
