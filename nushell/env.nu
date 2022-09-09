@@ -49,7 +49,9 @@ let-env PATH = ($env.PATH | prepend [
 
 ])
 
-let-env WORKFLOW = 'home'
+let-env WORKFLOW = 'cs'
+
+source ~/.config/nushell/contentsquare.nu
 
 setup_workflow
 
@@ -59,10 +61,10 @@ source ~/.config/nushell/theme.nu
 source ~/.config/nushell/completions.nu
 source ~/.config/nushell/tmux.nu
 
+
 def-env setup_workflow [] {
   let-env WORKFLOW_TMUX = if $env.WORKFLOW == 'cs' {
-      source-env ~/.config/nushell/contentsquare.nu
-      overlay use content_square
+      # overlay use content_square
       $"($env.HOME)/.config/nushell/cs-tmux-session-config.yml"
   } else {
       $"($env.HOME)/.config/nushell/tmux-session-config.yml"

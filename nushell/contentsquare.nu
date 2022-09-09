@@ -7,8 +7,8 @@ let-env AWS_REGION = 'eu-west-1'
 
 module content_square {
 
-  export def aws_login [mfa] {
-    csq ol login --password $"(pass onelogin)" --mfa-code $mfa
+  export def ,aws_login [] {
+    csq okta set-aws-creds -p $"(pass show okta)" 
   }
 
 }
