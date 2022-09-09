@@ -32,8 +32,15 @@ module prompt {
   export def create_right_prompt [] {
     $"(git_prompt) (workflow_prompt)" 
   }
+
   def workflow_prompt [] {
-    $"(ansi $rolfie_green)[($env.WORKFLOW)](ansi reset)"
+    let overlays = (overlay list)
+    let current = ($overlays | get (($overlays | length) - 1))
+    if $current == 'zero' { 
+      $"(ansi $rolfie_green)[home](ansi reset)"
+    } else {
+      $"(ansi $rolfie_green)[($current)](ansi reset)"
+    }
   }
 
   def git_prompt [] {
