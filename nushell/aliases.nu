@@ -35,6 +35,10 @@ def-env dev [dir?: string] {
   cd $"/media/rolfie/ssd2/projects/($dir)"
 }
 
+def-env cs [dir?: string] { 
+  cd $"/Users/tigranslama/projects/cs/($dir)"
+}
+
 def-env cours [dir?: string] { 
   cd $"/media/rolfie/ssd2/projects/cours/($dir)"
 }
