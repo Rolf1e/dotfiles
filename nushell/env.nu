@@ -42,7 +42,7 @@ let-env PATH = ($env.PATH | prepend [
     $PERSONAL_SOFTWARES,
 ])
 
-let-env WORKFLOW = 'home'
+let-env WORKFLOW = 'cs'
 
 setup_workflow
 
@@ -51,6 +51,8 @@ source ~/.config/nushell/aliases.nu
 source ~/.config/nushell/theme.nu
 source ~/.config/nushell/completions.nu
 source ~/.config/nushell/tmux.nu
+
+source ~/.config/nushell/contentsquare.nu
 
 def-env setup_workflow [] {
   let-env WORKFLOW_TMUX = if $env.WORKFLOW == 'cs' {
