@@ -35,18 +35,9 @@ let-env NU_PLUGIN_DIRS = [
 # rust
 let RUST = "~/.cargo/bin"
 
-#fzf
-let FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --no-ignore-vcs'
-let FZF_CTRL_T_COMMAND = "$FZF_DEFAULT_COMMAND"
-let FZF_DEFAULT_OPTS = '--height 96% --reverse --preview "cat {}"'
 
 let-env PATH = ($env.PATH | prepend [
     $RUST,
-
-    $FZF_CTRL_T_COMMAND, 
-    $FZF_DEFAULT_COMMAND,
-    $FZF_DEFAULT_OPTS,
-
 ])
 
 let-env WORKFLOW = 'cs'

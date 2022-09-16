@@ -6,8 +6,14 @@ export AWS_REGION=eu-west-1
 alias :q='exit'
 
 aws_login () {
-	mfa_code = $1
 	csq okta set-aws-creds -p $(pass show okta)
 }
 
-eval "$(ssh-agent -s)"
+alias vim="nvim"
+alias tc='function _(){ tmux attach-session -t $1; }; _'
+alias tl='tmux list-sessions'
+
+export ZSH="$HOME/.oh-my-zsh"
+export ZSH_THEME="robbyrussell"
+
+
