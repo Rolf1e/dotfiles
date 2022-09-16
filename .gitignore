@@ -2,3 +2,4 @@ plugged/
 himalaya/.*
 nushell/history.txt
 nushell/*tmux-*.yml
+nushell/local_*.nu
