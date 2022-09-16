@@ -20,7 +20,7 @@ def pc_lap_top_mod [] {
 #keyboard
 alias wally = ~/software/wally &
 
-alias rg = grep
+alias grep = rg 
 
 alias vi = nvim
 alias vim = nvim

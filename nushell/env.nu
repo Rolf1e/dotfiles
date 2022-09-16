@@ -35,18 +35,11 @@ let-env NU_PLUGIN_DIRS = [
 # rust
 let RUST = "~/.cargo/bin"
 
-#fzf
-let FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --no-ignore-vcs'
-let FZF_CTRL_T_COMMAND = "$FZF_DEFAULT_COMMAND"
-let FZF_DEFAULT_OPTS = '--height 96% --reverse --preview "cat {}"'
+let PERSONAL_SOFTWARES = "/media/rolfie/ssd2/softwares"
 
 let-env PATH = ($env.PATH | prepend [
     $RUST,
-
-    $FZF_CTRL_T_COMMAND, 
-    $FZF_DEFAULT_COMMAND,
-    $FZF_DEFAULT_OPTS,
-
+    $PERSONAL_SOFTWARES,
 ])
 
 let-env WORKFLOW = 'home'
@@ -61,8 +54,6 @@ source ~/.config/nushell/tmux.nu
 
 def-env setup_workflow [] {
   let-env WORKFLOW_TMUX = if $env.WORKFLOW == 'cs' {
-      source-env ~/.config/nushell/contentsquare.nu
-      overlay use content_square
       $"($env.HOME)/.config/nushell/cs-tmux-session-config.yml"
   } else {
       $"($env.HOME)/.config/nushell/tmux-session-config.yml"
