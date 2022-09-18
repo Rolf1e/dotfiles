@@ -7,22 +7,12 @@
 
 set syntax=off
 
-let g:palette = { 
-      \  'white': '#fbf1c7', 
-      \  'white_blue': '#a9b7c6', 
-      \  'dark_grey': '#2b2b2b', 
-      \  'light_grey': '#928374',
-      \  'transparent': '#32302f',
-      \  'dark_green': '#6a8759', 
-      \  'green': '#a9b665', 
-      \  'violet': '#d3869b', 
-      \  'blue': '#7daea3', 
-      \  'red': '#ea6962',
-      \  'bold_red': '#ff0000',
-      \  'dark_red': '#cc241d',
-      \  'orange': '#fe8019',
-      \  'NONE': 'NONE',
-      \ }
+function! ReadPaletteFromConfigFile()
+  let content = readfile($HOME . '/.config/.rolfie_colors.json')
+  return json_decode(content)
+endfunction
+
+let g:palette = ReadPaletteFromConfigFile() 
 
 let g:sections = {
   \ 'Identifier': ['white', 'NONE'],
