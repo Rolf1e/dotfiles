@@ -19,13 +19,10 @@ compton:
 
 tools-apt: tmux xclip compton
 
-bat:
-	cargo install --locked bat
-
 ripgrep:
 	cargo install ripgrep
 
-tools-cargo: bat ripgrep
+tools-cargo: ripgrep
 
 tools: tools-cargo tools-apt
 
