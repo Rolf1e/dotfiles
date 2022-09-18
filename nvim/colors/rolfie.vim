@@ -51,7 +51,7 @@ let g:sections = {
 
 function! ApplyHighlights(sections, palette)
   for [section, color_str] in items(a:sections)
-    execute 'highlight ' . section . ' guifg=' . a:palette[color_str[0]] . ' guibg=' . a:palette[color_str[1]] . ' gui=NONE'
+    execute 'highlight ' . section . ' guifg=' . a:palette['rolfie_'.color_str[0]] . ' guibg=' . a:palette['rolfie_'.color_str[1]] . ' gui=NONE'
   endfor
 endfunction
 
