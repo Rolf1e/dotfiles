@@ -18,7 +18,10 @@ noremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 noremap <silent> <space>f <cmd>lua vim.lsp.buf.format { async = true }<CR>
 noremap <silent> <leader>r <cmd>lua vim.lsp.buf.rename()<CR>
 noremap <silent> <leader>i <cmd>lua vim.lsp.buf.code_action()<CR>
-noremap <silent> <leader>e <cmd>lua vim.diagnostic.open_float()<CR>
+noremap <silent> <leader>u <cmd>lua vim.diagnostic.open_float()<CR>
+noremap <silent> <leader>e <cmd>lua vim.diagnostic.setqflist()<CR>
+noremap <silent> <leader>E <cmd>lua vim.diagnostic.setqflist({severity = "E"})<CR>
+noremap <silent> <leader>w <cmd>lua vim.diagnostic.setqflist({severity = "W"})<CR>
 
 lua require("my_compe_config")
 lua require("my_lsp_config")
@@ -42,17 +45,5 @@ autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
 autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
 augroup END
 
-" functions
-function! LspDiagnosticInQuickFixList()
-  echo s:LspDiagnosticLevelError()
-endfunction
-
-function! s:LspDiagnosticLevelError()
-  let s:diagnostic = "\"" . luaeval("vim.diagnostic.get(nil, { severity = vim.diagnostic.severity.ERROR })") . "\""
-  echo s:diagnostic
-  return json_decode(s:diagnostic)
-endfunction
-
-" noremap <silent> <leader>u <cmd>call LspDiagnosticInQuickFixList()<CR>
 
 
