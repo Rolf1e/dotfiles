@@ -1,23 +1,24 @@
+GIT_DOTFILES_REPO_PATH ?= ~/Documents/dotfiles
+DOT_CONFIG_PATH ?= ~/.config
+SOFTWARES_FOLDER ?= /media/rolfie/ssd2/softwares
+
 #alacritty
 alacritty-install:
 	cargo install alacritty
 
 alacritty-symlinks:
-	ln -s ~/Documents/dotfiles/alacritty ~/.config/alacritty
+	ln -s $(GIT_DOTFILES_REPO_PATH)/alacritty $(DOT_CONFIG_PATH)/alacritty
 
 alacritty: alacritty-install alacritty-symlinks
 
 # unix tools
-tmux:
-	apt install tmux
-
 xclip:
 	apt install xclip
 
 compton:
 	apt install compton
 
-tools-apt: tmux xclip compton
+tools-apt: xclip compton
 
 ripgrep:
 	cargo install ripgrep
@@ -28,51 +29,33 @@ tools: tools-cargo tools-apt
 
 # i3
 i3-symlinks:
-	ln -s ~/Documents/dotfiles/i3 ~/.config/i3
-
-# starship
-starship-symlinks:
-	ln -s ~/Documents/dotfiles/starship.toml ~/.config/starship.toml
-
-starship-install: 
-	cargo install starship
-
-starship: starship-install starship-symlinks
+	ln -s $(GIT_DOTFILES_REPO_PATH)/i3 $(DOT_CONFIG_PATH)/i3
 
 # neovim
 vim-plug:
 	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 neovim-pull:
-	cd /media/rolfie/ssd2/softwares/neovim && git pull
+	cd $(SOFTWARES_FOLDER)/neovim && git pull
 
 neovim-build:
-	make -C /media/rolfie/ssd2/softwares/neovim CMAKE_BUILD_TYPE=RelWithDebInfo
-	sudo make -C /media/rolfie/ssd2/softwares/neovim install
+	make -C $(SOFTWARES_FOLDER)/neovim CMAKE_BUILD_TYPE=RelWithDebInfo
+	sudo make -C $(SOFTWARES_FOLDER)/neovim install
 
 neovim-update: neovim-pull neovim-build
 
 neovim-clone:
-	cd /media/rolfie/ssd2/softwares && git clone https://github.com/neovim/neovim 
+	cd $(SOFTWARES_FOLDER) && git clone https://github.com/neovim/neovim 
 
 neovim-symlinks:
-	ln -s ~/Documents/dotfiles/nvim ~/.config/nvim
+	ln -s $(GIT_DOTFILES_REPO_PATH)/nvim $(DOT_CONFIG_PATH)/nvim
 
-neovim-first: vim-plug neovim-clone neovim-update neovim-symlinks
+neovim-colors: 
+	ln -s $(GIT_DOTFILES_REPO_PATH)/.rolfie_colors.json $(DOT_CONFIG_PATH)/.rolfie_colors.json
+
+neovim-first: vim-plug neovim-clone neovim-update neovim-symlinks neovim-colors
 
 neovim: neovim-update 
 
-# Personal - tmux creator
-tmux-creator-clone:
-	cd ~/software && git clone https://github.com/Rolf1e/tmux-creator
-
-tmux-creator-build:
-	cargo build --release --manifest-path ~/software/tmux-creator/Cargo.toml
-
-tmux-creator-symlinks:
-	ln -s ~/Documents/dotfiles/tmux-creator ~/.config/tmux-creator
-
-tmux-creator: tmux-creator-clone tmux-creator-build
-
-symlinks: tmux-creator-symlinks neovim-symlinks alacritty-symlinks i3-symlinks
+symlinks: neovim-symlinks alacritty-symlinks i3-symlinks
 
