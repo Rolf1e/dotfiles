@@ -21,7 +21,7 @@ noremap <silent> <leader>i <cmd>lua vim.lsp.buf.code_action()<CR>
 noremap <silent> <leader>u <cmd>lua vim.diagnostic.open_float()<CR>
 noremap <silent> <leader>e <cmd>lua vim.diagnostic.setqflist()<CR>
 noremap <silent> <leader>E <cmd>lua vim.diagnostic.setqflist({severity = "E"})<CR>
-noremap <silent> <leader>w <cmd>lua vim.diagnostic.setqflist({severity = "W"})<CR>
+noremap <silent> <leader>W <cmd>lua vim.diagnostic.setqflist({severity = "W"})<CR>
 
 lua require("my_compe_config")
 lua require("my_lsp_config")
@@ -31,13 +31,12 @@ hi LspReferenceRead cterm=bold ctermbg=blue
 hi LspReferenceText cterm=bold ctermbg=blue 
 hi LspReferenceWrite cterm=bold ctermbg=blue 
 
-hi link LspDiagnosticsVirtualTextError Red
-hi link LspDiagnosticsVirtualTextWarning Yellow
+hi link LspDiagnosticsVirtualTextError       Red
+hi link LspDiagnosticsVirtualTextWarning     Yellow
 hi link LspDiagnosticsVirtualTextInformation Grey
-hi link LspDiagnosticsVirtualTextHint White
-
-hi link LspCodeLens Red
-hi link LspCodeLensSeparator Blue
+hi link LspDiagnosticsVirtualTextHint        White
+hi link LspCodeLens                          Red
+hi link LspCodeLensSeparator                 Blue
 
 augroup lsp_document_highlight
 autocmd!
