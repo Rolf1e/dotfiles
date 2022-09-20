@@ -16,7 +16,7 @@ set colorcolumn=100
 set expandtab
 set smartindent
 set nohlsearch                          " no highlight on search
-set mouse=                              " WHO TF WANT'S A MOUSE IN VIM
+set mouse=                              " WHO TF WANTS A MOUSE IN VIM
 
 let g:python_host_prog = "/usr/bin/python2"
 let g:python3_host_prog = "/usr/bin/python3.9"

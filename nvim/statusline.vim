@@ -61,7 +61,7 @@ endfunction
 
 function! StatuslineGitBranch()
   let b:gitbranch=""
-  if executable("git") 
+  if !executable("git") 
     return
   endif
 
