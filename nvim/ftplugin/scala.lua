@@ -1,7 +1,9 @@
 local api = vim.api
 local cmd = vim.cmd
 
--- SCALA 
+
+api.nvim_set_keymap("n", "<leader>o", "<cmd>MetalsOrganizeImports<CR>", { noremap = true })
+
 local metals_config = require("metals").bare_config()
 
 -- Example of settings
