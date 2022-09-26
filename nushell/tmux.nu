@@ -4,15 +4,15 @@ let TMUX_CONFIG_FILE = $env.WORKFLOW_TMUX
 
 module tmux {
 
-  def get_command [name] {
-    open $TMUX_CONFIG_FILE 
+  def get_command [config, name] {
+    $config 
     | where name == $name 
     | get enter_command 
     | get 0
   }
 
-  def get_working_directory [name] {
-    open $TMUX_CONFIG_FILE 
+  def get_working_directory [config, name] {
+    $config
     | where name == $name 
     | get working_directory 
     | get 0
@@ -22,8 +22,8 @@ module tmux {
     tmux new-session -d -s $name -c $working_directory -n $name $command
   }
 
-  def tmux_create_windows [session_name] {
-    get_windows_config $session_name 
+  def tmux_create_windows [config, session_name] {
+    get_windows_config $config $session_name 
     | each { | window |
       tmux_create_window $session_name $"($window | get name )" $"($window | get working_directory)" ($window | get command --ignore-errors | default 'nu')
     }
@@ -33,8 +33,8 @@ module tmux {
     tmux new-window -a -t $session_name -n $name -c $working_directory $command
   }
 
-  def get_windows_config [name] {
-    open $TMUX_CONFIG_FILE 
+  def get_windows_config [config, name] {
+    $config
     | where name == $name 
     | get windows 
     | get 0 
@@ -59,7 +59,7 @@ module tmux {
 
   # Kill a tmux session
   export def tk [
-    name: string # Session name
+    name: string@session_connect_completion # Session name
   ] {
     tmux kill-session -t $name
   }
@@ -79,14 +79,14 @@ module tmux {
       echo $"Tmux session ($name) was not found"
     } else {
       
-      let working_directory = get_working_directory $name
-      let command = get_command $name
+      let working_directory = get_working_directory $whole_config $name
+      let command = get_command $whole_config $name
 
       tmux_create_session $name $working_directory $command
 
       echo $"Creating tmux session ($name) in ($working_directory)"
 
-      tmux_create_windows $name
+      tmux_create_windows $whole_config $name
     }
 
   }
