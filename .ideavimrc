@@ -9,3 +9,4 @@ source ~/.config/nvim/init.vim
 :map <leader>q <Action>(CommentByLineComment)
 :map K <Action>(QuickJavaDoc)
 :map gd <Action>(GotoDeclaration)
+:map <leader>o <Action>(OptimizeImports)
