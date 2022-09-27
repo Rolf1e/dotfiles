@@ -6,7 +6,15 @@ set number
 source ~/.config/nvim/init.vim
 
 :map <space>f <Action>(ReformatCode)
+:map <space>e <Action>(ActivateProjectToolWindow)
+:map <leader>o <Action>(OptimizeImports)
 :map <leader>q <Action>(CommentByLineComment)
 :map K <Action>(QuickJavaDoc)
 :map gd <Action>(GotoDeclaration)
-:map <leader>o <Action>(OptimizeImports)
+:map gi <Action>(GotoImplementation)
+:map gr <Action>(GotoDeclaration)
+:map <C-P> <Action>(SearchEverywhere)
+:map <C-U> <Action>(Switcher)
+:map <F9> <Action>(CheckinProject)
+:map <C-space> <Action>(CodeCompletion)
+:imap <C-space> <Action>(CodeCompletion)

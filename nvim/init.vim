@@ -113,6 +113,7 @@ nnoremap <silent> <space>e <cmd>Ex!<CR>
 nnoremap <silent> <F5> :UndotreeToggle<cr>
 
 " Git
-nmap <F9> :Git<CR>
-nmap <F8> :SymbolsOutlineOpen<CR>
+nnoremap <F9> :Git<CR>
+nnoremap <space><F9> :Git commit<CR>
+nnoremap <F8> :SymbolsOutlineOpen<CR>
 
