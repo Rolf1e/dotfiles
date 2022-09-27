@@ -62,7 +62,7 @@ Plug 'vim-test/vim-test'
 
 "Tree
 Plug 'mbbill/undotree'
-Plug 'simrat39/symbols-outline.nvim'
+Plug 'preservim/tagbar'
 
 call plug#end()
 
@@ -115,5 +115,5 @@ nnoremap <silent> <F5> :UndotreeToggle<cr>
 " Git
 nnoremap <F9> :Git<CR>
 nnoremap <space><F9> :Git commit<CR>
-nnoremap <F8> :SymbolsOutlineOpen<CR>
+nnoremap <F8> :TagbarToggle<CR>
 
