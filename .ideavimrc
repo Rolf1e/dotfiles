@@ -9,6 +9,7 @@ source ~/.config/nvim/init.vim
 :map <space>e <Action>(ActivateProjectToolWindow)
 :map <leader>o <Action>(OptimizeImports)
 :map <leader>q <Action>(CommentByLineComment)
+:map <leader>i <Action>(ShowIntentionActions)
 :map K <Action>(QuickJavaDoc)
 :map gd <Action>(GotoDeclaration)
 :map gi <Action>(GotoImplementation)
@@ -18,3 +19,7 @@ source ~/.config/nvim/init.vim
 :map <F9> <Action>(CheckinProject)
 :map <C-space> <Action>(CodeCompletion)
 :imap <C-space> <Action>(CodeCompletion)
+:map <C-o> <Action>(Back)
+:map <C-i> <Action>(Forward)
+
+:vmap <leader>je <Action>(Console.Jdbc.Execute)

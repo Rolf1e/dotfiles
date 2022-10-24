@@ -1,9 +1,9 @@
 <scheme name="rolfie" version="142" parent_scheme="Darcula">
   <metaInfo>
-    <property name="created">2022-03-23T20:58:50</property>
+    <property name="created">2022-10-24T23:17:04</property>
     <property name="ide">idea</property>
-    <property name="ideVersion">2021.3.2.0.0</property>
-    <property name="modified">2022-03-23T20:59:09</property>
+    <property name="ideVersion">2022.2.3.0.0</property>
+    <property name="modified">2022-10-24T23:17:35</property>
     <property name="originalScheme">rolfie</property>
   </metaInfo>
   <attributes>
@@ -105,6 +105,11 @@
       <value>
         <option name="FOREGROUND" value="a9b665" />
         <option name="FONT_TYPE" value="2" />
+      </value>
+    </option>
+    <option name="Scala Predefined types">
+      <value>
+        <option name="FOREGROUND" value="fe8019" />
       </value>
     </option>
   </attributes>

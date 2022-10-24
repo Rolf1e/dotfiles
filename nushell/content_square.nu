@@ -18,3 +18,6 @@ def pod_describe_config [name: string] {
   kubectl describe configMaps $name
 }
 
+def-env dev_cs [dir?: string] { 
+  cd $"/Users/tigranslama/projects/cs/($dir)"
+}

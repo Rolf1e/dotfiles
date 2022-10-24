@@ -7,9 +7,11 @@ PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 
 export JAVA_HOME="/Users/tigranslama/Library/Java/JavaVirtualMachines/openjdk-18.0.2.1/Contents/Home"
 
+
 # >>> coursier install directory >>>
 export PATH="$PATH:/Users/tigranslama/Library/Application Support/Coursier/bin"
 # <<< coursier install directory <<<
 
 # Content Square
 PATH="/Users/tigranslama/projects/platform_csq:$PATH"
+PATH="$SCALA_HOME:$PATH"
