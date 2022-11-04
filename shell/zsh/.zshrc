@@ -13,7 +13,7 @@ alias vim="nvim"
 alias tc='function _(){ tmux attach-session -t $1; }; _'
 alias tl='tmux list-sessions'
 
-export ZSH="$HOME/.oh-my-zsh"
-export ZSH_THEME="robbyrussell"
+source ~/.config/shell/zsh/zsh_prompt
+source ~/.config/shell/zsh/zsh_aliases
 
 

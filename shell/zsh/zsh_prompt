@@ -1,0 +1,29 @@
+
+
+rolfie_violet=''
+rolfie_red=''
+rolfie_blue=''
+
+git_prompt()
+{
+  if [ -d .git ]
+  {
+    '%F{}git(%f%F{}%f)%F{}%f'
+  # } else 
+  # {
+    # ''
+
+  }
+
+    # if (ls -a | where type == dir && name == .git | is-empty) == false {
+      # let branch = (git branch --show-current | str trim -c '')
+      # $"(ansi $rolfie_violet)git\((ansi $rolfie_red)($branch)(ansi $rolfie_violet)\)"
+    # } else {
+      # ""
+    # }
+}
+
+
+PROMPT='%F{#a9b7c6}%3~ 〉%f'
+
+RPROMPT=''

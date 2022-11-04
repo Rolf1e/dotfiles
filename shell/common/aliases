@@ -1,0 +1,73 @@
+# === SYSTEM ===
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
+
+alias big_files="du -ahx . | sort -rh | head -5"
+
+alias :q="exit"
+
+alias cd..="cd.."
+alias ..="cd .."
+
+alias dwn="cd ~/Downloads"
+alias doc="cd ~/Documents"
+
+tree_settings() {
+	tree -a -L $1 -I ".git|.github|.vscode|.idea|*node_modules|*dist|*target|*__pycache__|$2" --ignore-case
+}
+
+alias t3="tree_settings 3"
+alias t2="tree_settings 2"
+alias t1="tree_settings 1"
+alias tn='function _(){ tree_settings $1 $2; }; _'
+
+# === TOOLS === 
+# grep
+alias grep="rg"
+alias erg='function _(){ rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git,target}" $1; }; _'
+
+# vim
+alias vi="nvim"
+alias vim="nvim"
+
+# fzf
+alias fzfi='function _(){ erg $1; };_ | fzf'
+alias vifi='vim $(fzfi)'
+
+# docker 
+alias docker_stopall='docker stop $(docker ps -a -q) && docker rm -fv $(docker ps -aq)'
+alias docker_ip_find="docker inspect -f \ '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
+
+source ~/.config/shell/common/tmux
+
+# curl
+_curl() {
+  verb=$1
+  url=$2
+  body=$3
+  auth=$4
+
+  if [ $# -eq 5 ] #With auth
+  then
+    echo "Request HTTP $1 with Auth $4 $5"
+    curl -X $verb $url -d "$body" -H "Content-Type: application/json" -H "Authorization: $4 $5"
+  else
+    echo "Request HTTP $1"
+    curl -X $verb $url -d "$body" -H "Content-Type: application/json"
+  fi
+}
+
+alias http_get='function _(){ curl $1; }; _'
+alias http_post='function _(){ _curl POST $1 $2 $3 $4; }; _'
+alias http_put='function _(){ _curl PUT $1 $2 $3 $4; }; _'
+
+# git
+alias gs="git status"
+alias gd="git diff"
+alias ga="git add"
+alias gc="git commit -m"
+alias gm="git commit -v"
+alias gp="git push"
+alias gco="git checkout"
+alias grm="git rm --cached -r "

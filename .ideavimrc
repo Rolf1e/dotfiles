@@ -21,5 +21,6 @@ source ~/.config/nvim/init.vim
 :imap <C-space> <Action>(CodeCompletion)
 :map <C-o> <Action>(Back)
 :map <C-i> <Action>(Forward)
+:map zi <Action>(FoldingGroup)
 
 :vmap <leader>je <Action>(Console.Jdbc.Execute)

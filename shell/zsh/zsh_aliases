@@ -1,0 +1,4 @@
+if [ -f ~/.config/shell/common/aliases ]; then
+  source ~/.config/shell/common/aliases
+fi
+

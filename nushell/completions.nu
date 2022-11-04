@@ -1,7 +1,7 @@
 module pass_completions {
 
   export def pass_completion [] {
-    let home_pwd = "/home/rolfie/.password-store/"
+    let home_pwd = "~/.password-store/"
     let gpg = '.gpg'
     let gpg_length = ($gpg | str length)
     tree -f -i $home_pwd
