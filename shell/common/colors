@@ -1,0 +1,15 @@
+
+rolfie_colors="$HOME/.config/.rolfie_colors.json"
+
+rolfie_white=$(cat $rolfie_colors | jq '.rolfie_white.rgb256')
+rolfie_white_blue=$(cat $rolfie_colors | jq '.rolfie_white_blue.rgb256')
+rolfie_dark_grey=$(cat $rolfie_colors | jq '.rolfie_dark_grey.rgb256')
+rolfie_light_grey=$(cat $rolfie_colors | jq '.rolfie_light_grey.rgb256')
+rolfie_dark_green=$(cat $rolfie_colors | jq '.rolfie_dark_green.rgb256')
+rolfie_green=$(cat $rolfie_colors | jq '.rolfie_green.rgb256')
+rolfie_violet=$(cat $rolfie_colors | jq '.rolfie_violet.rgb256')
+rolfie_blue=$(cat $rolfie_colors | jq '.rolfie_blue.rgb256')
+rolfie_red=$(cat $rolfie_colors | jq '.rolfie_red.rgb256')
+rolfie_bold_red=$(cat $rolfie_colors | jq '.rolfie_bold_red.rgb256')
+rolfie_dark_red=$(cat $rolfie_colors | jq '.rolfie_dark_red.rgb256')
+rolfie_orange=$(cat $rolfie_colors | jq '.rolfie_orange.rgb256')

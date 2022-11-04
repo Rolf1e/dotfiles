@@ -1,16 +1,58 @@
 { 
-  "rolfie_white": "#fbf1c7", 
-  "rolfie_white_blue": "#a9b7c6", 
-  "rolfie_dark_grey": "#2b2b2b", 
-  "rolfie_light_grey": "#928374",
-  "rolfie_dark_green": "#6a8759", 
-  "rolfie_green": "#a9b665", 
-  "rolfie_violet": "#d3869b", 
-  "rolfie_blue": "#7daea3", 
-  "rolfie_red": "#ea6962",
-  "rolfie_bold_red": "#ff0000",
-  "rolfie_dark_red": "#cc241d",
-  "rolfie_orange": "#fe8019",
-  "rolfie_transparent": "#32302f",
-  "rolfie_NONE": "NONE"
+  "rolfie_white": {
+    "hexa": "#fbf1c7",
+    "rgb256": 255
+  }, 
+  "rolfie_white_blue": {
+    "hexa": "#a9b7c6", 
+    "rgb256": 109
+  },
+  "rolfie_dark_grey": {
+    "hexa": "#2b2b2b",
+    "rgb256": 239
+  },
+  "rolfie_light_grey": {
+    "hexa": "#928374",
+    "rgb256": 248
+  },
+  "rolfie_dark_green": {
+    "hexa": "#6a8759",
+    "rgb256": 22
+  }, 
+  "rolfie_green": {
+    "hexa": "#a9b665",
+    "rgb256": 34
+  }, 
+  "rolfie_violet": {
+    "hexa": "#d3869b",
+    "rgb256": 218
+  }, 
+  "rolfie_blue": {
+    "hexa": "#7daea3",
+    "rgb256": 27
+  }, 
+  "rolfie_red": {
+    "hexa": "#ea6962",
+    "rgb256": 167
+  },
+  "rolfie_bold_red": {
+    "hexa": "#ff0000",
+    "rgb256": 196
+  },
+  "rolfie_dark_red": {
+    "hexa": "#cc241d",
+    "rgb256": 124
+  },
+  "rolfie_orange": {
+    "hexa": "#fe8019",
+    "rgb256": 202
+  },
+  "rolfie_transparent": {
+    "hexa": "#32302f",
+    "rgb256": 0
+  },
+  "rolfie_NONE": {
+    "hexa": "NONE",
+    "rgb256": 0
+  }
 }
