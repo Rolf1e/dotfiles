@@ -15,3 +15,4 @@ export PATH="$PATH:/Users/tigranslama/Library/Application Support/Coursier/bin"
 # Content Square
 PATH="/Users/tigranslama/projects/platform_csq:$PATH"
 PATH="$SCALA_HOME:$PATH"
+

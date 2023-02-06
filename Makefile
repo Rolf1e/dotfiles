@@ -1,6 +1,6 @@
 GIT_DOTFILES_REPO_PATH ?= ~/Documents/dotfiles
 DOT_CONFIG_PATH ?= ~/.config
-SOFTWARES_FOLDER ?= /media/rolfie/ssd2/softwares
+SOFTWARES_FOLDER ?= ~/projects
 
 #alacritty
 alacritty-install:

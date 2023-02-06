@@ -1,14 +1,30 @@
 source ~/.config/shell/common/colors
 
-git_prompt()
+
+prompt_git()
 {
   if [ -d .git ]; then
     echo "%F{$rolfie_violet}git(%f%F{$rolfie_red}$(git branch --show-current)%f%F{$rolfie_violet})%f"
   else 
-    echo ''
+    echo ""
   fi
 }
 
+prompt_time() 
+{
+  echo "%F{$rolfie_dark_grey}%*%f"
+}
 
-export PROMPT="%F{$rolfie_white_blue}%3~ 〉%f"
-export RPROMPT="$(git_prompt)"
+prompt_current_directory() 
+{
+  echo "%F{$rolfie_white_blue}%3~%f"
+}
+
+prompt_symbol() 
+{
+  echo "%F{$rolfie_white_blue}〉%f"
+}
+
+
+export PROMPT="$(prompt_current_directory) $(prompt_symbol)"
+export RPROMPT="$(prompt_time) $(prompt_git)"
