@@ -1,8 +1,14 @@
 source "$HOME/.config/shell/common/colors" 
 source "$HOME/.config/shell/common/prompt" 
 
-# echo printf "%*s" "\e[" "${bash_rolfie_white_blue}" "m[\w 〉 ]\e[0m\T"
- 
-# PS1=$(printf "%q %q %q" "\e[" "${bash_rolfie_white_blue}" "m[\w 〉]\e[0m\T")
+P_PWD='\[\e[0;38;5;33m\]\w〉 \[\e[0m\]'
 
+P_LEFT="$P_PWD"
+
+P_GIT='\[\e[0;38;5;28m\]git(\[\e[0;91m\]$(git branch 2>/dev/null | grep '"'"'^*'"'"' | colrm 1 2)\[\e[0;38;5;22m\])\[\e[0m\]'
+P_TIME='\[\e[0;90m\]\D{}\[\e[0m\]'
+
+P_RIGHT="$P_GIT $P_TIME"
+
+PS1="$P_LEFT $LINE $P_RIGHT"
 
