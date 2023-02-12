@@ -1,8 +1,0 @@
-git_prompt()
-{
-  if [ -d .git ]; then
-    echo "%F{$rolfie_violet}git(%f%F{$rolfie_red}$(git branch --show-current)%f%F{$rolfie_violet})%f"
-  else 
-    echo ''
-  fi
-}

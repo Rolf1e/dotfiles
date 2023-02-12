@@ -30,6 +30,7 @@ let g:sections = {
   \ 'Include': ['orange', 'NONE'],
   \ 'Statement': ['blue', 'NONE'],
   \ 'Comment': ['light_grey', 'NONE'],
+  \ 'cComment': ['light_grey', 'NONE'],
   \ 'String': ['dark_green', 'NONE'],
   \ 'Constant': ['violet', 'NONE'],
   \ 'Error': ['bold_red', 'NONE'],
