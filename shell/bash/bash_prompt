@@ -1,0 +1,8 @@
+source "$HOME/.config/shell/common/colors" 
+source "$HOME/.config/shell/common/prompt" 
+
+# echo printf "%*s" "\e[" "${bash_rolfie_white_blue}" "m[\w 〉 ]\e[0m\T"
+ 
+# PS1=$(printf "%q %q %q" "\e[" "${bash_rolfie_white_blue}" "m[\w 〉]\e[0m\T")
+
+

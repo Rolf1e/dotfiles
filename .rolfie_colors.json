@@ -1,51 +1,63 @@
 { 
   "rolfie_white": {
     "hexa": "#fbf1c7",
-    "rgb256": 255
+    "rgb256": 255,
+    "bash": "1;37"
   }, 
   "rolfie_white_blue": {
     "hexa": "#a9b7c6", 
-    "rgb256": 109
+    "rgb256": 109, 
+    "bash": "0;36"
   },
   "rolfie_dark_grey": {
     "hexa": "#2b2b2b",
-    "rgb256": 239
+    "rgb256": 239,
+    "bash": "1;30"
   },
   "rolfie_light_grey": {
     "hexa": "#928374",
-    "rgb256": 248
+    "rgb256": 248,
+    "bash": "0;37"
   },
   "rolfie_dark_green": {
     "hexa": "#6a8759",
-    "rgb256": 22
+    "rgb256": 22,
+    "bash": "0;32"
   }, 
   "rolfie_green": {
     "hexa": "#a9b665",
-    "rgb256": 34
+    "rgb256": 34,
+    "bash": "1;32"
   }, 
   "rolfie_violet": {
     "hexa": "#d3869b",
-    "rgb256": 218
+    "rgb256": 218, 
+    "bash": "1;35"
   }, 
   "rolfie_blue": {
     "hexa": "#7daea3",
-    "rgb256": 27
+    "rgb256": 27,
+    "bash": "0;34"
   }, 
   "rolfie_red": {
     "hexa": "#ea6962",
-    "rgb256": 167
+    "rgb256": 167,
+    "bash": "1;31"
   },
   "rolfie_bold_red": {
     "hexa": "#ff0000",
-    "rgb256": 196
+    "rgb256": 196,
+    "bash": "0;31"
   },
   "rolfie_dark_red": {
     "hexa": "#cc241d",
-    "rgb256": 124
+    "rgb256": 124,
+    "bash": "1;31"
   },
   "rolfie_orange": {
     "hexa": "#fe8019",
-    "rgb256": 202
+    "rgb256": 202,
+    "bash": "0;35"
   },
   "rolfie_transparent": {
     "hexa": "#32302f",

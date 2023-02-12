@@ -31,6 +31,8 @@ alias erg='function _(){ rg --files --hidden --follow --no-ignore-vcs -g "!{node
 alias vi="nvim"
 alias vim="nvim"
 
+alias idea="/media/rolfie/ssd2/softwares/idea/idea-IC-223.7571.182/bin/idea.sh"
+
 # fzf
 alias fzfi='function _(){ erg $1; };_ | fzf'
 alias vifi='vim $(fzfi)'
@@ -71,3 +73,5 @@ alias gm="git commit -v"
 alias gp="git push"
 alias gco="git checkout"
 alias grm="git rm --cached -r "
+
+alias pdf='function _() { lesspipe $1 | bat; }; _'

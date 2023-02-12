@@ -1,8 +1,12 @@
-local jdtls_path = '/home/rolfie/software/eclipse.jdtls'
+local softwares_dir_path = '/media/rolfie/ssd2/softwares'
+
+local jdtls_path = softwares_dir_path .. '/jdtls'
 local equinox_version = '1.6.400.v20210924-0641'
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
-local workspace_dir = '/home/rolfie/software/eclipse.jdtls/.workspace/' .. project_name
+local workspace_dir = softwares_dir_path .. '/jdtls/.workspace/' .. project_name
+
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
+
 local m2_path = '/home/rolfie/.m2'
 local lombok_version = '1.18.22'
 local lombok_path = m2_path .. '/repository/org/projectlombok/lombok/' .. lombok_version .. '/lombok-' .. lombok_version  .. '.jar'

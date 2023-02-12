@@ -40,6 +40,7 @@ Plug 'mfussenegger/nvim-jdtls'
 Plug 'rust-lang/rust.vim'
 " Plug 'thosakwe/vim-flutter'
 " Plug 'rhysd/vim-clang-format'
+Plug 'lifepillar/pgsql.vim'
 
 "Debugger
 " Plug 'Shougo/vimproc.vim', {'do' : 'make'}

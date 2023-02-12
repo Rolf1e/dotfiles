@@ -1,2 +1,0 @@
-alias ffvelo-mysql="scalingo -a generation2024 mysql-console"
-alias ffvelo-logs="scalingo --region osc-fr1 --app generation2024 logs --lines 100000"

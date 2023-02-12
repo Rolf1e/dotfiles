@@ -87,6 +87,11 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+# some more ls aliases
+#alias ll='ls -l'
+#alias la='ls -A'
+#alias l='ls -CF'
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -106,71 +111,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+. "$HOME/.cargo/env"
 
-
-# To handle screen thing 
-# => /etc/systemd/logind.conf -> Lid commands
-
-#git_branch() {
-  #git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-#}
-#export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$(git_branch)\$ "
-
-#i3 connection nm-connection-editor
-#nm-applet
-
-#node
-#export NODE_PATH="~/node_modules"
-
-#rust
-export RUST="~/.cargo/bin"
-
-#java - maven
-export MAVEN_HOME="/home/rolfie/software/apache-maven-3.6.3/bin"
-export NVIM_SCRIPT="~/.config/nvim"
-#jdtfls
-
-export JAR="$HOME/software/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/plugins/org.eclipse.equinox.launcher_*.jar"
-export JAVA_HOME="$HOME/software/jdk-18.0.1.1"
-export GRADLE_HOME=$HOME/gradle 
-# $JAVA_HOME/bin/java -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultStartLevel=4 -Declipse.product=org.eclipse.jdt.ls.core.product -Dlog.protocol=true -Dlog.level=ALL -Xms1g -Xmx2G -jar $(echo "$JAR") -configuration "$HOME/software/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/config_linux" -data "${1:-$HOME/workspace}" --add-modules=ALL-SYSTEM --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED
-export JDTLS_CONFIG="$HOME/software/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/config_linux"
-export WORKSPACE=$HOME/workspace
-
-#haskell
-export HASKELL_PATH="/opt/ghc/bin"
-export GHCUP="/home/rolfie/.ghcup/env"
-[ -f "/home/rolfie/.ghcup/env" ] && source "/home/rolfie/.ghcup/env" # ghcup-env
-#dart
-export FLUTTER_DART_PATH="/home/rolfie/software/flutter/bin"
-export DART_PATH="/usr/bin/dart/bin"
-
-#go
-export GO_PATH="/usr/local/go/bin"
-
-export TERMINAL="alacritty"
-
-export OWN_SOFTWARE="~/software/.sh:~/software/firefox/"
-
-#fzf
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_DEFAULT_OPTS='--height 96% --reverse --preview "cat {}"'
-
-export QT_PATH='/home/rolfie/software/mozilla-vpn-client/qt/qt/bin'
-
-export EDITOR="nvim"
-
-export TEX_LIVE="/usr/local/texlive/2020/bin/x86_64-linux"
-
-#path
-export PATH=$PATH:"/home/rolfie/.local/bin":$TEX_LIVE:$RUST:$MAVEN_HOME:$HASKELL_PATH:$JAVA_HOME:$OWN_SOFTWARE:$GHCUP:$TERMINAL:$EDITOR:$DART_PATH:$FLUTTER_DART_PATH:$GO_PATH:$QT_PATH:$DOTNET_CLI_TELEMETRY_OUTPUT$APOLLO_TELEMETRY_DISABLED
-
-source ~/.config/alacritty/alacritty.bash
-
-#starship rust (always at end)
-eval "$(starship init bash)"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source "$HOME/.config/shell/bash/bash_aliases"
+source "$HOME/.config/shell/bash/bash_prompt"
