@@ -1,14 +1,32 @@
 source "$HOME/.config/shell/common/colors" 
 source "$HOME/.config/shell/common/prompt" 
 
-P_PWD='\[\e[0;38;5;33m\]\w〉 \[\e[0m\]'
+to_bash_color() {
+  echo $(tput setaf $1)
+}
 
-P_LEFT="$P_PWD"
+RESET="$(tput sgr0)"
 
-P_GIT='\[\e[0;38;5;28m\]git(\[\e[0;91m\]$(git branch 2>/dev/null | grep '"'"'^*'"'"' | colrm 1 2)\[\e[0;38;5;22m\])\[\e[0m\]'
-P_TIME='\[\e[0;90m\]\D{}\[\e[0m\]'
+leftprompt() 
+{
+  git=$(git branch 2>/dev/null | grep '"'"'^*'"'"' | colrm 1 2)
+  if [ -z "$git"]
+  then 
+    echo "$(to_bash_color $rolfie_white_blue)\w$(to_bash_color $rolfie_white_blue)〉"
+  else
+    echo "$(to_bash_color $rolfie_white_blue)\w $(to_bash_color $rolfie_green)git($(to_bash_color $rolfie_red)e$git$(to_bash_color $rolfie_green))$(to_bash_color $rolfie_white_blue)〉"
+  fi
+}
 
-P_RIGHT="$P_GIT $P_TIME"
+rightprompt()
+{
+    date=$(date +%A\ %H\:%M\:%S)
+    # printf "%*s" $COLUMNS "$(to_bash_color $rolfie_green)git($(to_bash_color $rolfie_red)$git$(to_bash_color $rolfie_green)) $(to_bash_color $rolfie_light_grey)$date"
 
-PS1="$P_LEFT $LINE $P_RIGHT"
+    printf "%*s" $COLUMNS "$date"
+}
 
+
+LEFT_PROMPT="$(leftprompt)"
+RIGHT_PROMPT="\[\$(tput sc; rightprompt; tput rc)\]"
+PS1="$(to_bash_color $rolfie_light_grey)${RIGHT_PROMPT}${LEFT_PROMPT} ${RESET}"
