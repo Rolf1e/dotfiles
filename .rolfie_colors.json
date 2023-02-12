@@ -17,11 +17,11 @@
   },
   "rolfie_dark_green": {
     "hexa": "#6a8759",
-    "rgb256": 22"
+    "rgb256": 22
   }, 
   "rolfie_green": {
     "hexa": "#a9b665",
-    "rgb256": 34"
+    "rgb256": 34
   }, 
   "rolfie_violet": {
     "hexa": "#d3869b",
@@ -29,7 +29,7 @@
   }, 
   "rolfie_blue": {
     "hexa": "#7daea3",
-    "rgb256": 27"
+    "rgb256": 27
   }, 
   "rolfie_red": {
     "hexa": "#ea6962",
