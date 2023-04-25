@@ -29,16 +29,11 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'RishabhRD/popfix'
 Plug 'RishabhRD/nvim-lsputils'
 Plug 'hrsh7th/nvim-compe'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-" Plug 'nvim-treesitter/playground'
-Plug 'nvim-treesitter/nvim-treesitter-refactor'
-Plug 'nvim-treesitter/completion-treesitter'
 " 
 Plug 'scalameta/nvim-metals'
 Plug 'mfussenegger/nvim-jdtls'
 " Plug 'elixir-editors/vim-elixir'
 Plug 'rust-lang/rust.vim'
-" Plug 'thosakwe/vim-flutter'
 " Plug 'rhysd/vim-clang-format'
 Plug 'lifepillar/pgsql.vim'
 
@@ -73,7 +68,6 @@ source ~/.config/nvim/statusline.vim
 source ~/.config/nvim/personal_functions.vim
 
 source ~/.config/nvim/fzf.vim
-source ~/.config/nvim/lsp.vim
 " source ~/.config/nvim/treesitter.vim
 " source ~/.config/nvim/vebugger.vim
 
