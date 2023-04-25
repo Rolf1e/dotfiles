@@ -68,7 +68,7 @@ source ~/.config/nvim/statusline.vim
 source ~/.config/nvim/personal_functions.vim
 
 source ~/.config/nvim/fzf.vim
-" source ~/.config/nvim/treesitter.vim
+source ~/.config/nvim/lsp.vim
 " source ~/.config/nvim/vebugger.vim
 
 

@@ -1,2 +1,7 @@
 # === TMUX ===
+
+TMUX_CONFIG_FILE='~/.config/nushell/tmux-session-config.yml'
+
 alias tc='function _(){ tmux attach-session -t $1; }; _'
+alias tl='tmux list-session'
+alias tk='function _(){ tmux kill-session -t $1; }; _'

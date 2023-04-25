@@ -26,12 +26,13 @@ left_prompt()
   fi
 }
 
-right_prompt()
+
+date_prompt()
 {
-    date=$(date +%A\ %H\:%M\:%S)
-    printf "%*s" $COLUMNS "$date"
+  echo "$(to_bash_color $rolfie_light_grey) $(date +%H\:%M\:%S)"
 }
 
-LEFT_PROMPT="$(left_prompt)"
-RIGHT_PROMPT="\[\$(tput sc; right_prompt; tput rc)\]"
-PS1="$(to_bash_color $rolfie_light_grey)${RIGHT_PROMPT}${LEFT_PROMPT} ${RESET}"
+PS1="$(date_prompt) $(left_prompt) ${RESET}"
+
+# PS1="$(to_bash_color $rolfie_light_grey)${RIGHT_PROMPT}${LEFT_PROMPT} ${RESET}"
+# PS1="${LEFT_PROMPT} ${RESET}"

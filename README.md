@@ -44,3 +44,6 @@ just use `make` on this file, are it will install everything !
   **Before using lsp completion**, you might need some [requirements](https://github.com/neovim/nvim-lspconfig)
 
 
+issue with iwl debug yoyo bin firware when installing debian: https://forums.debian.net/viewtopic.php?t=149817
+
+
