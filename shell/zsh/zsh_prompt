@@ -26,5 +26,5 @@ prompt_symbol()
   echo "%F{$rolfie_white_blue}〉%f"
 }
 
-export PROMPT="$(prompt_current_directory) $(prompt_symbol)"
-export RPROMPT="$(prompt_time) $(prompt_git)"
+export PROMPT="$(prompt_time) $(prompt_current_directory) $(prompt_symbol)"
+export RPROMPT=""
