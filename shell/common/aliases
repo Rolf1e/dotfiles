@@ -9,6 +9,7 @@ alias :q="exit"
 
 alias cd..="cd.."
 alias ..="cd .."
+alias cde='function _(){ cd de_$1; }; _'
 
 alias dwn="cd ~/Downloads"
 alias doc="cd ~/Documents"
