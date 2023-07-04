@@ -76,3 +76,11 @@ alias gco="git checkout"
 alias grm="git rm --cached -r "
 
 alias pdf='function _() { lesspipe $1 | bat; }; _'
+
+# kubernetes
+alias k="kubectl"
+alias kcc="kubectl config current-context"
+alias kpods="kubectl get pods"
+alias klogs='function _() { kubectl logs $1 -f; }; _'
+alias kless='function _() { kubectl logs $1 -f | less ; }; _'
+alias kcfg='function _() { kubectl describe configmaps $1; }; _'
