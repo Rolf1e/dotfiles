@@ -1,4 +1,5 @@
 if [ -f ~/.config/shell/common/aliases ]; then
   source ~/.config/shell/common/aliases
 fi
+alias kubecsiab='csq k8s create-kubeconfig'
 

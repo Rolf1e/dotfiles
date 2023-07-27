@@ -16,6 +16,10 @@ export PATH="$PATH:/Users/tigranslama/Library/Application Support/Coursier/bin"
 PATH="/Users/tigranslama/projects/platform_csq:$PATH"
 PATH="$SCALA_HOME:$PATH"
 
+export FLINK_HOME=$HOME/frameworks/flink/flink-1.10.3
+
 export GO_PATH="$HOME/go"
 export PATH="$PATH:$GO_PATH/bin"
+export PATH="$PATH:$FLINK_HOME/bin"
+
 
