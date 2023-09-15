@@ -13,7 +13,7 @@ module prompt {
         let path_segment = ($env.PWD | split row '/')
         let path_len = ($path_segment | length)
         if $path_len <= 3 {
-          $"(ansi $rolfie_blue)($env.PWD)(ansi reset)"
+          $"(date_prompt) (ansi $rolfie_blue)($env.PWD)(ansi reset)"
         } else {
           let short_path_segment = [
             $"/($path_segment | get ($path_len - 3))",
@@ -21,16 +21,20 @@ module prompt {
             $"/($path_segment | get ($path_len - 1))",
           ]
 
-          $"(ansi $rolfie_blue)($short_path_segment | str collect)(ansi reset)"
+          $"(date_prompt) (ansi $rolfie_blue)($short_path_segment | str collect)(ansi reset)"
         }
 
       } else {
-          $"(ansi $rolfie_blue)~(ansi reset)"
+          $"(date_prompt) (ansi $rolfie_blue)~(ansi reset)"
       }
   }
 
   export def create_right_prompt [] {
     $"(git_prompt) (workflow_prompt)" 
+  }
+
+  def date_prompt [] {
+    $"(ansi $rolfie_light_grey)(build-string (date now | date format '%I:%M:%S'))"
   }
 
   def workflow_prompt [] {

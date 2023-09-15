@@ -26,5 +26,10 @@ prompt_symbol()
   echo "%F{$rolfie_white_blue}〉%f"
 }
 
+prompt_k8s()
+{
+  echo "%F{rolfie_violet}k8s($(kubectl config current-context))%f"
+}
+
 export PROMPT="$(prompt_time) $(prompt_current_directory) $(prompt_symbol)"
 export RPROMPT=""
