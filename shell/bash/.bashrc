@@ -116,3 +116,5 @@ fi
 source "$HOME/.config/shell/bash/bash_aliases"
 source "$HOME/.config/shell/bash/bash_prompt"
 
+. "$HOME/.asdf/asdf.sh"
+

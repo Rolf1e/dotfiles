@@ -29,10 +29,11 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'RishabhRD/popfix'
 Plug 'RishabhRD/nvim-lsputils'
 Plug 'hrsh7th/nvim-compe'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " 
 Plug 'scalameta/nvim-metals'
 Plug 'mfussenegger/nvim-jdtls'
-" Plug 'elixir-editors/vim-elixir'
+Plug 'elixir-editors/vim-elixir'
 Plug 'rust-lang/rust.vim'
 " Plug 'rhysd/vim-clang-format'
 Plug 'lifepillar/pgsql.vim'

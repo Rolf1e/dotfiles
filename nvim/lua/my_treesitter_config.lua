@@ -5,8 +5,9 @@ require'nvim-treesitter.configs'.setup {
     "java", "scala",
     "bash", "python",  "lua",
     "javascript", "typescript",
-    "hcl"
-  },
+    "hcl", "erlang", "elixir"
+    },
+    auto_install = true,
     highlight = {
       enable = true,              
     },
