@@ -36,6 +36,8 @@ alias vdiff="vim -u NONE -d"
 alias idea="/media/rolfie/ssd2/softwares/idea/idea-IC-223.7571.182/bin/idea.sh"
 
 # fzf
+alias projects='nvim $PROJECT_DIR/$(ls $PROJECT_DIR | fzf)'
+
 alias fzfi='function _(){ erg $1; };_ | fzf'
 alias vifi='vim $(fzfi)'
 
