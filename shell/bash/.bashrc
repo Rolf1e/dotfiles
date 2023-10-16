@@ -118,3 +118,5 @@ source "$HOME/.config/shell/bash/bash_prompt"
 
 . "$HOME/.asdf/asdf.sh"
 
+export PROJECT_DIR="/media/rolfie/ssd2/projects"
+
