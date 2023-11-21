@@ -5,3 +5,10 @@ TMUX_CONFIG_FILE='~/.config/nushell/tmux-session-config.yml'
 alias tc='function _(){ tmux attach-session -t $1; }; _'
 alias tl='tmux list-session'
 alias tk='function _(){ tmux kill-session -t $1; }; _'
+
+function open_project_in_tmux() {
+  PROJECT_NAME=$(ls $PROJECT_DIR | fzf)
+  PROJECT=$PROJECT_DIR/$PROJECT_NAME 
+  tmux new-session -s $PROJECT_NAME -d -c $PROJECT nvim
+  tc $PROJECT_NAME
+}
