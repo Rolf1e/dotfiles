@@ -88,3 +88,7 @@ alias kpods="kubectl get pods"
 alias klogs='function _() { kubectl logs $1 -f; }; _'
 alias kless='function _() { kubectl logs $1 -f | less ; }; _'
 alias kcfg='function _() { kubectl describe configmaps $1; }; _'
+
+# kafka
+alias kktopics='function _() { kcat -b $1 -L | grep topic; }; _'
+alias kklogs='function _() { kcat -b $1 -C -t $2; }; _'
