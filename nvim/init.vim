@@ -28,9 +28,11 @@ call plug#begin('~/Documents/dotfiles/nvim/plugged')
 Plug 'neovim/nvim-lspconfig'
 Plug 'RishabhRD/popfix'
 Plug 'RishabhRD/nvim-lsputils'
-Plug 'hrsh7th/nvim-compe'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-" 
 Plug 'scalameta/nvim-metals'
 Plug 'mfussenegger/nvim-jdtls'
 Plug 'elixir-editors/vim-elixir'
@@ -41,6 +43,9 @@ Plug 'lifepillar/pgsql.vim'
 "Debugger
 " Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 " Plug 'idanarye/vim-vebugger'
+
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
 
 "Git
 Plug 'tpope/vim-fugitive'
@@ -112,4 +117,11 @@ nnoremap <silent> <F5> :UndotreeToggle<cr>
 nnoremap <F9> :Git<CR>
 nnoremap <space><F9> :Git commit<CR>
 nnoremap <F8> :TagbarToggle<CR>
+
+function! SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
 
