@@ -5,7 +5,7 @@ This repo aims to store all my linux configs !
 ![vim](./images/vim.png)
 
 ## Dependencies
-  (Some dependencies can be installed threw Makefile)
+  (Some dependencies can be installed through Makefile)
 
  - [rust](https://www.rust-lang.org/tools/install) (cargo) `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
  - terminal
