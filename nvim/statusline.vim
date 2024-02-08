@@ -9,10 +9,10 @@ let s:exclude_status_line = ["netrw", "tagbar", "Outline"]
 
 function! StatusLineLeft() 
   if count(s:exclude_status_line, &filetype)
-    return '[' . &filetype . ']:' . expand("%:~")
+    return '[' . &filetype . ']:' . expand("%")
   endif
 
-  let s:line =  StatuslineMode() . ' > ' . b:gitbranch . ': ' . expand("%:~")
+  let s:line =  StatuslineMode() . ' > ' . b:gitbranch . ': ' . expand("%")
   if &readonly
     return s:line . ':[RO]' 
   endif
@@ -35,7 +35,7 @@ function! StatusLineRight()
   if count(s:exclude_status_line, &filetype)
     return ''
   endif
-  return ' | [' . &fileencoding . '] ' . &filetype . ' < ' . line('.') . '/' . line('$') . ' B:' . bufnr("%") 
+  return '[' . pomo#status_bar() . '] ' . line('.') . '/' . line('$') . ' B:' . bufnr("%") 
 endfunction
 
 function! StatuslineMode()

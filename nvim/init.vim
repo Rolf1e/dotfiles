@@ -37,6 +37,7 @@ Plug 'scalameta/nvim-metals'
 Plug 'mfussenegger/nvim-jdtls'
 Plug 'elixir-editors/vim-elixir'
 Plug 'rust-lang/rust.vim'
+
 " Plug 'rhysd/vim-clang-format'
 Plug 'lifepillar/pgsql.vim'
 
@@ -61,6 +62,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 Plug 'vim-test/vim-test'
+Plug 'tricktux/pomodoro.vim'
 
 "Tree
 Plug 'mbbill/undotree'

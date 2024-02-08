@@ -1,1 +1,1 @@
-noremap <silent> <space>f <cmd>%!jq .<CR>
+noremap <silent> <space>F <cmd>%!jq .<CR>
