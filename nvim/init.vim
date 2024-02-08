@@ -22,6 +22,7 @@ let g:python_host_prog = "/usr/bin/python2"
 let g:python3_host_prog = "/usr/bin/python3.9"
 
 let g:ftplugin_sql_omni_key = '<C-n>'  " remap vim's autocomplete for sql
+let g:netrw_liststyle = 3
 
 call plug#begin('~/Documents/dotfiles/nvim/plugged')
 "Completer and formatter
