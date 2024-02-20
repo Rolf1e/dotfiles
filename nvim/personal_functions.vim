@@ -14,7 +14,7 @@ endfun
 nnoremap <F12> <cmd>call SyntaxGroup()<CR> 
 
 function! SelectSymbol()
-  let python_like = ["python", "bash", "zsh", "sh", "yaml", "dockerfile", "toml", "elixir", "conf"]
+  let python_like = ["python", "bash", "zsh", "sh", "yaml", "dockerfile", "toml", "elixir", "conf", "cucumber"]
   if count(python_like, &filetype)
     return '# '
   endif
