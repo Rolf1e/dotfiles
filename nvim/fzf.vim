@@ -13,7 +13,7 @@ function! s:buffers_action(lines)
       echo 'deleting buffer '.bufname
       execute 'bdelete '.bufname
     else
-      let bufnumber = split(buf[2], ':')[0][1]
+      let bufnumber = slice(buf[2], 1, strcharlen(buf[2]) - 1)
       execute 'b '.bufnumber
     endif
 endfunction
