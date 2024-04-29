@@ -56,4 +56,19 @@ function! ApplyHighlights(sections, palette)
   endfor
 endfunction
 
+function! TransparentBackGroundOn()
+  highlight Normal guibg=none
+  highlight NonText guibg=none
+  highlight Normal ctermbg=none
+  highlight NonText ctermbg=none
+endfunction
+
+function! TransparentBackGroundOff()
+  highlight Normal guibg=Black
+  highlight NonText guibg=Black
+  highlight Normal ctermbg=Black
+  highlight NonText ctermbg=Black
+endfunction
+
 call ApplyHighlights(g:sections, g:palette)
+call TransparentBackGroundOn()

@@ -35,8 +35,8 @@ hi link LspCodeLens                          Red
 hi link LspCodeLensSeparator                 Blue
 
 augroup lsp_document_highlight
-autocmd!
-autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+  autocmd!
+  autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+  autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
 augroup END
 
