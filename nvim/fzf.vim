@@ -21,6 +21,7 @@ endfunction
 function! s:buffers_on_steroids(query, fullscreen)
     let spec = { 'sink*': { lines -> s:buffers_action(lines) },
                 \ 'options': [
+                \   '--keep-right',
                 \   '--print-query',
                 \   '--header', ':: <ctrl-x> to Close Buffer',
                 \   '--prompt', 'Buffer> '
