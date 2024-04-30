@@ -9,10 +9,10 @@ let s:exclude_status_line = ["netrw", "tagbar", "Outline"]
 
 function! StatusLineLeft() 
   if count(s:exclude_status_line, &filetype)
-    return '[' . &filetype . ']:' . expand("%")
+    return '[' . &filetype . ']:' . expand("%:t")
   endif
 
-  let s:line =  StatuslineMode() . ' > ' . b:gitbranch . ': ' . expand("%")
+  let s:line =  StatuslineMode() . ' > ' . b:gitbranch . ': ' . expand("%:t")
   if &readonly
     return s:line . ':[RO]' 
   endif
