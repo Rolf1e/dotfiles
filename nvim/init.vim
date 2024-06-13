@@ -76,6 +76,7 @@ source ~/.config/nvim/statusline.vim
 source ~/.config/nvim/personal_functions.vim
 
 source ~/.config/nvim/fzf.vim
+source ~/.config/nvim/sql.vim
 source ~/.config/nvim/lsp.vim
 " source ~/.config/nvim/vebugger.vim
 
