@@ -22,3 +22,4 @@ api.nvim_create_autocmd("FileType", {
 })
 
 require('metals').initialize_or_attach(metals_config)
+

@@ -68,6 +68,7 @@ _curl() {
 alias http_get='function _(){ curl $1; }; _'
 alias http_post='function _(){ _curl POST $1 $2 $3 $4; }; _'
 alias http_put='function _(){ _curl PUT $1 $2 $3 $4; }; _'
+alias http_patch='function _(){ _curl PATCH $1 $2 $3 $4; }; _'
 
 # git
 alias gs="git status"

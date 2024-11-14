@@ -37,12 +37,10 @@ let rolfie_theme = {
     shape_custom: {attr: b}
 }
 
-let-env config = {
+$env.config = {
   show_banner: false
-  table_mode: light 
-  use_ls_colors: true
-  color_config: $rolfie_theme 
-  use_grid_icons: true
-  use_ansi_coloring: true
+  table: {
+    mode: light 
+  }
 }
 

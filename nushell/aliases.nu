@@ -28,16 +28,11 @@ alias vim = nvim
 alias dotfiles = tmo dotfiles
 
 # docker
-alias docker_stopall = docker stop $(docker ps -a -q) && docker rm -fv $(docker ps -aq)
-alias docker_ip_find = docker inspect -f \ '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'
-
-def-env dev [dir?: string] { 
-  cd $"/media/rolfie/ssd2/projects/($dir)"
+def docker_stopall [] {
+  docker stop (docker ps -a -q) abd docker rm -fv (docker ps -aq)
 }
-
-
-def-env cours [dir?: string] { 
-  cd $"/media/rolfie/ssd2/projects/cours/($dir)"
+def docker_ip_find [] {
+  docker inspect -f \ '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'
 }
 
 def tree_settings [depth: int, to_ignore?: string] {

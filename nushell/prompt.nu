@@ -16,12 +16,12 @@ module prompt {
           $"(date_prompt) (ansi $rolfie_blue)($env.PWD)(ansi reset)"
         } else {
           let short_path_segment = [
-            $"/($path_segment | get ($path_len - 3))",
-            $"/($path_segment | get ($path_len - 2))",
-            $"/($path_segment | get ($path_len - 1))",
-          ]
+            $"($path_segment | get ($path_len - 3))",
+            $"($path_segment | get ($path_len - 2))",
+            $"($path_segment | get ($path_len - 1))",
+          ] | str join "/"
 
-          $"(date_prompt) (ansi $rolfie_blue)($short_path_segment | str collect)(ansi reset)"
+          $"(date_prompt) (ansi $rolfie_blue)($short_path_segment)(ansi reset)"
         }
 
       } else {
@@ -34,7 +34,7 @@ module prompt {
   }
 
   def date_prompt [] {
-    $"(ansi $rolfie_light_grey)(build-string (date now | date format '%I:%M:%S'))"
+    $"(ansi $rolfie_light_grey)(date now | format date '%I:%M:%S')"
   }
 
   def workflow_prompt [] {
@@ -42,12 +42,11 @@ module prompt {
   }
 
   def git_prompt [] {
-      if (ls -a | where type == dir && name == .git | is-empty) == false {
-        let branch = (git branch --show-current | str trim -c '')
-        $"(ansi $rolfie_violet)git\((ansi $rolfie_red)($branch)(ansi $rolfie_violet)\)"
-      } else {
-        ""
-      }
+    let is_git = do { git status } | complete  | get exit_code
+    if 0 == $is_git {
+       let branch = (git branch --show-current | str trim -c '')
+       $"(ansi $rolfie_violet)git\((ansi $rolfie_red)($branch)(ansi $rolfie_violet)\)"
+    } else { "" }
   }
 
 }
@@ -55,12 +54,12 @@ module prompt {
 use prompt *
 
 # Use nushell functions to define your right and left prompt
-let-env PROMPT_COMMAND = { create_left_prompt }
-let-env PROMPT_COMMAND_RIGHT = { create_right_prompt }
+$env.PROMPT_COMMAND = { || create_left_prompt }
+$env.PROMPT_COMMAND_RIGHT = { || create_right_prompt }
 
 # The prompt indicators are environmental variables that represent
 # the state of the prompt
-let-env PROMPT_INDICATOR = { "〉" }
-let-env PROMPT_INDICATOR_VI_INSERT = { ": " }
-let-env PROMPT_INDICATOR_VI_NORMAL = { "〉" }
-let-env PROMPT_MULTILINE_INDICATOR = { "::: " }
+$env.PROMPT_INDICATOR = { "> " }
+$env.PROMPT_INDICATOR_VI_INSERT = { ": " }
+$env.PROMPT_INDICATOR_VI_NORMAL = { "> " }
+$env.PROMPT_MULTILINE_INDICATOR = { "::: " }

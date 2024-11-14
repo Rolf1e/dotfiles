@@ -7,7 +7,7 @@ to_bash_color() {
 
 RESET="$(tput sgr0)"
 
-ARROW_PROMPT="$(to_bash_color $rolfie_white_blue)〉"
+ARROW_PROMPT="$(to_bash_color $rolfie_white_blue)> "
 PROMPT_DIRTRIM=3
 PWD_PROMPT="$(to_bash_color $rolfie_white_blue)\w"
 
