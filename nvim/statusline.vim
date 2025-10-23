@@ -1,6 +1,5 @@
 set laststatus=2
-set statusline=
-set statusline+=%{StatusLineLeft()} 
+set statusline=%{StatusLineLeft()} 
 set statusline+=%=
 set statusline+=%{StatusLineLspStatus()}
 set statusline+=%{StatusLineRight()} 
