@@ -19,6 +19,7 @@ noremap <silent> <leader>e <cmd>lua vim.diagnostic.setqflist()<CR>
 noremap <silent> <leader>E <cmd>lua vim.diagnostic.setqflist({severity = "E"})<CR>
 noremap <silent> <leader>W <cmd>lua vim.diagnostic.setqflist({severity = "W"})<CR>
 
+
 lua require("my_compe_config")
 lua require("my_lsp_config")
 

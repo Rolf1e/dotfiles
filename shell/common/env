@@ -1,2 +1,7 @@
 export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude={.git,.idea,.vscode,.sass-cache,node_modules,build,tmp,.class}"
 export FZF_DEFAULT_OPTS="--keep-right"
+
+
+export M2="$HOME/.m2"
+export LOMBOK="$M2/repository/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar"
+export JDTLS_JVM_ARGS="-javaagent:$LOMBOK"

@@ -34,7 +34,7 @@ function! StatusLineRight()
   if count(s:exclude_status_line, &filetype)
     return ''
   endif
-  return '[' . pomo#status_bar() . '] ' . line('.') . '/' . line('$') . ' B:' . bufnr("%") 
+  return line('.') . '/' . line('$') . ' B:' . bufnr("%") 
 endfunction
 
 function! StatuslineMode()

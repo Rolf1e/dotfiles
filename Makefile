@@ -1,6 +1,6 @@
 GIT_DOTFILES_REPO_PATH ?= ~/Documents/dotfiles
 DOT_CONFIG_PATH ?= ~/.config
-SOFTWARES_FOLDER ?= /media/rolfie/ssd2/softwares
+SOFTWARES_FOLDER ?= ~/projects
 
 #alacritty
 alacritty-install:
@@ -35,17 +35,8 @@ i3-symlinks:
 vim-plug:
 	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-neovim-pull:
-	cd $(SOFTWARES_FOLDER)/neovim && git pull
-
-neovim-build:
-	make -C $(SOFTWARES_FOLDER)/neovim CMAKE_BUILD_TYPE=RelWithDebInfo
-	sudo make -C $(SOFTWARES_FOLDER)/neovim install
-
-neovim-update: neovim-pull neovim-build
-
-neovim-clone:
-	cd $(SOFTWARES_FOLDER) && git clone https://github.com/neovim/neovim 
+neovim-install:
+	brew install neovim
 
 neovim-symlinks:
 	ln -s $(GIT_DOTFILES_REPO_PATH)/nvim $(DOT_CONFIG_PATH)/nvim
@@ -53,9 +44,7 @@ neovim-symlinks:
 neovim-colors: 
 	ln -s $(GIT_DOTFILES_REPO_PATH)/.rolfie_colors.json $(DOT_CONFIG_PATH)/.rolfie_colors.json
 
-neovim-first: vim-plug neovim-clone neovim-update neovim-symlinks neovim-colors
-
-neovim: neovim-update 
+neovim-first: vim-plug neovim-install neovim-symlinks neovim-colors
 
 symlinks: neovim-symlinks alacritty-symlinks i3-symlinks
 

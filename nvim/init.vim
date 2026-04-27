@@ -33,13 +33,14 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'scalameta/nvim-metals'
-Plug 'mfussenegger/nvim-jdtls'
-Plug 'elixir-editors/vim-elixir'
+" Plug 'scalameta/nvim-metals'
+" Plug 'mfussenegger/nvim-jdtls'
+" Plug 'elixir-editors/vim-elixir'
 Plug 'rust-lang/rust.vim'
 
 " Plug 'rhysd/vim-clang-format'
 Plug 'lifepillar/pgsql.vim'
+
 
 "Debugger
 " Plug 'Shougo/vimproc.vim', {'do' : 'make'}
@@ -62,11 +63,11 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 Plug 'vim-test/vim-test'
-Plug 'tricktux/pomodoro.vim'
 
 "Tree
 Plug 'mbbill/undotree'
 Plug 'preservim/tagbar'
+
 
 call plug#end()
 
@@ -77,6 +78,7 @@ source ~/.config/nvim/personal_functions.vim
 
 source ~/.config/nvim/fzf.vim
 source ~/.config/nvim/sql.vim
+source ~/.config/nvim/github.vim
 source ~/.config/nvim/lsp.vim
 " source ~/.config/nvim/vebugger.vim
 
@@ -95,6 +97,8 @@ noremap <leader>p "*p
 
 " Open term in nvim
 noremap <leader>t <C-w>s<C-w><C-p>:resize 10<CR>:ter<CR>
+" Open Claude (csq x claude) in a vertical split on the left
+noremap <leader>c <C-w>v<C-w><C-p>:vertical resize 50<CR>:ter csq x claude<CR>
 " Quit term mod
 tnoremap <leader>q <C-\><C-N>
 
