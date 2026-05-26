@@ -16,7 +16,6 @@ set colorcolumn=100
 set expandtab
 set smartindent
 set nohlsearch                          " no highlight on search
-"set mouse=                              " WHO TF WANTS A MOUSE IN VIM
 
 let g:python_host_prog = "/usr/bin/python2"
 let g:python3_host_prog = "/usr/bin/python3.9"
@@ -33,25 +32,18 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-" Plug 'scalameta/nvim-metals'
-" Plug 'mfussenegger/nvim-jdtls'
-" Plug 'elixir-editors/vim-elixir'
-Plug 'rust-lang/rust.vim'
 
-" Plug 'rhysd/vim-clang-format'
-Plug 'lifepillar/pgsql.vim'
-
-
-"Debugger
-" Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-" Plug 'idanarye/vim-vebugger'
+Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
+Plug 'kristijanhusak/vim-dadbod-completion'
 
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 
+Plug 'nickjvandyke/opencode.nvim'
+
 "Git
 Plug 'tpope/vim-fugitive'
-Plug 'rbong/vim-flog'
 Plug 'airblade/vim-gitgutter'
 
 "System
@@ -62,11 +54,8 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-Plug 'vim-test/vim-test'
-
 "Tree
 Plug 'mbbill/undotree'
-Plug 'preservim/tagbar'
 
 
 call plug#end()
@@ -77,10 +66,8 @@ source ~/.config/nvim/statusline.vim
 source ~/.config/nvim/personal_functions.vim
 
 source ~/.config/nvim/fzf.vim
-source ~/.config/nvim/sql.vim
-source ~/.config/nvim/github.vim
 source ~/.config/nvim/lsp.vim
-" source ~/.config/nvim/vebugger.vim
+source ~/.config/nvim/dadbod.vim
 
 
 " === REMAPPING ===
@@ -98,7 +85,7 @@ noremap <leader>p "*p
 " Open term in nvim
 noremap <leader>t <C-w>s<C-w><C-p>:resize 10<CR>:ter<CR>
 " Open Claude (csq x claude) in a vertical split on the left
-noremap <leader>c <C-w>v<C-w><C-p>:vertical resize 50<CR>:ter csq x claude<CR>
+noremap <F4> <C-w>v<C-w><C-p>:vertical resize 50<CR>:ter csq x claude<CR>
 " Quit term mod
 tnoremap <leader>q <C-\><C-N>
 

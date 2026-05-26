@@ -1,6 +1,6 @@
 plugged/
-himalaya/.*
 nushell/history.txt
 nushell/*tmux-*.yml
 nushell/local_*.nu
 shell/zsh/.zsh_local
+shell/zsh/resolve_nvim_dadbod_config

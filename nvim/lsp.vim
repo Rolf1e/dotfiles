@@ -41,3 +41,4 @@ augroup lsp_document_highlight
   autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
 augroup END
 
+autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
